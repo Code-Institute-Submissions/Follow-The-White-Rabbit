@@ -13,17 +13,20 @@ The business goals of this website are:
 
 ### Goals 
 
-Organizational Goals:
+Organizational Goals: Create a simple, easy to play memory game, which can provide a quick relaxation moment, at the same time challenging players with different difficulty levels. The game should be simple, but engaging, with an increasing level of complexity to appeal to people who like challenges and give them fun feeling of overcoming difficulty and achievement. Provide reference to some 
 
-User Goals:
+User Goals: Have a stimulating relaxation break, challenge one's memory, train one's memory, compete with others online or offline. Being able to choose appropriate difficulty level, so the game is not too easy & boring, or too difficult & frustrating. 
 
-User Interface:
+User Interface: Visually appealing, not too crowded or too colorful, with simple, easy to understand navigation, clear objectives, instructions or prompts where needed. 
 
 ### Strategy
 
+Create a simple, easy to use game which provides challenging stimulative interactivity, with increasing difficulty level. Referencing some famous characters to appeal to certain audience. Create a game with reference to the characters from Alice in Wonderland, but Lewis S. Carol, to attract people who like books, reading in particular, and would be interested in testing or training their attantion and memory skills. 
+
 ### Scope
 
-User Strories?
+User Strories:
+- 
 
 ### Structure
 
