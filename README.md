@@ -26,9 +26,19 @@ Create a simple, easy to use game which provides challenging stimulative interac
 ### Scope
 
 User Strories:
-- 
+- School children: I like Alice in Wonderland, and its characters, and I'd love to play "with those chracters". I want a simple easy to undestand game, where I can test my attention and memory skills, by playing with my favourite characters, play together with my friends during a lesson break or over the weekend, and see who is faster. 
+- Students: I read the book several times, and now I get more meanings meant by the author than before, and i really love its storyline, and deeper meaning placed in the characters, their actions in various situations. I'd love to play a fun challening game, which challenges my attantion and tests my memory. It'd be fun also fun to compete with my friends who share the same love for the book. 
+- Elder people: I love books and reading. Alice in Wonderlnad has been one of my favourites since young age. I'd be happy to be reminded of the fun mysteries and intricacies of the book, but also keep my attention and memory fit. I'd love a simple easy to understand game, providing good exercises for my brain. 
 
 ### Structure
+
+The main screen will have a slogan: "Follow the white Rabbit", and/or "Catch me if you can", prompt for "How to Play", three screens of difficulty levels with characters from the book: Alice/Easy, The Cheshire Cat/Medium, and The Queen of Hearts/Difficult. 
+How To Play: explains the objective, rules, etc of the game.
+Gameplay screen: will have a number of images with the book's characters. Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" throung images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). A user will be aksed to repeat the sequence by pressing respective images. If it is succesful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
+Easy: 4 images
+Medium: 6 images
+Difficult: 9 images
+
 
 ### Skeleton
 
