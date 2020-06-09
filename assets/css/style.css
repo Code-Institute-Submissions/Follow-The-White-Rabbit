@@ -1,10 +1,14 @@
 /*----  General styles ---*/
-@import url('https://fonts.googleapis.com/css?family=Sunshiney:Ruge:200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sunshiney:Piedra:200,300,400,500,600,700&display=swap');
 
 body {
     background-color: rgb(245, 233, 243);
     font-family: "Sunshiney", sans-serif;
     font-size: 600;
+}
+
+#main {
+    width: 1038px;
 }
 
 .uppercase {
@@ -16,29 +20,58 @@ body {
 }
 
 #levels {
-    height: 10em;
+    height: 100%;
     width: 100%;
 }
-footer {
-    background-color: honeydew;
-    height: 1em;
-    font-size: 700;
-    text-align: center;
+
+#one-level {
+    height: 100%;
+    width: 100%;
+    background-color: blanchedalmond;
 }
 
-.card {
-    align-content: center;
-    height: 12em;
-    width: 12em;
-    margin: 0.1em;
-    padding: 0.2em;
+footer {
+    background-color: honeydew;
+    height: 1.4em;
+    font-size: 700;
+    text-align: center;
+    width: 1038px;
 }
+
+
+/*----  Image card for difficulty levels ---*/
+.card {    
+    height: 12em;
+    width: 70%;
+    margin-top: 1.2em;
+    padding: 0.2em;
+    
+    float: center;
+}
+
+.card-title {
+    font-family: "Piedra", sans-serif;
+    text-align: center;
+    font-size: 600;
+}
+
+
 
 /*----  Hero image ---*/
 #hero-image {
-    height: 460px;
+    height: 500px;
     width: 100%;
-    background: url("../images/hero_image.jpg") no-repeat center center;
+    background: url("../images/hero_image_narrow.jpg") no-repeat center center;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+#hero-image-easy {
+    height: 500px;
+    width: 100%;
+    background: url("../images/hero_image_easy.jpg") no-repeat center center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
