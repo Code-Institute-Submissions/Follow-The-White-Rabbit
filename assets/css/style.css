@@ -1,3 +1,44 @@
+/*----  General styles ---*/
+@import url('https://fonts.googleapis.com/css?family=Sunshiney:Ruge:200,300,400,500,600,700&display=swap');
+
 body {
-    background-color: #A58FA1;
+    background-color: rgb(245, 233, 243);
+    font-family: "Sunshiney", sans-serif;
+    font-size: 600;
+}
+
+.uppercase {
+    text-transform: uppercase; 
+}
+
+#title {
+    text-align: center;
+}
+
+#levels {
+    height: 10em;
+    width: 100%;
+}
+footer {
+    background-color: honeydew;
+    height: 1em;
+    font-size: 700;
+    text-align: center;
+}
+
+.card {
+    align-content: center;
+    height: 12em;
+    width: 12em;
+    margin: 0.1em;
+    padding: 0.2em;
+}
+
+/*----  Hero image ---*/
+#hero-image {
+    height: 460px;
+    width: 100%;
+    background: url("../images/hero_image.jpg") no-repeat center center;
+    margin: 0;
+    padding: 0;
 }
