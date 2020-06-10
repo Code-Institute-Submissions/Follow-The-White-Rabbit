@@ -9,7 +9,7 @@
 The project is a website f
 The business goals of this website are:
 
-## User Expereince design
+## UX
 
 ### Goals 
 
@@ -18,6 +18,8 @@ Organizational Goals: Create a simple, easy to play memory game, which can provi
 User Goals: Have a stimulating relaxation break, challenge one's memory, train one's memory, compete with others online or offline. Being able to choose appropriate difficulty level, so the game is not too easy & boring, or too difficult & frustrating. 
 
 User Interface: Visually appealing, not too crowded or too colorful, with simple, easy to understand navigation, clear objectives, instructions or prompts where needed. 
+
+Developer goals: Learn & practive interactive fornt end development, using HTML, CSS, & Javascript. It is a student project, which can be potentially used by an online book store, offered to its visitors as a fun break, which can attract more users, and later on used as a promotional tool for new books on this shop, etc. 
 
 ### Strategy
 
@@ -45,6 +47,13 @@ Difficult: 9 images
 Wireframes go here
 
 ### Surface
+
+Design choices:
+Colors: 
+Fonts: 
+* Sunshiney, for resemblance to Alice in Wonderland font. 
+
+Images:
 
 
 
