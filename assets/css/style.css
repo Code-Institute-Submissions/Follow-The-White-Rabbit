@@ -3,17 +3,21 @@
 
 body {
     font-family: "Sunshiney", sans-serif;
-    font-size: 600;
-    background: url("../images/bg_med.png") no-repeat center center fixed;    
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    font-size: 600;    
 }
 
+/*
 #main {
-    width: 1038px;
-}
+    background-image: url("../images/bg_med.png");    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  
+    background-attachment: fixed; 
+    opacity: 0.2;
+    height: 100vh;
+} 
+*/
 
 .uppercase {
     text-transform: uppercase; 
@@ -23,28 +27,75 @@ body {
     text-align: center;
 }
 
-#levels {
-    height: 100%;
+/*-- Game Containers  --- */
+#main {
+    background-image: url("../images/bg_med.png");    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    opacity: 1;
+    height: 200vh;
+    position: relative;
+}
+
+#player-board {
+    height: 6em;
+    width: 50%;
+    background-color: greenyellow;
+    border: black solid 0.2em;
+    border-radius: 15%;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-top: 2em;
+    margin-left: auto; 
+    margin-right: auto; 
+    justify-content: center;
+    color: black;
+    display: block;
+    top: 5%;
+}
+
+#game-board {
+    height: 20em;
+    width: 60%;
+    background-color: orange;
+    border: black solid 0.2em;
+    border-radius: 3%;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-top: 0.5em;
+    margin-left: auto; 
+    margin-right: auto; 
+    justify-content: center;
+    color: black;
+    display: block;
+    top: 30%;
+
+}
+
+/*----  Level & Game cards ---*/
+.game-card {
+    height: 150px;
     width: 100%;
+    background-color: royalblue;
+    border: black solid 1px;
+    margin-left: auto; 
+    margin-right: auto; 
+    font-size: 65%;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
 }
 
-#one-level {
-    height: 100%;
-    width: 100%;
-    background-color: blanchedalmond;
+.game-row {
+    padding: 1em;
+    margin: 2em;
+    
 }
 
-footer {
-    background-color: honeydew;
-    height: 1.4em;
-    font-size: 700;
-    text-align: center;
-    width: 1038px;
-}
-
-
-/*----  Image card for difficulty levels ---*/
-.card {    
+.level-card {    
     height: 12em;
     width: 70%;
     margin-top: 1.2em;
@@ -53,7 +104,7 @@ footer {
     float: center;
 }
 
-.card-title {
+.level-card-title {
     font-family: "Piedra", sans-serif;
     text-align: center;
     font-size: 600;
