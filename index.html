@@ -18,34 +18,109 @@
     <!--Local CSS styles link-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!--Local Javascript link-->
-    <link rel="javascript" href="assets/js/index.js" type="text/javascript">
+    <link defer rel="javascript" href="assets/js/index.js" type="text/javascript">
     
 </head>
 <body>
     <div id="main" class="container-fluid">
-        <div id="player-board" class="row">
-            Player Info <br>
-            Score<br>
-            Etc <br>
-            Etc
+    <!--Player/level/score info board -->
+        <div class="row">
+            <div class="column board-row">
+                <div id="player-board">
+                    Player Info <br>
+                    Score<br>
+                    Etc <br>
+                    Etc
+                </div>
+            </div>
         </div>
-        <div id="game-board" class="container">
-            <div id="rowOne" class="row game-row justify-content-center">
-                <div id="col_1" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 1</div>
-                <div id="col_2" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 2</div>
-                <div id="col_3" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 3</div>
-            <div>
-            <div id="rowTwo" class="row game-row justify-content-center">
-                <div id="col_4" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 4</div>
-                <div id="col_5" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 5</div>
-                <div id="col_6" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 6</div>
-            <div>
-            <div id="rowThree" class="row game-row justify-content-center">
-                <div id="col_7" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 7</div>
-                <div id="col_8" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 8</div>
-                <div id="col_9" class="col-lg-4 col-sm-6 col-xs-12 game-card">Column 9</div>
-            <div>
+        <div class="row">
+            <div class="column board-row">
+                <div id="game-board" class="row game-row justify-content-center">
+                    <div id="col_1" class="column">
+                        <div class="game-card">Card 1</div>
+                    </div>
+                    <div id="col_2" class="column">
+                        <div class="game-card">Card 2</div>
+                    </div>
+                    <div id="col_3" class="column">
+                        <div class="game-card">Card 3</div>
+                    </div>
+                </div>
+                <div id="rowTwo" class="row game-row justify-content-center">
+                    <div id="col_4" class="column">
+                        <div class="game-card">Card 4</div>
+                    </div>
+                    <div id="col_5" class="column">
+                        <div class="game-card">Card 5</div>
+                    </div>
+                    <div id="col_6" class="column">
+                        <div class="game-card">Card 6</div>
+                    </div>
+                </div>
+                <div id="rowThree" class="row game-row justify-content-center">
+                    <div id="col_7" class="column">
+                        <div class="game-card">Card 7</div>
+                    </div>
+                    <div id="col_8" class="column">
+                        <div class="game-card">Card 8</div>
+                    </div>
+                    <div id="col_9" class="column">
+                        <div class="game-card">Card 9</div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!--
+        <div class="row">
+            <div id="game-board" class="column">
+                <div id="rowOne" class="box-white-curved-corners row game-row justify-content-center">
+                    <div id="col_1" class="column">
+                        <div class="game-card">Card 1</div>
+                    </div>
+                    <div id="col_2" class="column">
+                        <div class="game-card">Card 2</div>
+                    </div>
+                    <div id="col_3" class="column">
+                        <div class="game-card">Card 3</div>
+                    </div>
+                </div>
+                <div id="rowTwo" class="row game-row justify-content-center">
+                    <div id="col_4" class="column">
+                        <div class="game-card">Card 4</div>
+                    </div>
+                    <div id="col_5" class="column">
+                        <div class="game-card">Card 5</div>
+                    </div>
+                    <div id="col_6" class="column">
+                        <div class="game-card">Card 6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div id="game-board" class="column">
+                <div id="rowOne" class="box-white-curved-corners row game-row justify-content-center">
+                    <div id="col_1" class="column">
+                        <div class="game-card">Card 1</div>
+                    </div>
+                    <div id="col_2" class="column">
+                        <div class="game-card">Card 2</div>
+                    </div>
+                   
+                </div>
+                <div id="rowTwo" class="row game-row justify-content-center">
+                    <div id="col_4" class="column">
+                        <div class="game-card">Card 4</div>
+                    </div>
+                    <div id="col_5" class="column">
+                        <div class="game-card">Card 5</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        -->
     </div>
     
     
@@ -56,7 +131,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!--Local Javascript link-->
-    <link rel="javascript" href="assets/js/index.js" type="text/javascript">
 </body>
 </html>
