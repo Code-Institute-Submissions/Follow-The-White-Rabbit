@@ -6,37 +6,96 @@
     <meta name="description" content="Follow The White Rabbit Memory Game">
     <meta name="keywords" content="Memory game, memory, memo, game">
     <meta name="author" content="Oleksiy Statsenko">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <!-- favicon files -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon_32x32.png">
 
     <!--Bootstrap CSS links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+    
+
+
     <title>Follow The White Rabbit - Memory Matching Game</title>
     <!--Local CSS styles link-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!--Local Javascript link-->
+    
     <link defer rel="javascript" href="assets/js/index.js" type="text/javascript">
     
+    
+	
+    
+    
+
 </head>
 <body>
-    <div id="main" class="container-fluid">
-    <!--Player/level/score info board -->
-        <div class="row">
-            <div class="column board-row">
-                <div id="player-board">
-                    Player Info <br>
-                    Score<br>
-                    Etc <br>
-                    Etc
+ 
+    <!-- Modal -->
+    <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
+    <div id="myModal" class="modal modal-lg">
+        <div class="modal-dialog">
+            <div class="modal-title">
+                <div class="modal-header">
+                    <h4 class="modal-title uppercase">Let's Catch the White Rabbit</h4>
+                </div>
+                <div>
+                   <form id="player-name">
+                        <input type="text" id="fname" name="fname" required maxlength="15" placeholder="Your name.."><br><br>
+                    </form>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title uppercase">Choose your character</h4>
+                    <div class="row">
+                        <div class="column">
+                            <div id="modal-row" class="row">
+                                <div id="easy" class="column">
+                                    <div class="level-card">Card 1</div>
+                                </div>
+                                <div id="medium" class="column">
+                                    <div class="level-card">Card 2</div>
+                                </div>
+                                <div id="hard" class="column">
+                                    <div class="level-card">Card 3</div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="column board-row">
-                <div id="game-board" class="row game-row justify-content-center">
+    </div>
+
+     
+    
+    
+
+    <div id="main" class="container-fluid">
+    
+    <!--Player/level/score info board -->
+        <div id="player-board" class="rounded banner row board-row align-middle">
+            <div class="column">
+                <div class>
+                    <div id="player-info" class="row">
+                    <div id="#" class="column">
+                        <div class="info-card align-middle">Player info</div>
+                    </div>
+                    <div id="#" class="column">
+                        <div class="info-card align-middle">Level info</div>
+                    </div>
+                    <div id="#" class="column">
+                        <div class="info-card align-middle">Score</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+
+    
+        <div id="game-board-hard" class="row board-row">
+            <div class="column">
+                <div id="rowOne" class="row game-row justify-content-center">
                     <div id="col_1" class="column">
                         <div class="game-card">Card 1</div>
                     </div>
@@ -71,9 +130,13 @@
                 </div>
             </div>
         </div>
+       
+        
+        
+
         <!--
         <div class="row">
-            <div id="game-board" class="column">
+            <div id="game-board-medium" class="column">
                 <div id="rowOne" class="box-white-curved-corners row game-row justify-content-center">
                     <div id="col_1" class="column">
                         <div class="game-card">Card 1</div>
@@ -99,7 +162,7 @@
             </div>
         </div>
          <div class="row">
-            <div id="game-board" class="column">
+            <div id="game-board-easy" class="column">
                 <div id="rowOne" class="box-white-curved-corners row game-row justify-content-center">
                     <div id="col_1" class="column">
                         <div class="game-card">Card 1</div>
@@ -111,10 +174,10 @@
                 </div>
                 <div id="rowTwo" class="row game-row justify-content-center">
                     <div id="col_4" class="column">
-                        <div class="game-card">Card 4</div>
+                        <div class="game-card">Card 3</div>
                     </div>
                     <div id="col_5" class="column">
-                        <div class="game-card">Card 5</div>
+                        <div class="game-card">Card 4</div>
                     </div>
                     
                 </div>
@@ -124,12 +187,12 @@
     </div>
     
     
-        
+    <!-- scripts -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     
 
-    <!-- scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

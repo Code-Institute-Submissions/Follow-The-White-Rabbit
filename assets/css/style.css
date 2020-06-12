@@ -1,23 +1,15 @@
 /*----  General styles ---*/
-@import url('https://fonts.googleapis.com/css?family=Sunshiney:Piedra:200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alice:Sunshiney:200,300,400,500,600,700&display=swap');
 
 body {
-    font-family: "Sunshiney", sans-serif;
+    font-family: "Alice", sans-serif;
     font-size: 600;    
-}
-
-/*
-#main {
     background-image: url("../images/bg_med.png");    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-  
     background-attachment: fixed; 
-    opacity: 0.2;
-    height: 100vh;
-} 
-*/
+}
 
 .uppercase {
     text-transform: uppercase; 
@@ -27,60 +19,62 @@ body {
     text-align: center;
 }
 
+
+
 /*-- Game Containers  --- */
+
 #main {
-    background-image: url("../images/bg_med.png");    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed; 
-    opacity: 1;
-    height: 200vh;
-    position: relative;
+    display: none;
 }
 
 #player-board {
-    height: 6em;
-    width: 50%;
+    height: max-content;
+    width: 60%;
+    align-content: center;
     background-color: greenyellow;
     border: black solid 0.2em;
-    border-radius: 15%;
-    position: absolute;
-    left: 0; 
-    right: 0; 
+    
     margin-top: 2em;
-    margin-left: auto; 
-    margin-right: auto; 
-    justify-content: center;
     color: black;
     display: block;
-    
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 
-#game-board {
+#game-board-hard {
     height: max-content;
     width: max-content;
     padding: 2% 5%;
-    background-color: orange;
+    background-color: #cfb747;
     border: black solid 0.2em;
     border-radius: 3%;
-    position: absolute;
-    left: 0; 
-    right: 0; 
+    align-content: center;
     margin-top: 0.5em;
-    margin-left: auto; 
-    margin-right: auto; 
-    justify-content: center;
     color: black;
     display: block;
-       
+    
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 
-.board-row {
-    float: right;
-}
+
 
 /*----  Level & Game cards ---*/
+
+.info-card {
+    height: 80px;
+    width: 100px;
+    background-color: royalblue;
+    border: black solid 1px;
+    margin: 15px;
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
 
 .game-card {
     height: 150px;
@@ -95,12 +89,11 @@ body {
 
 
 .level-card {    
-    height: 12em;
-    width: 70%;
-    margin-top: 1.2em;
+    height: 9em;
+    width: 9em;
+    margin: 1em;
     padding: 0.2em;
-    
-    float: center;
+    border: black solid 1px;
 }
 
 .level-card-title {
@@ -109,5 +102,20 @@ body {
     font-size: 600;
 }
 
+/*---- Modal ----*/
 
+#myModal {
+    height: 90%;
+    width: 80%;
+    background-color: #F0DEB4;
+    color: #C70018;
+    border: #3F2800 solid 0.2em;
+    
+    position: center;
+    align-self: center;
+    display: block; 
+    margin-top: 2em; 
+    margin-left: auto;
+    margin-right: auto;
+}
 
