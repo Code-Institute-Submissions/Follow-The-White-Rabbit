@@ -19,8 +19,6 @@ body {
     text-align: center;
 }
 
-
-
 /*-- Game Containers  --- */
 
 #main {
@@ -72,7 +70,7 @@ body {
     border: black solid 1px;
     margin: 15px;
     font-size: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Alice', Courier, monospace;
     color: black;
 }
 
@@ -97,7 +95,7 @@ body {
 }
 
 .level-card-title {
-    font-family: "Piedra", sans-serif;
+    font-family: "Alice", sans-serif;
     text-align: center;
     font-size: 600;
 }
@@ -111,11 +109,40 @@ body {
     color: #C70018;
     border: #3F2800 solid 0.2em;
     
-    position: center;
-    align-self: center;
+    position: absolute;
     display: block; 
-    margin-top: 2em; 
+    margin-top: 1.5em;
+     margin-left: auto;
+    margin-right: auto;
+    
+
+    
+}
+
+#player-name{
     margin-left: auto;
     margin-right: auto;
 }
 
+
+/*----------------------------------- MEDIA QUERIES */
+	@media screen and (max-width: 992px) {
+	  /*phones and tablets*/
+	.info-card {
+        height: 60px;
+        width: 75px;
+        margin: 10px;
+        font-size: 8px;} 
+    }
+
+	@media screen and (max-width: 767px) {
+	  /*phones*/
+    .info-card {
+        height: 50px;
+        width: 65px;
+        margin: 8px;
+        font-size:6px;} 
+    }
+	
+	@media screen and (max-width: 576px) {
+	  /*small phones*/

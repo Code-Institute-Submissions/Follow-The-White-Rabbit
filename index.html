@@ -30,9 +30,10 @@
 
 </head>
 <body>
- 
+    
     <!-- Modal -->
     <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
+    <!--
     <div id="myModal" class="modal modal-lg">
         <div class="modal-dialog">
             <div class="modal-title">
@@ -41,7 +42,7 @@
                 </div>
                 <div>
                    <form id="player-name">
-                        <input type="text" id="fname" name="fname" required maxlength="15" placeholder="Your name.."><br><br>
+                        <input type="text" id="username" name="username" required placeholder="Your name..">
                     </form>
                 </div>
                 <div class="modal-body">
@@ -65,12 +66,33 @@
             </div>
         </div>
     </div>
-
-     
+-->
+     <div id="myModal" class="modal modal-lg">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Subscribe our Newsletter</h4>
+            </div>
+            <div class="modal-body">
+                <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     
     
 
-    <div id="main" class="container-fluid">
+    <div id="main" class="container container-fluid">
     
     <!--Player/level/score info board -->
         <div id="player-board" class="rounded banner row board-row align-middle">
