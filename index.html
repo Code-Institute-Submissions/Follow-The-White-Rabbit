@@ -31,33 +31,41 @@
 </head>
 <body>
     
-    <!-- Modal -->
+    <!-- Modal - Main screen -->
     <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
-    <!--
+    
     <div id="myModal" class="modal modal-lg">
         <div class="modal-dialog">
             <div class="modal-title">
-                <div class="modal-header">
-                    <h4 class="modal-title uppercase">Let's Catch the White Rabbit</h4>
+                <div id="modal-title" class="modal-header">
+                    <h2 class="modal-title uppercase">Let's Catch the White Rabbit</h2>
                 </div>
+                <!-- Username field form -->
                 <div>
                    <form id="player-name">
                         <input type="text" id="username" name="username" required placeholder="Your name..">
                     </form>
                 </div>
+                <!-- Difficulty level choice images -->
                 <div class="modal-body">
                     <h4 class="modal-title uppercase">Choose your character</h4>
                     <div class="row">
                         <div class="column">
                             <div id="modal-row" class="row">
-                                <div id="easy" class="column">
-                                    <div class="level-card">Card 1</div>
+                                <div  class="column">
+                                    <div id="easy" class="level-card">
+                                        <img src="assets/images/alice.jpg" alt="ALice in Wonderland" class="level-image">
+                                    </div>
+                                   </div>
+                                <div class="column">
+                                    <div id="medium" class="level-card">
+                                        <img src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image">
+                                    </div>
                                 </div>
-                                <div id="medium" class="column">
-                                    <div class="level-card">Card 2</div>
-                                </div>
-                                <div id="hard" class="column">
-                                    <div class="level-card">Card 3</div>
+                                <div  class="column">
+                                    <div id="hard" class="level-card">
+                                        <img src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -66,30 +74,8 @@
             </div>
         </div>
     </div>
--->
-     <div id="myModal" class="modal modal-lg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Subscribe our Newsletter</h4>
-            </div>
-            <div class="modal-body">
-                <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email Address">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-    
+
+   
     
 
     <div id="main" class="container container-fluid">

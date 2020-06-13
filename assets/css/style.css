@@ -1,5 +1,6 @@
 /*----  General styles ---*/
-@import url('https://fonts.googleapis.com/css?family=Alice:Sunshiney:200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alice:200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sunshiney:200,300,400,500,600,700&display=swap');
 
 body {
     font-family: "Alice", sans-serif;
@@ -85,11 +86,16 @@ body {
     color: black;
 }
 
+.level-image {
+    max-width:100%;
+    max-height:100%;
+    text-align: center;
+}
 
 .level-card {    
     height: 9em;
     width: 9em;
-    margin: 1em;
+    margin: 0.5em;
     padding: 0.2em;
     border: black solid 1px;
 }
@@ -112,11 +118,31 @@ body {
     position: absolute;
     display: block; 
     margin-top: 1.5em;
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
+    left: 0;
+    right: 0;
     
+}
 
-    
+#modal-title {
+    font-family: "Sunshiney", sans-serif;
+    text-align: right;
+    margin-bottom: 2em;
+    font-size: 600;
+}
+
+/*-- Colors to convey difficulty levels */
+#easy {
+    background-color: rgb(25, 207, 25);
+}
+
+#medium {
+    background-color: rgb(255, 251, 24);
+}
+
+#hard {
+    background-color: rgb(241, 63, 8);
 }
 
 #player-name{
