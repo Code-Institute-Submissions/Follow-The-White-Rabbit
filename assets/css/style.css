@@ -22,9 +22,7 @@ body {
 
 /*-- Game Containers  --- */
 
-#main {
-    display: none;
-}
+
 
 #player-board {
     height: max-content;
@@ -59,7 +57,6 @@ body {
     left: 0;
     right: 0;
 }
-
 
 
 /*----  Level & Game cards ---*/
@@ -108,15 +105,29 @@ body {
 
 /*---- Modal ----*/
 
+/* Fixing non working links in modal */
+.modal-dialog {
+    pointer-events: all;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
 #myModal {
-    height: 90%;
+    
+    height: auto;
     width: 80%;
+    display: block;
     background-color: #F0DEB4;
     color: #C70018;
     border: #3F2800 solid 0.2em;
+    position: fixed;
     
-    position: absolute;
-    display: block; 
     margin-top: 1.5em;
     margin-left: auto;
     margin-right: auto;
@@ -124,6 +135,9 @@ body {
     right: 0;
     
 }
+
+
+
 
 #modal-title {
     font-family: "Sunshiney", sans-serif;
@@ -134,7 +148,7 @@ body {
 
 /*-- Colors to convey difficulty levels */
 #easy {
-    background-color: rgb(25, 207, 25);
+    background-color: rgba(25, 207, 25, 1);
 }
 
 #medium {
@@ -142,7 +156,7 @@ body {
 }
 
 #hard {
-    background-color: rgb(241, 63, 8);
+    background-color: rgb(207, 13, 1);
 }
 
 #player-name{
@@ -150,25 +164,36 @@ body {
     margin-right: auto;
 }
 
-
 /*----------------------------------- MEDIA QUERIES */
-	@media screen and (max-width: 992px) {
-	  /*phones and tablets*/
-	.info-card {
+    @media screen and (max-width: 992px) {
+      /*phones and tablets*/
+    .info-card {
         height: 60px;
         width: 75px;
         margin: 10px;
         font-size: 8px;} 
     }
 
-	@media screen and (max-width: 767px) {
-	  /*phones*/
+    
+
+
+    @media screen and (max-width: 767px) {
+      /*phones*/
     .info-card {
         height: 50px;
         width: 65px;
         margin: 8px;
         font-size:6px;} 
     }
-	
-	@media screen and (max-width: 576px) {
-	  /*small phones*/
+
+    h4 {
+        font-size: 17px;
+    }
+
+     
+    @media screen and (max-width: 576px) {
+      /*small phones*/
+    #myModal {
+        max-width: 95%;
+    }
+

@@ -18,7 +18,9 @@
     <title>Follow The White Rabbit - Memory Matching Game</title>
     <!--Local CSS styles link-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--Local Javascript link-->
     
+    <link defer rel="javascript" href="assets/js/index.js" type="text/javascript">
     
     
     
@@ -26,61 +28,13 @@
     
 
 </head>
-<body>
-    
-    
-    <!-- Modal - Main screen -->
-    <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
-    
-    <div id="myModal" class="modal modal-lg visible">
-        <div class="modal-dialog">
-            <div class="modal-title">
-                <div >
-                    <h2 class="modal-title uppercase">Let's Catch the White Rabbit</h2>
-                </div>
-                <!-- Username field form -->
-                <div>
-                   <form id="player-name">
-                        <input type="text" id="username" name="username" required placeholder="Your name..">
-                    </form>
-                </div>
-                <!-- Difficulty level choice images -->
-                <div class="modal-body">
-                    <h4 class="modal-title uppercase">Choose your character</h4>
-                    <div class="row">
-                        <div class="column">
-                            <div id="modal-row" class="row">
-                                <div  class="column">
-                                    <div id="easy" class="level-card">
-                                        <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
-                                    </div>
-                                   </div>
-                                <div class="column">
-                                    <div id="medium" class="level-card">
-                                        <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
-                                    </div>
-                                </div>
-                                <div  class="column">
-                                    <div id="hard" class="level-card">
-                                        <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   
+<body>   
     
 
-    <div id="main" class="container container-fluid invisible">
+    <div id="main-level" class="container container-fluid">
     
     <!--Player/level/score info board -->
-        <div id="player-board" class="rounded banner row invisible">
-            <a href="index.html"><button type="button">Reset</button></a>
+        <div id="player-board" class="rounded banner row board-row align-middle">
             <div class="column">
                 <div class>
                     <div id="player-info" class="row">
@@ -100,7 +54,7 @@
         
 
     
-        <div id="game-board-hard" class="row board-row invisible">
+        <div id="game-board-hard" class="row board-row">
             <div class="column">
                 <div id="rowOne" class="row game-row justify-content-center">
                     <div id="col_1" class="column">
@@ -195,8 +149,6 @@
     
     
     <!-- scripts -->
-    <!--Local Javascript link-->
-    <script src="assets/js/index.js" type="text/javascript"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
