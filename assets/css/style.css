@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Alice:200,300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sunshiney:200,300,400,500,600,700&display=swap');
 
+html, body{
+    margin: 0;
+    padding: 0;  
+}
+
+
 body {
     font-family: "Alice", sans-serif;
     font-size: 600;    
@@ -40,6 +46,8 @@ body {
     right: 0;
 }
 
+#game-board-easy, 
+#game-board-medium,
 #game-board-hard {
     height: max-content;
     width: max-content;
