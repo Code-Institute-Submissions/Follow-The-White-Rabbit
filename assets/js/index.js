@@ -12,39 +12,30 @@ let imageH = document.getElementById('imageH');
 let main = document.getElementById('main');
 let playerBoard = document.getElementById('player-board');
 
-$('#imageE').click(function() {
-    easyLevel();
+
+
+$(document).ready(function(){
+    $('#imageE').click(function() {
+        $('.modal').hide();
+        $('#main, #player-board, #game-board-easy').show();
+    });   
 });
 
-$('#imageM').click(function() {
-    mediumLevel();
+$(document).ready(function(){
+    $('#imageM').click(function() {
+        $('.modal').hide();
+        $('#main, #player-board, #game-board-medium').show();
+    });
 });
 
-$('#imageH').click(function() {
-    hardLevel();
+$(document).ready(function(){
+    $('#imageH').click(function() {
+        $('.modal').hide();
+        $('#main, #main, #player-board, #game-board-hard').show();
+    });
 });
 
-function easyLevel() {
-    $('.modal').addClass('invisible').removeClass('visible');
-    $('#main').addClass('visible').removeClass('invisible');
-    $('#player-board').addClass('visible').removeClass('invisible');
-    $('#game-board-easy').addClass('visible').removeClass('invisible');
-  
-}
 
-function mediumLevel() {
-    $('.modal').addClass('invisible').removeClass('visible');
-    $('#main').addClass('visible').removeClass('invisible');
-    $('#player-board').addClass('visible').removeClass('invisible');
-    $('#game-board-medium').addClass('visible').removeClass('invisible');
-}
-
-function hardLevel() {
-    $('.modal').addClass('invisible').removeClass('visible');
-    $('#main').addClass('visible').removeClass('invisible');
-    $('#player-board').addClass('visible').removeClass('invisible');
-    $('#game-board-hard').addClass('visible').removeClass('invisible');
-}
 
 
 

@@ -26,20 +26,24 @@ body {
     text-align: center;
 }
 
+
+
 /*-- Game Containers  --- */
 
-
+#main {
+    display: none;
+}
 
 #player-board {
     height: max-content;
     width: 60%;
     align-content: center;
-    background-color: greenyellow;
+    background-color: rgb(211, 231, 31);
     border: black solid 0.2em;
     
     margin-top: 2em;
     color: black;
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -58,7 +62,7 @@ body {
     align-content: center;
     margin-top: 0.5em;
     color: black;
-    display: block;
+    display: none;
     
     margin-left: auto;
     margin-right: auto;
@@ -72,7 +76,7 @@ body {
 .info-card {
     height: 80px;
     width: 100px;
-    background-color: royalblue;
+    background-color: rgb(124, 139, 185);
     border: black solid 1px;
     margin: 15px;
     font-size: 10px;
@@ -80,14 +84,27 @@ body {
     color: black;
 }
 
+.easy-card{
+    height: 200px;
+    width: 200px;
+}
+
+.medium-card{
+    height: 165px;
+    width: 165px;
+}
+
+.hard-card{
+    height: 160px;
+    width: 160px;
+}
+
 .game-card {
-    height: 150px;
-    width: 150px;
     background-color: royalblue;
     border: black solid 1px;
     margin: 15px;
     font-size: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Alice', Courier, monospace;
     color: black;
 }
 
@@ -116,14 +133,6 @@ body {
 /* Fixing non working links in modal */
 .modal-dialog {
     pointer-events: all;
-}
-
-.invisible{
-    display: none;
-}
-
-.visible{
-    display: block;
 }
 
 #myModal {
@@ -175,6 +184,10 @@ body {
 /*----------------------------------- MEDIA QUERIES */
     @media screen and (max-width: 992px) {
       /*phones and tablets*/
+    #myModal {
+        max-width: 95%;
+    }
+
     .info-card {
         height: 60px;
         width: 75px;
@@ -182,11 +195,36 @@ body {
         font-size: 8px;} 
     }
 
+.easy-card{
+    resize: both;
+}
+
+.medium-card{
+    resize: both;
+}
+
+.hard-card{
+    resize: both;
+}
     
 
 
     @media screen and (max-width: 767px) {
       /*phones*/
+.easy-card{
+    resize: both;
+}
+
+.medium-card{
+    resize: both;
+}
+
+.hard-card{
+    resize: both;
+}
+    #myModal {
+        max-width: 95%;
+    }
     .info-card {
         height: 50px;
         width: 65px;
@@ -198,7 +236,6 @@ body {
         font-size: 17px;
     }
 
-     
     @media screen and (max-width: 576px) {
       /*small phones*/
     #myModal {
