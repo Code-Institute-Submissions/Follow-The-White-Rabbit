@@ -19,21 +19,29 @@ $(document).ready(function(){
         $('.modal').hide();
         $('#main, #player-board, #game-board-easy').show();
     });   
-});
 
-$(document).ready(function(){
     $('#imageM').click(function() {
         $('.modal').hide();
         $('#main, #player-board, #game-board-medium').show();
     });
-});
 
-$(document).ready(function(){
     $('#imageH').click(function() {
         $('.modal').hide();
         $('#main, #main, #player-board, #game-board-hard').show();
     });
 });
+
+/* Array of images from assets/images/random folder  --  index.html div id="card-images" */
+const randomImageArr =["alice", "cat", "dodo", "caterillar", "queen", "twins"];
+function setRandomImages(randomImageArr) {
+    let num = randomImageArr[Math.floor(Math.random() * randomImageArr.length)];
+    document.getElementById("card01").appendChild(num); 
+    
+}
+
+
+
+
 
 
 

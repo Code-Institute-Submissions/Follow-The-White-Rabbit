@@ -7,7 +7,6 @@ html, body{
     padding: 0;  
 }
 
-
 body {
     font-family: "Alice", sans-serif;
     font-size: 600;    
@@ -25,8 +24,6 @@ body {
 #title {
     text-align: center;
 }
-
-
 
 /*-- Game Containers  --- */
 
@@ -84,7 +81,7 @@ body {
     color: black;
 }
 
-.card-images {
+#card-images {
     display: none;
 }
 
@@ -112,9 +109,10 @@ body {
     color: black;
 }
 
-.level-image {
-    max-width:100%;
-    max-height:100%;
+.level-image,
+.card-image  {
+    max-width: 100%;
+    max-height: 100%;
     text-align: center;
 }
 
