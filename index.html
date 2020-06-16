@@ -18,6 +18,8 @@
     <title>Follow The White Rabbit - Memory Matching Game</title>
     <!--Local CSS styles link-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--Local Javascript link-->
+    <script defer src="assets/js/index.js" type="text/javascript"></script>
     
     
     
@@ -74,10 +76,10 @@
     </div>
 
    
+    <!-- Game container with card grids -->
+    <div id="main" class="container container-fluid">
     
 
-    <div id="main" class="container container-fluid">
-   
     <!-- Player/level/score info board -->
         <div id="player-board" class="row">
             <a href="index.html"><button type="button">Reset</button></a>
@@ -97,13 +99,23 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Images for game cards-->
+        <div id="card-images">
+            <img type="image" src="assets/images/random/queen.jpg" alt="Queen of Hearts" class="card-image">
+            <img type="image" src="assets/images/random/alice.jpg" alt="Alice in Wonderland" class="card-image">
+            <img type="image" src="assets/images/random/dodo.jpg" alt="Dodo" class="card-image">
+            <img type="image" src="assets/images/random/cat.jpg" alt="Chshire Cat" class="card-image">
+            <img type="image" src="assets/images/random/caterpillar.jpg" alt="Caterpillar" class="card-image">
+            <img type="image" src="assets/images/random/twins.jpg" alt="Twins" class="card-image">
+        </div>
+
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row">
             <div  class="column">
                 <div id="rowOne" class="row ">
                     <div id="col_1" class="column">
-                        <div class="game-card easy-card">Card 1</div>
+                        <div class="game-card easy-card"><img type="image" src="assets/images/random/dodo.jpg" alt="Dodo" class="card-image"></div>
                     </div>
                     <div id="col_2" class="column">
                         <div class="game-card easy-card">Card 2</div>
@@ -192,8 +204,6 @@
     
     
     <!-- scripts -->
-    <!--Local Javascript link-->
-    <script src="assets/js/index.js" type="text/javascript"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -84,6 +84,10 @@ body {
     color: black;
 }
 
+.card-images {
+    display: none;
+}
+
 .easy-card{
     height: 200px;
     width: 200px;
