@@ -5,12 +5,13 @@ console.log("test");
 The code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load */ 
 
 /* Choosing difficulty level and closing the modal   */
-let modal = document.getElementById('myModal');
-let imageE = document.getElementById('imageE');
-let imageM = document.getElementById('imageM');
-let imageH = document.getElementById('imageH');
-let main = document.getElementById('main');
-let playerBoard = document.getElementById('player-board');
+let modal = document.getElementById('myModal'),
+ imageE = document.getElementById('imageE'),
+ imageM = document.getElementById('imageM'),
+ imageH = document.getElementById('imageH'),
+ main = document.getElementById('main'),
+ playerBoard = document.getElementById('player-board');
+
 
 
 
@@ -32,10 +33,14 @@ $(document).ready(function(){
 });
 
 /* Array of images from assets/images/random folder  --  index.html div id="card-images" */
-const randomImageArr =["alice", "cat", "dodo", "caterillar", "queen", "twins"];
-function setRandomImages(randomImageArr) {
-    let num = randomImageArr[Math.floor(Math.random() * randomImageArr.length)];
-    document.getElementById("card01").appendChild(num); 
+const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins"];
+function setRandomImages() {
+    let num = Math.floor(Math.random() * 6);
+    console.log(num);
+    let img = randomImageArr[ num ];
+    console.log(img);
+    let imgToPlace = document.getElementById(img);
+    document.getElementById("card01").appendChild(imgToPlace); 
     
 }
 
