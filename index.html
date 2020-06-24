@@ -46,17 +46,17 @@
                             <div id="modal-row" class="row">
                                 <div  class="column">
                                     <div id="easy" class="level-card">
-                                        <a  href="#"><img onclick="setRandomImages()" id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
+                                        <a  href="#"><img onclick="randomPics(easyCards.length,easyCards)" id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
                                     </div>
                                    </div>
                                 <div class="column">
                                     <div id="medium" class="level-card">
-                                        <a href="#"><img onclick="randomPics()" id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
+                                        <a href="#"><img onclick="randomPics(mediumCards.length,mediumCards)" id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
                                     </div>
                                 </div>
                                 <div  class="column">
                                     <div id="hard" class="level-card">
-                                        <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
+                                        <a href="#"><img onclick="randomPics(hardCards.length,hardCards)" id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
                                     </div>
                                 </div>
                             </div>
@@ -160,35 +160,35 @@
             <div class="column">
                 <div id="rowOne" class="row game-row justify-content-center">
                     <div id="col_1" class="column">
-                        <div class="game-card hard-card">Card 1</div>
+                        <div id="card1" class="game-card hard-card"></div>
                     </div>
                     <div id="col_2" class="column">
-                        <div class="game-card hard-card">Card 2</div>
+                        <div id="card2" class="game-card hard-card"></div>
                     </div>
                     <div id="col_3" class="column">
-                        <div class="game-card hard-card">Card 3</div>
+                        <div id="card3" class="game-card hard-card"></div>
                     </div>
                 </div>
                 <div id="rowTwo" class="row game-row justify-content-center">
                     <div id="col_4" class="column">
-                        <div class="game-card hard-card">Card 4</div>
+                        <div id="card4" class="game-card hard-card"></div>
                     </div>
                     <div id="col_5" class="column">
-                        <div class="game-card hard-card">Card 5</div>
+                        <div id="card5" class="game-card hard-card"></div>
                     </div>
                     <div id="col_6" class="column">
-                        <div class="game-card hard-card">Card 6</div>
+                        <div id="card6" class="game-card hard-card"></div>
                     </div>
                 </div>
                 <div id="rowThree" class="row game-row">
                     <div id="col_7" class="column">
-                        <div class="game-card hard-card">Card 7</div>
+                        <div id="card7" class="game-card hard-card"></div>
                     </div>
                     <div id="col_8" class="column">
-                        <div class="game-card hard-card">Card 8</div>
+                        <div id="card8" class="game-card hard-card"></div>
                     </div>
                     <div id="col_9" class="column">
-                        <div class="game-card hard-card">Card 9</div>
+                        <div id="card9" class="game-card hard-card"></div>
                     </div>
                 </div>
             </div>

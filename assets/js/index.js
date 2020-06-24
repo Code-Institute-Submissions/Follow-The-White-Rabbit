@@ -36,50 +36,70 @@ $(document).ready(function(){
 const e = 4;
 const m = 6;
 const h = 9;
-const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"]
+const easyCards = ["card01","card02","card03","card04"];
+const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"];
+const hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"];
 const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
-function setRandomImages() {
-    let randomNum = [];
-    let i = 0;
-    while (i < 4) {
-    let num = Math.floor(Math.random() * randomImageArr.length);
-    if (randomNum.indexOf(num) < 0) {
-    i++;
-    }
-    
-    console.log(num);
-    console.log(randomNum);
-    }
 
-    let img = randomImageArr[ num ];
-    console.log(img);
-    let imgToPlace = document.getElementById(img);
-    document.getElementById("card01").appendChild(imgToPlace); 
-    
+function randomPics(a,b) {
+    let i = 0;
+    let images = [];
+    while (i < a) { 
+        let n = Math.floor(Math.random() * randomImageArr.length);
+        if (images.indexOf(n) < 0) {
+        images.push(n);
+        i++;
+        }
+        console.log(a);
+    }
+    let index = 0;
+    while (index < images.length) {
+        let img = randomImageArr[ images [index] ];
+        let imgToPlace = document.getElementById(img);
+        document.getElementById(b[index]).appendChild(imgToPlace); 
+        index++;
+    }
 }
 
+/*
 function randomPics () {
     let i = 0;
     let images = [];
-    while (i < m) { 
+    while (i < mediumCards.length) { 
         let n = Math.floor(Math.random() * randomImageArr.length);
-        console.log(n);
         if (images.indexOf(n) < 0) {
         images.push(n);
         i++;
         }
     }
-    console.log(images);
     let index = 0;
     while (index < images.length) {
         let img = randomImageArr[ images [index] ];
-        console.log(index);
         let imgToPlace = document.getElementById(img);
         document.getElementById(mediumCards[index]).appendChild(imgToPlace); 
         index++;
     }
 }
 
+function randomPics2 () {
+    let i = 0;
+    let images = [];
+    while (i < hardCards.length) { 
+        let n = Math.floor(Math.random() * randomImageArr.length);
+        if (images.indexOf(n) < 0) {
+        images.push(n);
+        i++;
+        }
+    }
+    let index = 0;
+    while (index < images.length) {
+        let img = randomImageArr[ images [index] ];
+        let imgToPlace = document.getElementById(img);
+        document.getElementById(hardCards[index]).appendChild(imgToPlace); 
+        index++;
+    }
+}
+*/
 
 
 
