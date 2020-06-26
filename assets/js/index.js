@@ -61,10 +61,7 @@ function randomPics(a,b) {
     
 }
 
-/* Idea for timer taken from www.w3schools.com  */
-
-
-function rabbitRun(a,b) {
+function rabbitRun(a,b,run) {
     let i = 0;
     let rabbitRun = [];
     while (i < a) { 
@@ -77,8 +74,8 @@ function rabbitRun(a,b) {
     
     console.log("rabbitRun");
 
-    let index = 0;
     
+    let index = 0;
     while (index < rabbitRun.length) {
         let card = document.getElementById(b [rabbitRun [index] ] );
         console.log(rabbitRun[index], card);        console.log(rabbitRun);
@@ -86,22 +83,26 @@ function rabbitRun(a,b) {
         let imageToRemove = document.getElementById(randomImageArr [images[img]]);
         let imageToPlace = document.getElementById(rabbit[0]);
         console.log(images);         console.log(img);         console.log(card, imageToRemove, imageToPlace);
-        
-        
-        card.replaceChild(imageToPlace, imageToRemove);
-        
-        setTimeout(() => { 
-        card.appendChild(imageToRemove);
-        card.removeChild(imageToPlace);
-        
-        }, 2000);  
-    
        
-      
-        index++;    
+            console.log(card);
+            card.removeChild(imageToRemove);
+            card.appendChild(imageToPlace);
+        setTimeout(() => { 
+            console.log(card);
+            card.appendChild(imageToRemove);
+            card.removeChild(imageToPlace);
+            
+            
+        }, 500);  
+        
+        
+
+        index++;
     }    
-         
     
+
+         
+
 
     
 
@@ -112,20 +113,6 @@ function rabbitRun(a,b) {
 
 
     
-    /*
-    let index = 0;
-    while (index < rabbitRun.length) {
-        let imgToPlace = document.getElementById("rabbit");
-        console.log(imgToPlace, images[index]);
-        
-        document.getElementById(rabbitRun[index]).removeChild(images[index]).appendChild(imgToPlace);  
-        console.log(rabbitRun[index]);
-        console.log("test");
-        index++;
-    }
-    console.log(rabbitRun);
-}  
-*/
     
 
 console.log();
