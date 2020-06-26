@@ -78,9 +78,8 @@ function rabbitRun(a,b) {
     console.log("rabbitRun");
 
     let index = 0;
+    
     while (index < rabbitRun.length) {
-        
-        let imgToPlace = document.getElementById("rabbit");
         let card = document.getElementById(b [rabbitRun [index] ] );
         console.log(rabbitRun[index], card);        console.log(rabbitRun);
         let img = rabbitRun [index] ;
@@ -88,28 +87,23 @@ function rabbitRun(a,b) {
         let imageToPlace = document.getElementById(rabbit[0]);
         console.log(images);         console.log(img);         console.log(card, imageToRemove, imageToPlace);
         
+        
         card.replaceChild(imageToPlace, imageToRemove);
-        card.replaceChild(imageToRemove, imageToPlace);
-        index+1;
-card.replaceChild(imageToPlace, imageToRemove);
-        card.replaceChild(imageToRemove, imageToPlace);
-        index+1;
         
+        setTimeout(() => { 
+        card.appendChild(imageToRemove);
+        card.removeChild(imageToPlace);
+        
+        }, 2000);  
+    
+       
+      
+        index++;    
+    }    
+         
+    
 
-        
-        
-                
-           
-        
-    }
-
-    function replaceImage(card, imageToPlace, imageToRemove) {
-        setTimeout(function() { 
-            card.replaceChild(imageToPlace, imageToRemove);
-            card.replaceChild(imageToRemove, imageToPlace);
-
-            }, 1000 * index); 
-    }
+    
 
 
     console.log(rabbitRun);
