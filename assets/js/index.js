@@ -38,6 +38,9 @@ const rabbit = ["rabbit"];
 let images = [];
 
 /* Function inseriting random pictures into game cards */
+
+// document.getElementsByClassName(".level-card").addEventListener("click", randomPics);
+
 function randomPics(a,b) {
     let i = 0;
     
@@ -54,19 +57,18 @@ function randomPics(a,b) {
         let img = randomImageArr[ images [index] ];
         let imgToPlace = document.getElementById(img);
         document.getElementById(b[index]).appendChild(imgToPlace); 
-        console.log(imgToPlace);
         index++;
     }
+    console.log("images:" + images)
     return images;
-    
 }
 
+
 /* Idea for timer taken from www.w3schools.com  */
-
-
-function rabbitRun(a,b) {
+let rabbitRun = [];
+function whiteRabbitRun(a,b) {
     let i = 0;
-    let rabbitRun = [];
+    
     while (i < a) { 
         let n = Math.floor(Math.random() * b.length);
         if (rabbitRun.indexOf(n) < 0) {
@@ -75,57 +77,105 @@ function rabbitRun(a,b) {
         }
     }
     
-    console.log("rabbitRun");
+    console.log("rabbitRun: " + rabbitRun);
 
     let index = 0;
+    let rabbitImg = $("#rabbit");
+    let card = b[rabbitRun[index]];  
     
-    while (index < rabbitRun.length) {
-        let card = document.getElementById(b [rabbitRun [index] ] );
-        console.log(rabbitRun[index], card);        console.log(rabbitRun);
-        let img = rabbitRun [index] ;
-        let imageToRemove = document.getElementById(randomImageArr [images[img]]);
-        let imageToPlace = document.getElementById(rabbit[0]);
-        console.log(images);         console.log(img);         console.log(card, imageToRemove, imageToPlace);
-        
-        
-        card.replaceChild(imageToPlace, imageToRemove);
-        
-        setTimeout(() => { 
-        card.appendChild(imageToRemove);
-        card.removeChild(imageToPlace);
-        
-        }, 2000);  
+    $("#" + card).find("img:first").hide(); // hide the first image (ie: Alice)
+        //debugger; // turn-on to see it work "in action"
+
+    $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+        //debugger; // turn-on to see it work "in action"
+
+    //$("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        //debugger; // turn-on to see it work "in action"
+
+    // $("#" + card).find("img:first").show(); // find first image and show it (ie: Alice)
+        //debugger; // turn-on to see it work "in acti
     
-       
-      
-        index++;    
-    }    
-         
-    
+    var myInterval = setInterval(function(){ 
+        $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        //debugger; // turn-on to see it work "in action"
 
-    
-
-
-    console.log(rabbitRun);
-    return rabbitRun;
-}
-
-
-    
-    /*
-    let index = 0;
-    while (index < rabbitRun.length) {
-        let imgToPlace = document.getElementById("rabbit");
-        console.log(imgToPlace, images[index]);
-        
-        document.getElementById(rabbitRun[index]).removeChild(images[index]).appendChild(imgToPlace);  
-        console.log(rabbitRun[index]);
-        console.log("test");
+        $("#" + card).find("img:first").show(); // find first image and show it (ie: Alice)
+        //debugger; // turn-on to see it work "in acti
         index++;
-    }
-    console.log(rabbitRun);
-}  
-*/
-    
+         card = b[rabbitRun[index]];
+       $("#" + card).find("img:first").hide(); // hide the first image (ie: Alice)
+        //debugger; // turn-on to see it work "in action"
 
-console.log();
+       $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+        //debugger; // turn-on to see it work "in action"
+        
+        if  (index >= rabbitRun.length) {
+            clearInterval(myInterval);
+        }
+       // $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        //debugger; // turn-on to see it work "in action"
+
+        //$("#" + card).find("img:first").show(); // find first image and show it (ie: Alice)
+        //debugger; // turn-on to see it work "in acti
+        
+    }, 1000);
+    
+}
+   // while (index < rabbitRun.length) {
+        
+        // let img = rabbitRun[index];
+        // let imageToRemove = document.getElementById(randomImageArr [images[img]]);
+        // let imageToPlace = document.getElementById(rabbit[0]);
+/*
+        $("#" + card).find("img:first").hide(); // hide the first image (ie: Alice)
+        debugger; // turn-on to see it work "in action"
+
+        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+        debugger; // turn-on to see it work "in action"
+
+        $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        debugger; // turn-on to see it work "in action"
+
+        $("#" + card).find("img:first").show(); // find first image and show it (ie: Alice)
+        debugger; // turn-on to see it work "in action"
+
+        index++;
+    }    
+    */
+    console.log("function done: " + rabbitRun);
+    //return rabbitRun;
+
+
+/* Capturing players' clicks through game cards  */
+let followRabbit = []; // defined globally, not in a function
+$(".game-card").on("click", function() {     
+    if (followRabbit.length === images.length) {
+        return followRabbit;
+    } 
+    else {
+    gameCardID = $(this).attr("id");
+    //index = $(".board").indexOf(gameCardID);
+    index = easyCards.indexOf(gameCardID);
+    followRabbit.push(index);
+    }    
+    console.log("rabbitRun: " + rabbitRun.length + ": " + rabbitRun);
+    console.log("followRabbit: " +followRabbit.length + ": " + followRabbit);
+});
+
+
+/* Comparison of randomly generated White Rabbit run across game cards vs a players' clicks  */
+$(".game-card").on("click", function() { 
+            if (followRabbit.length == rabbitRun.length && followRabbit.length < rabbitRun.length+1) {
+                for (i=0; i < rabbitRun.length; i++) {
+                    if (followRabbit[i] === rabbitRun[i]) {  
+                       console.log("Caught Me!");
+                    }
+                    else  {
+                    console.log("I am gone! Try again!");
+                    }                   
+                }
+            } 
+});
+
+
+
