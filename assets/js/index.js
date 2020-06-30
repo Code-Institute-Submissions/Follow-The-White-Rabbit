@@ -10,22 +10,27 @@ let modal = document.getElementById('myModal'),
  imageM = document.getElementById('imageM'),
  imageH = document.getElementById('imageH'),
  main = document.getElementById('main'),
- playerBoard = document.getElementById('player-board');
+ playerBoard = document.getElementById('player-board'),
+ board; // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
 
 $(document).ready(function(){
     $('#imageE').click(function() {
+
         $('.modal').hide();
         $('#main, #player-board, #game-board-easy').show();
+        randomPics(easyCards.length,easyCards);
     });   
 
     $('#imageM').click(function() {
         $('.modal').hide();
         $('#main, #player-board, #game-board-medium').show();
+        randomPics(mediumCards.length,mediumCards);
     });
 
     $('#imageH').click(function() {
         $('.modal').hide();
         $('#main, #main, #player-board, #game-board-hard').show();
+        randomPics(hardCards.length,hardCards);
     });
 });
 
@@ -115,19 +120,16 @@ function whiteRabbitRun(a,b) {
    /* finish - Code here was writtne with help from tutors: Stephen & Tim  */
 
 
-let board;
+
 $(".board").on("click", function() {    
-    let boardId = $(this).attr("id");;
+    let boardId = $(this).attr("id");
     if (boardId == "game-board-easy") board = easyCards;
     if (boardId == "game-board-medium") board = mediumCards;
     if (boardId == "game-board-hard") board = hardCards;
-    console.log(board);
 });
 
-
-
 /* Capturing players' clicks through game cards  */
-let followRabbit = []; // defined globally, not in a function
+let followRabbit = []; 
 $(".game-card").on("click", function() {     
     if (followRabbit.length === images.length) 
         return followRabbit;
@@ -135,20 +137,18 @@ $(".game-card").on("click", function() {
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
 });
+console.log()
 
-
-/* Comparison of randomly generated White Rabbit run across game cards vs a players' clicks  */
+/* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
 $(".game-card").on("click", function() { 
-            if (followRabbit.length == rabbitRun.length && followRabbit.length < rabbitRun.length+1) {
-                for (i=0; i < rabbitRun.length; i++) {
-                    if (followRabbit[i] === rabbitRun[i]) {  
-                       console.log("Caught Me!");
-                    }
-                    else  {
-                    console.log("I am gone! Try again!");
-                    }                   
-                }
-            } 
+    if (followRabbit.length == rabbitRun.length && followRabbit.length < rabbitRun.length+1) {
+        for (i=0; i < rabbitRun.length; i++) {
+            if (followRabbit[i] === rabbitRun[i])  
+                console.log("Caught Me!");
+            else 
+                console.log("I am gone! Try again!");
+        }
+    } 
 });
 
 

@@ -18,6 +18,9 @@ This document is intended to record testing at various stages of development of 
     - Booked a screen one-on-one session.
 
 3. Capture of players' clicks and comparison to randomly generate White Rabbit "run" pattern
+    Testing on all difficulty level boards:
+    - Incorrect RabbitRun returns both Win and Lost messages.
+    
     
 
 4. xxxxxx
