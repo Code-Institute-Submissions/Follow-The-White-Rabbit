@@ -75,7 +75,7 @@
 
     <!-- Player/level/score info board -->
         <div id="player-board" class="row">
-            <a href="index.html"><button type="button">Reset</button></a>
+            <a href="index.html"><button onclick="test()" type="button">Reset</button></a>
             <div class="column">
                 <div class>
                     <div id="player-info" class="row">
@@ -111,13 +111,8 @@
 
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row board">
-            <button onclick="" type="button">play</button>
-<<<<<<< HEAD
-            <button onclick="rabbitRun(easyCards.length,easyCards,function)" type="button">repeat</button>
-=======
-            <button onclick="whiteRabbitRun(easyCards.length,easyCards)" type="button">repeat</button>
->>>>>>> origin/rabbitrun
-            
+            <button onclick="whiteRabbitRun(easyCards.length,easyCards)" type="button">PLAY</button>
+            <button onclick="reset(easyCards)" type="button">RESET</button>
             <div  class="column">
                 <div id="rowOne" class="row">
                     <div id="col_1" class="column">
@@ -139,9 +134,9 @@
         </div>
 
         <!-- Medium Level cards grid -->
-        <div id="game-board-medium" class="row board"
-        <button onclick="" type="button">play</button>
-            <button onclick="whiteRabbitRun(mediumCards.length,mediumCards)" type="button">repeat</button>
+        <div id="game-board-medium" class="row board">        
+            <button onclick="whiteRabbitRun(mediumCards.length,mediumCards)" type="button">PLAY</button>
+            <button onclick="rabbitRun(mediumCards.length,mediumCards)" type="button">RESET</button>
             <div  class="column">
                 <div id="rowOne" class="box-white-curved-corners row ">
                     <div id="col_1" class="column">
@@ -170,8 +165,8 @@
     
         <!-- Hard Level cards grid -->
         <div id="game-board-hard" class="row board">
-        <button onclick="" type="button">play</button>
-            <button onclick="whiteRabbitRun(hardCards.length,hardCards)" type="button">repeat</button>
+        <button onclick="whiteRabbitRun(hardCards.length,hardCards)" type="button">PLAY</button>
+        <button onclick="randomPics(hardCards.length,hardCards)" type="button">RESET</button>
             <div class="column">
                 <div id="rowOne" class="row game-row justify-content-center">
                     <div id="col_1" class="column">
@@ -209,6 +204,8 @@
             </div>
         </div>   
     </div>
+    <!-- WIN modal  -->
+    
     
     
     <!-- scripts -->
