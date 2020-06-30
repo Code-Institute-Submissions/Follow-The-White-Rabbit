@@ -15,7 +15,6 @@ let modal = document.getElementById('myModal'),
 
 $(document).ready(function(){
     $('#imageE').click(function() {
-
         $('.modal').hide();
         $('#main, #player-board, #game-board-easy').show();
         randomPics(easyCards.length,easyCards);
@@ -137,15 +136,15 @@ $(".game-card").on("click", function() {
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
 });
-console.log()
+
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
 $(".game-card").on("click", function() { 
-    if (followRabbit.length == rabbitRun.length && followRabbit.length < rabbitRun.length+1) {
+    if (followRabbit.length === rabbitRun.length) {
         for (i=0; i < rabbitRun.length; i++) {
             if (followRabbit[i] === rabbitRun[i])  
                 console.log("Caught Me!");
-            else 
+            else
                 console.log("I am gone! Try again!");
         }
     } 

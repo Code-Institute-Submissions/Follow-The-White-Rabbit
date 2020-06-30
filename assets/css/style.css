@@ -113,6 +113,10 @@ body {
     font-family: 'Alice', Courier, monospace;
     color: black;
 }
+.game-card:hover {
+    border: white solid 2px;
+}
+
 
 .level-image,
 .card-image  {
@@ -130,6 +134,7 @@ body {
     border: black solid 1px;
     border-radius: 10%;
 }
+
 
 .level-card-title {
     font-family: "Alice", sans-serif;
@@ -162,9 +167,6 @@ body {
     
 }
 
-
-
-
 #modal-title {
     font-family: "Sunshiney", sans-serif;
     text-align: right;
@@ -183,6 +185,12 @@ body {
 
 #hard {
     background-color: rgb(207, 13, 1);
+}
+
+#easy:hover,
+#medium:hover,
+#hard:hover {
+    background-color: white;
 }
 
 #player-name{
