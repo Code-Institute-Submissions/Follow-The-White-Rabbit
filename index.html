@@ -108,13 +108,19 @@
             <img id="rabbit" type="image" src="assets/images/rabbit.jpg" alt="White Rabbit" class="card-image">
         </div>
 
-        <!-- Easy Level cards grid -->
+        <!-- Easy Level cards grid  -->
         <div id="game-board-easy" class="row board">
-            <button onclick="whiteRabbitRun(easyCards.length,easyCards)" type="button">PLAY</button>
-            <button onclick="reset(easyCards)" type="button">RESET</button>
-            <div class="click-counter">
-                                <h5 class="click-counter">Clicks left: 0</h5>
-                            </div>
+            <div class="row">
+                <div class="column">
+                    <button id="btn-play-easy" class="button" onclick="whiteRabbitRun(easyCards.length,easyCards)" type="button">PLAY</button>
+                    <button onclick="reset(easyCards)" type="button">RESET</button> 
+                </div>
+                <div class="column">
+                    <div class="clicks-counter">
+                        <h5 class="click-counter">Clicks left: 4</h5>
+                    </div>  
+                </div>
+            </div>
             <div  class="column">
                 <div id="rowOne" class="row">
                     <div id="col_1" class="column">
@@ -137,8 +143,19 @@
 
         <!-- Medium Level cards grid -->
         <div id="game-board-medium" class="row board">        
-            <button onclick="whiteRabbitRun(mediumCards.length,mediumCards)" type="button">PLAY</button>
-            <button onclick="rabbitRun(mediumCards.length,mediumCards)" type="button">RESET</button>
+            
+            <div class="row">
+                <div class="column">
+                    <button id="btn-play-medium" class="button" onclick="whiteRabbitRun(mediumCards.length,mediumCards)" type="button">PLAY</button>
+                    <button onclick="rabbitRun(mediumCards.length,mediumCards)" type="button">RESET</button>
+                </div>
+                <div class="column">
+                    <div class="clicks-counter">
+                        <h5 class="clicks-counter">Clicks left: 6</h5>
+                    </div>  
+                </div>
+            </div>
+            
             <div  class="column">
                 <div id="rowOne" class="box-white-curved-corners row ">
                     <div id="col_1" class="column">
@@ -167,8 +184,18 @@
     
         <!-- Hard Level cards grid -->
         <div id="game-board-hard" class="row board">
-        <button onclick="whiteRabbitRun(hardCards.length,hardCards)" type="button">PLAY</button>
-        <button onclick="randomPics(hardCards.length,hardCards)" type="button">RESET</button>
+        <div class="row">
+            <div class="column">
+                    <button id="btn-play-hard" class="button" onclick="whiteRabbitRun(hardCards.length,hardCards)" type="button">PLAY</button>
+                    <button onclick="randomPics(hardCards.length,hardCards)" type="button">RESET</button>
+                </div>
+                <div class="column">
+                    <div class="clicks-counter">
+                        <h5 class="click-counter">Clicks left: 9</h5>
+                    </div>  
+                </div>
+            </div>
+      
             <div class="column">
                 <div id="rowOne" class="row game-row justify-content-center">
                     <div id="col_1" class="column">

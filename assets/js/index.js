@@ -11,7 +11,10 @@ let modal = document.getElementById('myModal'),
  imageH = document.getElementById('imageH'),
  main = document.getElementById('main'),
  playerBoard = document.getElementById('player-board'),
- board; // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
+ board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
+ clicksCounterEasy = 4,
+ clicksCounterMedium = 6,
+ clicksCounterHard = 9;
 
 $(document).ready(function(){
     $('#imageE').click(function() {
@@ -38,13 +41,10 @@ const easyCards = ["card01","card02","card03","card04"];
 const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"];
 const hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"];
 const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
-
-
-
 var images = [];
+
 /* Function inseriting random pictures into game cards */
-function randomPics(a,b) {
-    
+function randomPics(a,b) {    
     let i = 0;
     console.log("from randomPics 1: " + images)
     while (i < a) { 
@@ -119,7 +119,7 @@ function whiteRabbitRun(a,b) {
    /* finish - Code here was writtne with help from tutors: Stephen & Tim  */
 
 
-
+/*  Identifier clicks from which difficulty level to capture, for followRabbit below  */
 $(".board").on("click", function() {    
     let boardId = $(this).attr("id");
     if (boardId == "game-board-easy") board = easyCards;
@@ -137,26 +137,32 @@ $(".game-card").on("click", function() {
         followRabbit.push(index);
         console.log(followRabbit);
 });
-/*
-$(".game-card").on("click", function() { 
-    if (followRabbit.length === rabbitRun.length && followRabbit === rabbitRun) 
-        
-        
-                console.log("Caught Me!");
-    if (followRabbit.length === rabbitRun.length && followRabbit !== rabbitRun)
-                console.log("I am gone! Try again!");
-       
-    
-});
 
-*/
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
 // Fixed wrong return 
+// JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
-                                alert("Caught Me!");
-     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
-                alert("I am gone! Try again!");        
+        alert("Caught Me!");
+    if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
+        alert("I am gone! Try again!");        
 });
+let clicksCounter;
+$(".button").on("click", function() {    
+    let btnId = $(this).attr("id");
+    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
+    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
+    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
+    console.log(clicksCounter);
+});
+
+$(".game-card").on("click", function() {
+    clicksCounter--;
+    let countedClicks = ("Clicks left: " + clicksCounter);
+    $('.clicks-counter').text(countedClicks);
+    console.log(countedClicks);
+});
+
+
 
 
