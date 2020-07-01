@@ -149,8 +149,7 @@ body {
     pointer-events: all;
 }
 
-#myModal {
-    
+#myModal {    
     height: auto;
     width: 80%;
     display: block;
@@ -158,13 +157,11 @@ body {
     color: #C70018;
     border: #3F2800 solid 0.2em;
     position: fixed;
-    
     margin-top: 1.5em;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    
 }
 
 #modal-title {
@@ -190,7 +187,7 @@ body {
 #easy:hover,
 #medium:hover,
 #hard:hover {
-    background-color: white;
+    background-color: rgb(247, 243, 243);
 }
 
 #player-name{
@@ -224,8 +221,6 @@ body {
     resize: both;
 }
     
-
-
     @media screen and (max-width: 767px) {
       /*phones*/
 .easy-card{

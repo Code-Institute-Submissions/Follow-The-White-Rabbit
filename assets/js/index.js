@@ -135,20 +135,28 @@ $(".game-card").on("click", function() {
     else 
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
+        console.log(followRabbit);
 });
-
-
-/* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
+/*
 $(".game-card").on("click", function() { 
-    if (followRabbit.length === rabbitRun.length) {
-        for (i=0; i < rabbitRun.length; i++) {
-            if (followRabbit[i] === rabbitRun[i])  
+    if (followRabbit.length === rabbitRun.length && followRabbit === rabbitRun) 
+        
+        
                 console.log("Caught Me!");
-            else
+    if (followRabbit.length === rabbitRun.length && followRabbit !== rabbitRun)
                 console.log("I am gone! Try again!");
-        }
-    } 
+       
+    
 });
 
+*/
+/* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
+// Fixed wrong return 
+$(".game-card").on("click", function() { 
+    if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
+                                alert("Caught Me!");
+     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
+                alert("I am gone! Try again!");        
+});
 
 

@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,7 +71,6 @@
    
     <!-- Game container with card grids -->
     <div id="main" class="container container-fluid">
-    
 
     <!-- Player/level/score info board -->
         <div id="player-board" class="row">
@@ -113,6 +112,9 @@
         <div id="game-board-easy" class="row board">
             <button onclick="whiteRabbitRun(easyCards.length,easyCards)" type="button">PLAY</button>
             <button onclick="reset(easyCards)" type="button">RESET</button>
+            <div class="click-counter">
+                                <h5 class="click-counter">Clicks left: 0</h5>
+                            </div>
             <div  class="column">
                 <div id="rowOne" class="row">
                     <div id="col_1" class="column">
