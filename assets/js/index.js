@@ -66,7 +66,7 @@ function randomPics(a,b) {
         index++;
     }
 }
-
+/*
 function reset(b){
     console.log("reset");
     let index = 0;
@@ -82,9 +82,17 @@ function reset(b){
     return randomPics();
     return images;
 }
+*/
 
+/* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
-function whiteRabbitRun(a,b) {
+$(".button").on("click", function() {    
+    let btnId = $(this).attr("id");
+    if (btnId == "btn-play-easy") b = easyCards, a = easyCards.length; 
+    if (btnId == "btn-play-medium") b = mediumCards, a = mediumCards.length; 
+    if (btnId == "btn-play-hard") b = hardCards, a = hardCards.length; 
+    console.log(b)
+    // function whiteRabbitRun(a,b) {
     let i = 0;
     while (i < a) { 
         let n = Math.floor(Math.random() * b.length);
@@ -95,7 +103,7 @@ function whiteRabbitRun(a,b) {
     }
         console.log("rabbitRun: " + rabbitRun);
     
-    /* START - Code here was written with help from tutors: Stephen & Tim  */
+    // START - Code here was written with help from tutors: Stephen & Tim  
     let index = 0, 
      rabbitImg = $("#rabbit"),
      card = b[rabbitRun[index]];  
@@ -114,12 +122,45 @@ function whiteRabbitRun(a,b) {
         }      
     }, 500);
     return rabbitRun;
+    // finish - Code here was writtne with help from tutors: Stephen & Tim  
+});
+/*
+let rabbitRun = [];
+function whiteRabbitRun(a,b) {
+    let i = 0;
+    while (i < a) { 
+        let n = Math.floor(Math.random() * b.length);
+        if (rabbitRun.indexOf(n) < 0) {
+        rabbitRun.push(n);
+        i++;
+        }
+    }
+        console.log("rabbitRun: " + rabbitRun);
     
+    // START - Code here was written with help from tutors: Stephen & Tim  
+    let index = 0, 
+     rabbitImg = $("#rabbit"),
+     card = b[rabbitRun[index]];  
+        $("#" + card).find("img:first").hide(); // hide the first image 
+        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+    var myInterval = setInterval(function(){ 
+        $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        $("#" + card).find("img:first").show(); // find first image and show it 
+            index++;
+            card = b[rabbitRun[index]];
+        $("#" + card).find("img:first").hide(); // hide the first image
+        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
+        
+       if  (index >= rabbitRun.length) {
+            clearInterval(myInterval);
+        }      
+    }, 500);
+    return rabbitRun;
+    // finish - Code here was writtne with help from tutors: Stephen & Tim  
 }
-   /* finish - Code here was writtne with help from tutors: Stephen & Tim  */
+*/
 
-
-/*  Identifier clicks from which difficulty level to capture, for followRabbit below  */
+/*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
 $(".board").on("click", function() {    
     let boardId = $(this).attr("id");
     if (boardId == "game-board-easy") board = easyCards;
@@ -139,7 +180,6 @@ $(".game-card").on("click", function() {
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
-// Fixed wrong return 
 // JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
@@ -147,6 +187,8 @@ $(".game-card").on("click", function() {
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
         alert("I am gone! Try again!");        
 });
+
+/* Clicks countdown for each game boards */
 let clicksCounter;
 $(".button").on("click", function() {    
     let btnId = $(this).attr("id");

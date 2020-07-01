@@ -20,7 +20,10 @@ This document is intended to record testing at various stages of development of 
 3. Capture of players' clicks and comparison to randomly generate White Rabbit "run" pattern
     Testing on all difficulty level boards:
     - Incorrect RabbitRun returns both Win and Lost messages.
+    Corrected the code for rabbitRun & followRaabit, tested clicking through all three difficulty levels, both correct and wrong set of clicks, at least 6 times each, now works correctly. 
     
     
 
-4. xxxxxx
+4. Clicks left Counter
+    each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
+    Tested clicks across three difficultty levels. Works correctly. 
