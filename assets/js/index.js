@@ -16,25 +16,19 @@ let modal = document.getElementById('myModal'),
  clicksCounterMedium = 6,
  clicksCounterHard = 9;
 
+/* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
-    $('#imageE').click(function() {
-        $('.modal').hide();
-        $('#main, #player-board, #game-board-easy').show();
-        randomPics(easyCards.length,easyCards);
-    });   
-
-    $('#imageM').click(function() {
-        $('.modal').hide();
-        $('#main, #player-board, #game-board-medium').show();
-        randomPics(mediumCards.length,mediumCards);
-    });
-
-    $('#imageH').click(function() {
-        $('.modal').hide();
-        $('#main, #main, #player-board, #game-board-hard').show();
-        randomPics(hardCards.length,hardCards);
-    });
-});
+    $(".level-image").on("click", function() {    
+        let level = $(this).attr("id");
+        if (level == "imageE") a = easyCards, b = a.length, c = "#game-board-easy";
+        if (level == "imageM") a = mediumCards, b = a.length, c = "#game-board-medium"; 
+        if (level == "imageH") a = hardCards, b = a.length, c = "#game-board-hard"; 
+       $('.modal').hide();
+       $("#main, #player-board").show();
+       $(c).show();
+       randomPics(b,a);
+    }); 
+});  
 
 /* Array of images from assets/images/random folder  --  index.html div id="card-images" */
 const easyCards = ["card01","card02","card03","card04"];
@@ -91,8 +85,7 @@ $(".button").on("click", function() {
     if (btnId == "btn-play-easy") b = easyCards, a = easyCards.length; 
     if (btnId == "btn-play-medium") b = mediumCards, a = mediumCards.length; 
     if (btnId == "btn-play-hard") b = hardCards, a = hardCards.length; 
-    console.log(b)
-    // function whiteRabbitRun(a,b) {
+    
     let i = 0;
     while (i < a) { 
         let n = Math.floor(Math.random() * b.length);
@@ -124,41 +117,6 @@ $(".button").on("click", function() {
     return rabbitRun;
     // finish - Code here was writtne with help from tutors: Stephen & Tim  
 });
-/*
-let rabbitRun = [];
-function whiteRabbitRun(a,b) {
-    let i = 0;
-    while (i < a) { 
-        let n = Math.floor(Math.random() * b.length);
-        if (rabbitRun.indexOf(n) < 0) {
-        rabbitRun.push(n);
-        i++;
-        }
-    }
-        console.log("rabbitRun: " + rabbitRun);
-    
-    // START - Code here was written with help from tutors: Stephen & Tim  
-    let index = 0, 
-     rabbitImg = $("#rabbit"),
-     card = b[rabbitRun[index]];  
-        $("#" + card).find("img:first").hide(); // hide the first image 
-        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
-    var myInterval = setInterval(function(){ 
-        $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
-        $("#" + card).find("img:first").show(); // find first image and show it 
-            index++;
-            card = b[rabbitRun[index]];
-        $("#" + card).find("img:first").hide(); // hide the first image
-        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
-        
-       if  (index >= rabbitRun.length) {
-            clearInterval(myInterval);
-        }      
-    }, 500);
-    return rabbitRun;
-    // finish - Code here was writtne with help from tutors: Stephen & Tim  
-}
-*/
 
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
 $(".board").on("click", function() {    
