@@ -1,6 +1,3 @@
-
-console.log("test");
-
 /* Modal loading on page loading 
 The code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load */ 
 
@@ -20,13 +17,13 @@ let modal = document.getElementById('myModal'),
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
         let level = $(this).attr("id");
-        if (level == "imageE") a = easyCards, b = a.length, c = "#game-board-easy";
-        if (level == "imageM") a = mediumCards, b = a.length, c = "#game-board-medium"; 
-        if (level == "imageH") a = hardCards, b = a.length, c = "#game-board-hard"; 
+        if (level == "imageE") b = easyCards, a = b.length, c = "#game-board-easy";
+        if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
+        if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
        $('.modal').hide();
        $("#main, #player-board").show();
        $(c).show();
-       randomPics(b,a);
+       randomPics(a,b);
     }); 
 });  
 
@@ -40,47 +37,29 @@ var images = [];
 /* Function inseriting random pictures into game cards */
 function randomPics(a,b) {    
     let i = 0;
-    console.log("from randomPics 1: " + images)
     while (i < a) { 
         let n = Math.floor(Math.random() * randomImageArr.length);
-        console.log("n: " + n);
         if (images.indexOf(n) < 0) {
         images.push(n);
         i++;
         }
-        console.log("from randomPics 2: " + images)
     }
-    console.log("from randomPics 3: " + images)
+    console.log("from randomPics 1: " + images)
     let index = 0;
     while (index < images.length) {
+        console.log("images from while: " + images)
         let img = randomImageArr[ images [index] ];
         let imgToPlace = document.getElementById(img);
+        console.log(img, imgToPlace);
         console.log(b[index]);
         document.getElementById(b[index]).appendChild(imgToPlace); 
         index++;
-    }
+    } console.log("from randomPics 2: " + images);
 }
-/*
-function reset(b){
-    console.log("reset");
-    let index = 0;
-    while (index < images.length) {
-        let img = randomImageArr[ images [index] ];
-        let imgToPlace = document.getElementById(img);
-        document.getElementById(b[index]).removeChild(imgToPlace); 
-        index++;
-    }
-    images.length = 0;
-    console.log("from reset:" + images); 
-    
-    return randomPics();
-    return images;
-}
-*/
 
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
-$(".button").on("click", function() {    
+$(".btn-play").on("click", function() {    
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") b = easyCards, a = easyCards.length; 
     if (btnId == "btn-play-medium") b = mediumCards, a = mediumCards.length; 
@@ -148,7 +127,7 @@ $(".game-card").on("click", function() {
 
 /* Clicks countdown for each game boards */
 let clicksCounter;
-$(".button").on("click", function() {    
+$(".btn-play").on("click", function() {    
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
@@ -159,10 +138,29 @@ $(".button").on("click", function() {
 $(".game-card").on("click", function() {
     clicksCounter--;
     let countedClicks = ("Clicks left: " + clicksCounter);
-    $('.clicks-counter').text(countedClicks);
+    $('.click-counter').text(countedClicks);
     console.log(countedClicks);
 });
 
+$(".btn-reset").on("click", function() {
+    console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
+    index = 0;
+    console.log(index);
+    while (index < board.length) {
+    card = board[index];
+    console.log(card);
+    $("#" + card).find("img:last").remove();
+    index++;
+    console.log(index);
+    }
+    images = [];
+    rabbitRun = [];
+    followRabbit = [];
+     
+    console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
+    randomPics(a,b);
+    
+});
 
 
 

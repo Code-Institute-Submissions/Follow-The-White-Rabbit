@@ -71,6 +71,12 @@ body {
     right: 0;
 }
 
+.click-counter {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 2em;
+    text-align: right;
+}
 
 /*----  Level & Game cards ---*/
 
