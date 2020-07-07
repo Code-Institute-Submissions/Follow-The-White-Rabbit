@@ -74,7 +74,7 @@
 
     <!-- Player/level/score info board -->
         <div id="player-board" class="row">
-            <a href="index.html"><button onclick="test()" type="button">Reset</button></a>
+            <a href="index.html"><button type="button">Reset</button></a>
             <div class="column">
                 <div class>
                     <div id="player-info" class="row">
@@ -233,9 +233,50 @@
             </div>
         </div>   
     </div>
+
     <!-- WIN modal  -->
+    <div id="win-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Caught me!</h4>
+        </div>
+        <div class="modal-body">
+            <p>Congratulations!</p>
+            <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+
+        </div>
+    </div>
     
-    
+     <!-- LOSE modal  -->
+    <div id="lose-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">I am gone! </h4>
+        </div>
+        <div class="modal-body">
+            <p>Try again!</p>
+            <img id="lose-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+
+        </div>
+    </div>
     
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  

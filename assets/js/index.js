@@ -120,10 +120,20 @@ $(".game-card").on("click", function() {
 // JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
-        alert("Caught Me!");
+        displayModal("#win-modal", "#caughtMe");
+        
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
-        alert("I am gone! Try again!");        
+        displayModal("#lose-modal, #rabbitIsGone");
+       
 });
+
+function displayModal(id, audio) {
+    setTimeout(function() {
+        $(id).modal('show');
+        $(audio).play()
+    }, 500);
+}
+
 
 /* Clicks countdown for each game boards */
 let clicksCounter;
