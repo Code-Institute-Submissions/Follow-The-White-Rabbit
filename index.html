@@ -10,7 +10,10 @@
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <!-- favicon files -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon_32x32.png">
-
+    
+    <!--Font Awesome style link-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    
     <!--Bootstrap CSS links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
@@ -112,8 +115,8 @@
         <div id="game-board-easy" class="row board">
             <div class="row">
                 <div class="column">
-                    <button id="btn-play-easy" class="btn-play"  type="button">PLAY</button>
-                    <button class="btn-reset" type="button">RESET</button> 
+                    <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
+                    <button class="btn-reset btn-outline-succes btn-large" type="button"><i class="fa fa-undo" aria-hidden="true"></i></button> 
                 </div>
                 <div class="column">
                     <div class="clicks-counter">
@@ -235,7 +238,7 @@
     </div>
 
     <!-- WIN modal  -->
-    <div id="win-modal" class="modal fade" role="dialog">
+    <div id="win-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -249,7 +252,9 @@
             <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            <button type="button" class="btn btn-success btn-lg btn-moda" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+        
         </div>
         </div>
 
@@ -257,7 +262,7 @@
     </div>
     
      <!-- LOSE modal  -->
-    <div id="lose-modal" class="modal fade" role="dialog">
+    <div id="lose-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -271,7 +276,7 @@
             <img id="lose-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning btn-lg btn-modal" data-dismiss="modal"><i class=" far fa-check-circle"></i></button>
         </div>
         </div>
 

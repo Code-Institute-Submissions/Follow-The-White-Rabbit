@@ -260,3 +260,10 @@ body {
         max-width: 95%;
     }
 
+
+/*-- Modals: WIN & LOSE */
+.btn-modal {
+    color: rgb(4, 180, 4);
+    font-size: 25px;
+
+}

@@ -121,19 +121,16 @@ $(".game-card").on("click", function() {
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
         displayModal("#win-modal", "#caughtMe");
-        
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
         displayModal("#lose-modal, #rabbitIsGone");
-       
 });
 
-function displayModal(id, audio) {
+function displayModal(id, audioId) {
     setTimeout(function() {
-        $(id).modal('show');
-        $(audio).play()
+        $(id).modal("show")
+        // $(audioId).play()
     }, 500);
 }
-
 
 /* Clicks countdown for each game boards */
 let clicksCounter;
