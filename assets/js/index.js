@@ -128,13 +128,20 @@ $(".game-card").on("click", function() {
 function displayModal(id, audioId) {
     setTimeout(function() {
         $(id).modal("show")
-        // $(audioId).play()
     }, 500);
 }
 
 /* Clicks countdown for each game boards */
 let clicksCounter;
-$(".btn-play").on("click", function() {    
+$(".btn-play, .btn-modal").on("click", function() {    
+    let btnId = $(this).attr("id");
+    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
+    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
+    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
+    console.log(clicksCounter);
+});
+
+$(".btn-modal").on("click", function() {    
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
@@ -149,25 +156,33 @@ $(".game-card").on("click", function() {
     console.log(countedClicks);
 });
 
+
 $(".btn-reset").on("click", function() {
-    console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
-    index = 0;
-    console.log(index);
-    while (index < board.length) {
-    card = board[index];
-    console.log(card);
-    $("#" + card).find("img:last").remove();
-    index++;
-    console.log(index);
-    }
-    images = [];
-    rabbitRun = [];
-    followRabbit = [];
-     
-    console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
-    randomPics(a,b);
-    
-});
-
-
-
+    console.log(board);
+        
+        $("#main, #player-board").show();
+        $(board).show();
+       
+       
+                console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
+        index = 0;
+                console.log(index);
+        while (index < board.length) {
+        card = board[index];
+                console.log(card);
+        $("#" + card).find("img:last").remove();
+        index++;
+                console.log(index);
+        }
+        images = [];
+        rabbitRun = [];
+        followRabbit = [];
+        clicksCounter
+                console.log("images: " + images, 
+                            "rabbitRun: " + rabbitRun, 
+                            "followRabbit: " + followRabbit, 
+                            "board: " + board);
+      
+       randomPics(a,b);
+        
+});  

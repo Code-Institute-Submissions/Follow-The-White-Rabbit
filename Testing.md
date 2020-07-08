@@ -24,6 +24,14 @@ This document is intended to record testing at various stages of development of 
     
     
 
-4. Clicks left Counter
-    each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
+4. Clicks Countdown
+    Each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
     Tested clicks across three difficultty levels. Works correctly. 
+
+5. Win-Lose modal
+    Added modals for both cases. Tested, works correctly: Win Modal in case a player repeated the Rabbit's run correctly, and Lose modal if otherwise. 
+
+6. Reset Function
+    Added a reset function, which should reset all the game cards, rabbit's run pattern and generate a new set of random images, and insert them into game cards on respective level.
+    The function does not work properly, does not insert full amount (4 or 6 or 9) cards, and then crashes, with a warning message in Developers Tools Console.
+    - The function is supposed to remove all the images inserted as children elements, generate randomly a new set of cards, and insert them into cards for a new game. The funciton retruns a null for some of the images, sometimes after correctly inserting 1 or 2 images. 
