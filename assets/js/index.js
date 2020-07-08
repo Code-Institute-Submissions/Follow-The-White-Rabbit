@@ -133,7 +133,7 @@ function displayModal(id, audioId) {
 
 /* Clicks countdown for each game boards */
 let clicksCounter;
-$(".btn-play, .btn-modal").on("click", function() {    
+$(".btn-play").on("click", function() {    
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
@@ -141,11 +141,12 @@ $(".btn-play, .btn-modal").on("click", function() {
     console.log(clicksCounter);
 });
 
+/* Reseting clicks countdown on closing the win-lose modal */
 $(".btn-modal").on("click", function() {    
-    let btnId = $(this).attr("id");
-    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
-    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
-    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
+    if (board == easyCards) clicksCounter = clicksCounterEasy; 
+    if (board == mediumCards) clicksCounter = clicksCounterMedium;
+    if (board == hardCards) clicksCounter = clicksCounterHard;
+    $('.click-counter').text("Clicks left: " + clicksCounter);
     console.log(clicksCounter);
 });
 
