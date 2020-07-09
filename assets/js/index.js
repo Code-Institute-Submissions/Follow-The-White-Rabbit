@@ -24,6 +24,7 @@ $(document).ready(function(){
        $("#main, #player-board").show();
        $(c).show();
        randomPics(a,b);
+       $(".game-card,.card-image").css({"pointer-events": "none"});       
     }); 
 });  
 
@@ -111,6 +112,8 @@ $(".board").on("click", function() {
     if (boardId == "game-board-easy") board = easyCards;
     if (boardId == "game-board-medium") board = mediumCards;
     if (boardId == "game-board-hard") board = hardCards;
+    
+    // $('.btn-play').fadeTo(100, 0.3, function() { $(this).fadeTo(500, 1.5); });
 });
 
 /* Capturing players' clicks through game cards  */
@@ -142,12 +145,13 @@ function displayModal(id) {
 /* Clicks countdown setup for each game boards */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
-    $(this).prop("disabled",true);
+     $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
+    // $(this).removeClass(".active");
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
     if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
-    
+    $(".game-card, .card-image").css({"pointer-events": "auto"});
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */
@@ -176,6 +180,9 @@ $(".btn-reset, .btn-modal").on("click", function() {
         images = [];
         rabbitRun = [];
         followRabbit = [];
-        $(".btn-play").prop("disabled",false);
+        $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success");
+        
+        // $(".btn-play").addClass(".active"); maybe add active class to the button???? 
+        $(".game-card,.card-image").css({"pointer-events": "none"});
         randomPics(a,b);  
 });  

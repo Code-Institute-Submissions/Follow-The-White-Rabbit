@@ -206,6 +206,8 @@ body {
 }
 
 /*----------------------------------- MEDIA QUERIES */
+
+
     @media screen and (max-width: 992px) {
       /*phones and tablets*/
     #myModal {

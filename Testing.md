@@ -35,3 +35,4 @@ This document is intended to record testing at various stages of development of 
     Added a reset function, which should reset all the game cards, rabbit's run pattern and generate a new set of random images, and insert them into game cards on respective level.
     The function does not work properly, does not insert full amount (4 or 6 or 9) cards, and then crashes, with a warning message in Developers Tools Console.
     - The function is supposed to remove all the images inserted as children elements, generate randomly a new set of cards, and insert them into cards for a new game. The funciton retruns a null for some of the images, sometimes after correctly inserting 1 or 2 images. 
+    Fixed: reset function works upon clicking modal button close, inserts new set of images into game cards, and Paly button is re-laucnhes the Rabbit Run across cards.
