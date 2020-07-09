@@ -71,6 +71,10 @@ body {
     right: 0;
 }
 
+.board{
+    max-width: 100%;
+}
+
 .click-counter {
     font-family: Arial, Helvetica, sans-serif;
     color: red;
@@ -262,8 +266,12 @@ body {
 
 
 /*-- Modals: WIN & LOSE */
-.btn-modal {
+.btn-modal{
     color: rgb(4, 180, 4);
     font-size: 25px;
+}
 
+.win-lose-modal-bgr{
+    background-image: url("../images/modal_bgr.jpg");    
+    /* background-color: */
 }

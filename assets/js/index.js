@@ -142,14 +142,16 @@ function displayModal(id) {
 /* Clicks countdown setup for each game boards */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
+    $(this).prop("disabled",true);
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
     if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
+    
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */
-$(".btn-modal").on("click", function() {    
+$(".btn-reset, .btn-modal").on("click", function() {    
     if (board == easyCards) clicksCounter = clicksCounterEasy; 
     if (board == mediumCards) clicksCounter = clicksCounterMedium;
     if (board == hardCards) clicksCounter = clicksCounterHard;
@@ -174,6 +176,6 @@ $(".btn-reset, .btn-modal").on("click", function() {
         images = [];
         rabbitRun = [];
         followRabbit = [];
-               
+        $(".btn-play").prop("disabled",false);
         randomPics(a,b);  
 });  
