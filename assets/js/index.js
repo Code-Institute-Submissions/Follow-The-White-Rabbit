@@ -48,11 +48,12 @@ function randomPics(a,b) {
     let index = 0;
     while (index < images.length) {
         console.log("images from while: " + images)
-        let img = randomImageArr[ images [index] ];
-        let imgToPlace = document.getElementById(img);
-        console.log(img, imgToPlace);
+        //let img = randomImageArr[ images [index] ];
+        let imgToPlace = document.getElementById(randomImageArr[ images [index] ]);
+        let img = imgToPlace.cloneNode(true);
+        console.log(imgToPlace);
         console.log(b[index]);
-        document.getElementById(b[index]).appendChild(imgToPlace); 
+        document.getElementById(b[index]).appendChild(img); 
         index++;
     } console.log("from randomPics 2: " + images);
 }
@@ -72,28 +73,35 @@ $(".btn-play").on("click", function() {
         rabbitRun.push(n);
         i++;
         }
+        console.log("rabbitRun 1: " + rabbitRun);
     }
-        console.log("rabbitRun: " + rabbitRun);
     
     // START - Code here was written with help from tutors: Stephen & Tim  
     let index = 0, 
-     rabbitImg = $("#rabbit"),
+     rabbitImg = $("#rabbit").clone();
+     console.log(rabbitImg);
      card = b[rabbitRun[index]];  
         $("#" + card).find("img:first").hide(); // hide the first image 
+        console.log("img:first");
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
     var myInterval = setInterval(function(){ 
         $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+        console.log("img:last");
         $("#" + card).find("img:first").show(); // find first image and show it 
+        console.log("rabbitRun 2: " + rabbitRun);
             index++;
             card = b[rabbitRun[index]];
+            
         $("#" + card).find("img:first").hide(); // hide the first image
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
-        
+        console.log("rabbitRun 3: " + rabbitRun);
        if  (index >= rabbitRun.length) {
             clearInterval(myInterval);
         }      
     }, 500);
+    console.log("rabbitRun 4: " + rabbitRun);
     return rabbitRun;
+    
     // finish - Code here was writtne with help from tutors: Stephen & Tim  
 });
 
@@ -113,7 +121,6 @@ $(".game-card").on("click", function() {
     else 
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
-        console.log(followRabbit);
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
@@ -123,67 +130,50 @@ $(".game-card").on("click", function() {
         displayModal("#win-modal", "#caughtMe");
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
         displayModal("#lose-modal, #rabbitIsGone");
+    
 });
 
-function displayModal(id, audioId) {
+function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show")
-    }, 500);
+    }, 300);
 }
 
-/* Clicks countdown for each game boards */
+/* Clicks countdown setup for each game boards */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
     if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
-    console.log(clicksCounter);
 });
 
-/* Reseting clicks countdown on closing the win-lose modal */
+/* Resetting clicks countdown on closing the win-lose modal */
 $(".btn-modal").on("click", function() {    
     if (board == easyCards) clicksCounter = clicksCounterEasy; 
     if (board == mediumCards) clicksCounter = clicksCounterMedium;
     if (board == hardCards) clicksCounter = clicksCounterHard;
     $('.click-counter').text("Clicks left: " + clicksCounter);
-    console.log(clicksCounter);
 });
 
+/* Cicks countdown while a player is clicking through cards */
 $(".game-card").on("click", function() {
     clicksCounter--;
     let countedClicks = ("Clicks left: " + clicksCounter);
     $('.click-counter').text(countedClicks);
-    console.log(countedClicks);
 });
 
-
-$(".btn-reset").on("click", function() {
-    console.log(board);
-        
-        $("#main, #player-board").show();
-        $(board).show();
-       
-       
-                console.log("images: " + images, "rabbitRun: " + rabbitRun, "followRabbit: " + followRabbit, "board: " + board);
-        index = 0;
-                console.log(index);
+/* Resetting the whole game board on closing the win-lose modal */
+$(".btn-reset, .btn-modal").on("click", function() {
+        index = 0; 
         while (index < board.length) {
-        card = board[index];
-                console.log(card);
-        $("#" + card).find("img:last").remove();
-        index++;
-                console.log(index);
+            card = board[index];
+            $("#" + card).find("img:last").remove();
+        index++;    
         }
         images = [];
         rabbitRun = [];
         followRabbit = [];
-        clicksCounter
-                console.log("images: " + images, 
-                            "rabbitRun: " + rabbitRun, 
-                            "followRabbit: " + followRabbit, 
-                            "board: " + board);
-      
-       randomPics(a,b);
-        
+               
+        randomPics(a,b);  
 });  
