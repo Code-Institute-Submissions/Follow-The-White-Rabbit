@@ -9,7 +9,7 @@ html, body{
 
 body {
     font-family: "Alice", sans-serif;
-    font-size: 600;    
+    font-size: 15px;    
     background-image: url("../images/bg_med.png");    
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,12 +36,14 @@ body {
 }
 
 #player-board {
-    height: max-content;
-    width: 60%;
+    height: 300px;
+    width: 70%;
+    min-width: 60%;
+    min-height: 40%;
+    padding: 20px;
     align-content: center;
     background-color: rgb(211, 231, 31);
     border: black solid 0.2em;
-    
     margin-top: 2em;
     color: black;
     display: none;
@@ -49,6 +51,11 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
+    border-radius: 10%;
+
+   
+    
+
 }
 
 #game-board-easy,
@@ -71,8 +78,14 @@ body {
     right: 0;
 }
 
+.levels 
+{
+    max-width: 100%;
+}
+
 .board{
     max-width: 100%;
+    
 }
 
 .click-counter {
@@ -84,12 +97,15 @@ body {
 
 /*----  Level & Game cards ---*/
 
+
+
 .info-card {
-    height: 80px;
-    width: 100px;
+    height: max-content;
+    width: auto;
     background-color: rgb(124, 139, 185);
     border: black solid 1px;
     margin: 15px;
+    padding: 10px;
     font-size: 10px;
     font-family: 'Alice', Courier, monospace;
     color: black;
@@ -136,6 +152,10 @@ body {
     border-radius: 9.5%;
 }
 
+.levels{
+    margin-top: 5%;
+}
+
 .level-card {    
     height: 9em;
     width: 9em;
@@ -143,13 +163,14 @@ body {
     padding: 0.2em;
     border: black solid 1px;
     border-radius: 10%;
+    margin: 0 5px;
 }
 
 
 .level-card-title {
     font-family: "Alice", sans-serif;
     text-align: center;
-    font-size: 600;
+    font-size: 7px;
 }
 
 /*---- Modal ----*/
@@ -159,11 +180,17 @@ body {
     pointer-events: all;
 }
 
+.modal-title {
+    margin-bottom: 10px;
+}
+
 #myModal {    
-    height: auto;
+    height: 80vh;
+    min-height: 400px;
     width: 80%;
     display: block;
     background-color: #F0DEB4;
+    
     color: #C70018;
     border: #3F2800 solid 0.2em;
     position: fixed;
@@ -172,7 +199,19 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
+    border-radius: 10%;
 }
+/*
+.modal-bgr{
+    background-image: url(../images/rabbit_modal_bgr.jpg);
+    opacity: 0.96;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}   */
 
 #modal-title {
     font-family: "Sunshiney", sans-serif;

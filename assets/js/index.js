@@ -20,7 +20,7 @@ $(document).ready(function(){
         if (level == "imageE") b = easyCards, a = b.length, c = "#game-board-easy";
         if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
         if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
-       $('.modal').hide();
+       $('#myModal').hide();
        $("#main, #player-board").show();
        $(c).show();
        randomPics(a,b);

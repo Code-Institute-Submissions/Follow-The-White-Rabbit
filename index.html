@@ -29,38 +29,44 @@
     
     <!-- Modal - Main screen -->
     <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
-    
-    <div id="myModal" class="modal modal-lg">
+    <div id="myModal" class="modal-lg modal-bgr">
         <div class="modal-dialog">
-            <div class="modal-title">
-                <div >
-                    <h2 class="modal-title uppercase">Let's Catch the White Rabbit</h2>
-                </div>
-                <!-- Username field form -->
-                <div>
-                   <form id="player-name">
-                        <input type="text" id="username" name="username" required placeholder="Your name..">
-                    </form>
-                </div>
-                <!-- Difficulty level choice images -->
-                <div class="modal-body">
-                    <h4 class="modal-title uppercase">Choose your character</h4>
+            <div class="row modal-body">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="column">
-                            <div id="modal-row" class="row">
-                                <div  class="column">
-                                    <div id="easy" class="level-card">
-                                        <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
-                                    </div>
-                                   </div>
+                        <div class="modal-title">
+                            <h2 class="modal-title uppercase">Let's Catch the White Rabbit</h2>
+                        </div>
+                        <!-- Username field form -->
+                        <div>
+                            <form id="player-name">
+                                <input type="text" id="username" name="username" required placeholder="Your name..">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Difficulty level choice images -->
+                    <div class="row">
+                        <div class="levels">
+                                <h4 class="modal-title uppercase">Choose your character</h4>
+                            <div class="row">
                                 <div class="column">
-                                    <div id="medium" class="level-card">
-                                        <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
-                                    </div>
-                                </div>
-                                <div  class="column">
-                                    <div id="hard" class="level-card">
-                                        <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
+                                    <div id="modal-row" class="row">
+                                        <div  class="column d-flex justify-content-center">
+                                            <div id="easy" class="level-card">
+                                                <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div id="medium" class="level-card">
+                                                <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div id="hard" class="level-card">
+                                                <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -76,23 +82,47 @@
     <div id="main" class="container container-fluid">
 
     <!-- Player/level/score info board -->
-        <div id="player-board" class="row">
-            <a href="index.html"><button type="button">Reset</button></a>
-            <div class="column">
-                <div class>
+        <div id="player-board" class="row jquery-content-center">
+         <!--   <a href="index.html"><button type="button">Reset</button></a>
+           <div class="column">
+                <div class="row"> -->
                     <div id="player-info" class="row">
-                    <div id="#" class="column">
-                        <div class="info-card align-middle">Player info</div>
+                        <div id="#" class="info-card column">
+                            <div class="row align-middle">
+                                <div class="column">
+                                    <div class="row">
+                                        <h3>Player info</h3>
+                                    </div>
+                                    <div class="row"> Image </div>
+                                    <div class="row"> Player's Name </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div id="#" class="info-card column">
+                            <div class="row align-middle">
+                                <div class="column">
+                                    <div class="row">
+                                        <h3>Level info</h3>
+                                    </div>
+                                    <div class="row"> Level Image </div>
+                                    <div class="row"> Button </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div id="#" class="info-card column">
+                            <div class="row align-middle">
+                                <div class="column">
+                                    <div class="row">
+                                        <h3>Score info</h3>
+                                    </div>
+                                    <div class="row"> Image </div>
+                                    
+                                </div>
+                            </div>   
+                        </div>
                     </div>
-                    <div id="#" class="column">
-                        <div class="info-card align-middle">Level info</div>
-                    </div>
-                    <div id="#" class="column">
-                        <div class="info-card align-middle">Score</div>
-                    </div>
-                </div>
-                </div>
-            </div>
+            <!--    </div>
+            </div>  -->
         </div>
 
         <!-- Images for game cards-->
