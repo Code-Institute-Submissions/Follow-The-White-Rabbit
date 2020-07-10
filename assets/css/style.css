@@ -125,6 +125,8 @@ body {
     font-family: 'Alice', Courier, monospace;
     color: black;
 }
+    
+
 
 .game-card:hover {
     border: white solid 2px;
@@ -298,7 +300,6 @@ body {
 dfn { 
   padding: 0 0.4em;
   font-family: "Alice", sans-serif;
-  cursor: help;
   font-style: normal;
   position: relative;
   }
@@ -307,10 +308,10 @@ dfn::after {
   content: attr(data-info);
   display: inline;
   position: absolute;
-  top: 0; left: 15px;
+  top: 0; left: 12px;
   opacity: 0;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1.5em;
   padding: 0.5em 0.8em;
   /* background: rgba(0,0,0,0.8); */
@@ -331,6 +332,6 @@ dfn::before {
 dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
 dfn:hover::after,
 dfn:hover::before {opacity: 1;}
-dfn:hover::after {top: 5px;}
-dfn:hover::before {top: 20px;} 
+dfn:hover::after {top: 2px;}
+dfn:hover::before {top: 15px;} 
 /* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */

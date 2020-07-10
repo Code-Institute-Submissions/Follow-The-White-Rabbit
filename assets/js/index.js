@@ -43,7 +43,8 @@ $(".info-level-image").on("click", function() {
         if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
         if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
        $("#main, #player-board").show();
-       $(this).hide();
+       console.log(c);
+       $(".board").hide();
        $(c).show();
        randomPics(a,b);
        $(".game-card,.card-image").css({"pointer-events": "none"});       
