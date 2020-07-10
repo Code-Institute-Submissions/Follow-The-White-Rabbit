@@ -127,13 +127,15 @@ $(".board").on("click", function() {
     if (boardId == "game-board-easy") board = easyCards;
     if (boardId == "game-board-medium") board = mediumCards;
     if (boardId == "game-board-hard") board = hardCards;
-    
-    // $('.btn-play').fadeTo(100, 0.3, function() { $(this).fadeTo(500, 1.5); });
 });
 
 /* Capturing players' clicks through game cards  */
 let followRabbit = []; 
 $(".game-card").on("click", function() {     
+    //$(this).css({"border": "red solid 2px"})
+    //setTimeout(function() {
+    //    $(this).css({"border": "white solid 2px"})
+    //}, 600);
     if (followRabbit.length === images.length) 
         return followRabbit;
     else 
@@ -160,20 +162,23 @@ function displayModal(id) {
 /* Clicks countdown setup for a new game, for each game board  */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
-     $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
-    // $(this).removeClass(".active");
+    $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
+    $(".btn-reset").prop("disabled",true);
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy,
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
+            $(".btn-reset").prop("disabled",false);
         }, speed*4); // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
+            $(".btn-reset").prop("disabled",false);
         }, speed*6); // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
+            $(".btn-reset").prop("disabled",false);
         }, speed*9); // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 
