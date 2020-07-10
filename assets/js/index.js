@@ -1,6 +1,13 @@
 /* Modal loading on page loading 
 The code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load */ 
 
+/* Array of images from assets/images/random folder  --  index.html div id="card-images" */
+const easyCards = ["card01","card02","card03","card04"];
+const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"];
+const hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"];
+const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
+var images = [];
+
 /* Choosing difficulty level and closing the modal   */
 let modal = document.getElementById('myModal'),
  imageE = document.getElementById('imageE'),
@@ -11,7 +18,8 @@ let modal = document.getElementById('myModal'),
  board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
- clicksCounterHard = 9;
+ clicksCounterHard = 9,
+ speed = 500;
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
@@ -28,12 +36,18 @@ $(document).ready(function(){
     }); 
 });  
 
-/* Array of images from assets/images/random folder  --  index.html div id="card-images" */
-const easyCards = ["card01","card02","card03","card04"];
-const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"];
-const hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"];
-const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
-var images = [];
+/* Change Level funciton  */
+$(".info-level-image").on("click", function() {    
+        let level = $(this).attr("id");
+        if (level == "imageE") b = easyCards, a = b.length, c = "#game-board-easy";
+        if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
+        if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
+       $("#main, #player-board").show();
+       $(this).hide();
+       $(c).show();
+       randomPics(a,b);
+       $(".game-card,.card-image").css({"pointer-events": "none"});       
+    }); 
 
 /* Function inseriting random pictures into game cards */
 function randomPics(a,b) {    
@@ -99,7 +113,7 @@ $(".btn-play").on("click", function() {
        if  (index >= rabbitRun.length) {
             clearInterval(myInterval);
         }      
-    }, 500);
+    }, speed);
     console.log("rabbitRun 4: " + rabbitRun);
     return rabbitRun;
     
@@ -151,16 +165,15 @@ $(".btn-play").on("click", function() {
     if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy,
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
-        }, 2000); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+        }, speed*4); // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
-        }, 3000); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+        }, speed*6); // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
-        }, 4500); // Delayed activation of game cards, so a player cannot click while Rabbit Run
-    
+        }, speed*9); // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */

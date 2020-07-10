@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Alice:200,300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sunshiney:200,300,400,500,600,700&display=swap');
 
-html, body{
+html, body {
     margin: 0;
     padding: 0;  
 }
@@ -30,7 +30,6 @@ body {
 }
 
 /*-- Game Containers  --- */
-
 #main {
     display: none;
 }
@@ -52,10 +51,6 @@ body {
     left: 0;
     right: 0;
     border-radius: 10%;
-
-   
-    
-
 }
 
 #game-board-easy,
@@ -71,21 +66,14 @@ body {
     margin-top: 0.5em;
     color: black;
     display: none;
-    
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
 }
 
-.levels 
-{
-    max-width: 100%;
-}
-
-.board{
-    max-width: 100%;
-    
+.board {
+    max-width: 100%; 
 }
 
 .click-counter {
@@ -96,36 +84,34 @@ body {
 }
 
 /*----  Level & Game cards ---*/
-
-
-
 .info-card {
     height: max-content;
     width: auto;
     background-color: rgb(124, 139, 185);
     border: black solid 1px;
-    margin: 15px;
     padding: 10px;
     font-size: 10px;
     font-family: 'Alice', Courier, monospace;
     color: black;
+    float: left;
+    margin: auto;
 }
 
 #card-images {
     display: none;
 }
 
-.easy-card{
+.easy-card {
     height: 200px;
     width: 200px;
 }
 
-.medium-card{
+.medium-card {
     height: 165px;
     width: 165px;
 }
 
-.hard-card{
+.hard-card {
     height: 160px;
     width: 160px;
 }
@@ -139,11 +125,12 @@ body {
     font-family: 'Alice', Courier, monospace;
     color: black;
 }
+
 .game-card:hover {
     border: white solid 2px;
 }
 
-
+.info-level-image,
 .level-image,
 .card-image  {
     max-width: 100%;
@@ -152,20 +139,19 @@ body {
     border-radius: 9.5%;
 }
 
-.levels{
+.levels {
     margin-top: 5%;
+    max-width: 100%;
 }
 
 .level-card {    
     height: 9em;
     width: 9em;
-    margin: 0.5em;
     padding: 0.2em;
+    margin: 0 5px;
     border: black solid 1px;
     border-radius: 10%;
-    margin: 0 5px;
 }
-
 
 .level-card-title {
     font-family: "Alice", sans-serif;
@@ -190,7 +176,6 @@ body {
     width: 80%;
     display: block;
     background-color: #F0DEB4;
-    
     color: #C70018;
     border: #3F2800 solid 0.2em;
     position: fixed;
@@ -201,17 +186,6 @@ body {
     right: 0;
     border-radius: 10%;
 }
-/*
-.modal-bgr{
-    background-image: url(../images/rabbit_modal_bgr.jpg);
-    opacity: 0.96;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}   */
 
 #modal-title {
     font-family: "Sunshiney", sans-serif;
@@ -239,15 +213,14 @@ body {
     background-color: rgb(247, 243, 243);
 }
 
-#player-name{
+#player-name {
     margin-left: auto;
     margin-right: auto;
 }
 
 /*----------------------------------- MEDIA QUERIES */
 
-
-    @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
       /*phones and tablets*/
     #myModal {
         max-width: 95%;
@@ -260,19 +233,19 @@ body {
         font-size: 8px;} 
     }
 
-.easy-card{
+.easy-card {
     resize: both;
 }
 
-.medium-card{
+.medium-card {
     resize: both;
 }
 
-.hard-card{
+.hard-card {
     resize: both;
 }
     
-    @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
       /*phones*/
 .easy-card{
     resize: both;
@@ -282,12 +255,14 @@ body {
     resize: both;
 }
 
-.hard-card{
+.hard-card {
     resize: both;
 }
-    #myModal {
-        max-width: 95%;
-    }
+
+#myModal {
+    max-width: 95%;
+ }
+
     .info-card {
         height: 50px;
         width: 65px;
@@ -304,15 +279,58 @@ body {
     #myModal {
         max-width: 95%;
     }
+    }
 
 
 /*-- Modals: WIN & LOSE */
-.btn-modal{
+.btn-modal {
     color: rgb(4, 180, 4);
     font-size: 25px;
 }
 
-.win-lose-modal-bgr{
+.win-lose-modal-bgr {
     background-image: url("../images/modal_bgr.jpg");    
     /* background-color: */
 }
+
+/*  Difficulty level Bubbble info on hover above level image on the main page */
+/* Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
+dfn { 
+  padding: 0 0.4em;
+  font-family: "Alice", sans-serif;
+  cursor: help;
+  font-style: normal;
+  position: relative;
+  }
+
+dfn::after {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 0; left: 15px;
+  opacity: 0;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  /* background: rgba(0,0,0,0.8); */
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+
+dfn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px; left: 15px;
+  opacity: 0;
+  width: 0; height: 0;
+} 
+
+dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {opacity: 1;}
+dfn:hover::after {top: 5px;}
+dfn:hover::before {top: 20px;} 
+/* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
