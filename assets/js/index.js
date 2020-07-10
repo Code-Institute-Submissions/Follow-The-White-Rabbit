@@ -142,16 +142,25 @@ function displayModal(id) {
     }, 300);
 }
 
-/* Clicks countdown setup for each game boards */
+/* Clicks countdown setup for a new game, for each game board  */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
      $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
     // $(this).removeClass(".active");
     let btnId = $(this).attr("id");
-    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy; 
-    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium;
-    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard;
-    $(".game-card, .card-image").css({"pointer-events": "auto"});
+    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy,
+        setTimeout(function() {
+            $(".game-card, .card-image").css({"pointer-events": "auto"});
+        }, 2000); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium, 
+        setTimeout(function() {
+            $(".game-card, .card-image").css({"pointer-events": "auto"});
+        }, 3000); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard, 
+        setTimeout(function() {
+            $(".game-card, .card-image").css({"pointer-events": "auto"});
+        }, 4500); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+    
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */
