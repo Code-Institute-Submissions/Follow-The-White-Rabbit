@@ -27,7 +27,6 @@ function getUserName() {
 	    userName = $('#username').val();
 	    localStorage.setItem("userName", userName);
         $('.username').text(userName);
-        console.log(userName);
 }
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
@@ -42,17 +41,13 @@ $(document).ready(function(){
             $('#myModal').hide();
             $("#main, #player-board").show();
             $(level).show(); // shows level game board
-            randomPics(a,b); // generates random images into cards
+            randomPics(a,b); // generates random images into game cards
             $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
-        console.log(level);
         }
-        return level;
+        board = b;
+        return board, level;
     }); 
 });  
-
-
-
-
 
 /* Change Level funciton  */
 $(".info-level-image").on("click", function() { 
@@ -81,18 +76,14 @@ function randomPics(a,b) {
         i++;
         }
     }
-    console.log("from randomPics 1: " + images)
+    
     let index = 0;
-    while (index < images.length) {
-        console.log("images from while: " + images)
-        //let img = randomImageArr[ images [index] ];
+    while (index < images.length) {   
         let imgToPlace = document.getElementById(randomImageArr[ images [index] ]);
         let img = imgToPlace.cloneNode(true);
-        console.log(imgToPlace);
-        console.log(b[index]);
         document.getElementById(b[index]).appendChild(img); 
         index++;
-    } console.log("from randomPics 2: " + images);
+    }
 }
 
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
@@ -110,33 +101,26 @@ $(".btn-play").on("click", function() {
         rabbitRun.push(n);
         i++;
         }
-        console.log("rabbitRun 1: " + rabbitRun);
     }
     
     // START - Code here was written with help from tutors: Stephen & Tim  
     let index = 0, 
      rabbitImg = $("#rabbit").clone();
-     console.log(rabbitImg);
      card = b[rabbitRun[index]];  
         $("#" + card).find("img:first").hide(); // hide the first image 
-        console.log("img:first");
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
     var myInterval = setInterval(function(){ 
         $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
-        console.log("img:last");
         $("#" + card).find("img:first").show(); // find first image and show it 
-        console.log("rabbitRun 2: " + rabbitRun);
             index++;
             card = b[rabbitRun[index]];
             
         $("#" + card).find("img:first").hide(); // hide the first image
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
-        console.log("rabbitRun 3: " + rabbitRun);
-       if  (index >= rabbitRun.length) {
+        if  (index >= rabbitRun.length) {
             clearInterval(myInterval);
         }      
     }, speed);
-    console.log("rabbitRun 4: " + rabbitRun);
     return rabbitRun;
     
     // finish - Code here was writtne with help from tutors: Stephen & Tim  
@@ -153,10 +137,6 @@ $(".board").on("click", function() {
 /* Capturing players' clicks through game cards  */
 let followRabbit = []; 
 $(".game-card").on("click", function() {     
-    //$(this).css({"border": "red solid 2px"})
-    //setTimeout(function() {
-    //    $(this).css({"border": "white solid 2px"})
-    //}, 600);
     if (followRabbit.length === images.length) 
         return followRabbit;
     else 
