@@ -27,6 +27,8 @@ This document is intended to record testing at various stages of development of 
 4. Clicks Countdown
     Each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
     Tested clicks across three difficultty levels. Works correctly. 
+    BUG: If reset button is pressed before Play Button for Rabbit Run after loading from the main screen, "Clicks left" shows "undefined" instead of 4/6/9.
+        Fixed. 
 
 5. Win-Lose modal
     Added modals for both cases. Tested, works correctly: Win Modal in case a player repeated the Rabbit's run correctly, and Lose modal if otherwise. 

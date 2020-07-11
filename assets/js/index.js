@@ -21,7 +21,8 @@ let modal = document.getElementById('myModal'),
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
  speed = 500,
- level;
+ level,
+ score = 0;
 
 function getUserName() {
 	    userName = $('#username').val();
@@ -122,7 +123,6 @@ $(".btn-play").on("click", function() {
         }      
     }, speed);
     return rabbitRun;
-    
     // finish - Code here was writtne with help from tutors: Stephen & Tim  
 });
 
@@ -154,6 +154,7 @@ $(".game-card").on("click", function() {
     
 });
 
+// Delay in showing win-lose modal //
 function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show")
@@ -215,3 +216,12 @@ $(".btn-reset, .btn-modal").on("click", function() {
         $(".game-card,.card-image").css({"pointer-events": "none"});
         randomPics(a,b);  
 });  
+
+$(".btn-modal").on("click", function() {
+    let btn = $(this).attr("id");
+    console.log(btn);
+    if (btn == "modal-btn-win") score++, console.log(score);
+    if ((btn == "modal-btn-lose" && score > 0)) score--, console.log(score);
+    $(".score").text(score);    
+    console.log(score);
+});

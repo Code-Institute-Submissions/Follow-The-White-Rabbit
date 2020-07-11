@@ -19,15 +19,12 @@
     <!--Bootstrap CSS links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
-    
-
     <title>Follow The White Rabbit - Memory Matching Game</title>
     <!--Local CSS styles link-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     
 </head>
-<body>
-    
+<body>    
     
     <!-- Modal - Main screen -->
     <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
@@ -106,33 +103,33 @@
                         </div> 
                         <div id="score-info" class="col-12 info-card">
                             <div class="row"> 
-                                <h4 class="score">SCORE</h4>
+                                <h4 class="score-title">SCORE</h4>
                             </div>
                             <div class="row">
-                                <h4 class="score">SCORE NUMBER</h4>
+                                <h4 class="score text-center">SCORE NUMBER</h4>
                             </div> 
                         </div> 
                     </div>     
                 </div>
                 
                 <div id="level-info" class="info-card column">
-                            <div id="change-level" class="row">
-                                <div  class="column d-flex justify-content-center">
-                                    <div id="easy" class="level-card">
-                                        <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div id="medium" class="level-card">
-                                        <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div id="hard" class="level-card">
-                                        <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
-                                    </div>
-                                </div>
+                    <div id="change-level" class="row">
+                        <div  class="column d-flex justify-content-center">
+                            <div id="easy" class="level-card">
+                                <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
                             </div>
+                        </div>
+                        <div class="column">
+                            <div id="medium" class="level-card">
+                                <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div id="hard" class="level-card">
+                                <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div> 
             </div>
         </div>
@@ -291,16 +288,18 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 modal-background background-cover-center win-lose-modal-bgr">
+                            <div class="col-12 win-modal-bgr">
                                 <div class="row justify-content-center">
-                                    <div class="modal-title">
-                                        <h4 class="modal-title">Caught me!</h4>
-                                        <p>Congratulations!</p>
-                                        <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
+                                    <div>
+                                        <h4 class="modal-title">CAUGHT ME!</h4>
+                                            <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
                                     </div>
-                                    <div class="col-12 text-center"> 
-                                        <button type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
-                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-12 text-center">
+                                            <h4 class="score-win-title">CONGRATULATIONS! YOU GET 1 POINT!</h4> 
+                                            <button id="modal-btn-win" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                        </div>
+                                    </div>    
                                 </div>    
                             </div>
                         </div>
@@ -310,23 +309,35 @@
         </div>
     </div>
     
-     <!-- LOSE modal  -->
+    <!-- LOSE Modal -->
     <div id="lose-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <h4 class="modal-title">I am gone!</h4>
-                    <p>Try again!</p>
-                    <img id="lose-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
-                </div>
-                <div class="modal-footer">
-                    <button id="modal-btn-lose" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class=" far fa-check-circle"></i></button>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 lose-modal-bgr">
+                                <div class="row justify-content-center">
+                                    <div>
+                                        <h4 class="modal-title">I AM GONE!</h4>
+                                            <img id="win-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-12 text-center">
+                                            <h4 class="score-win-title">SORRY! YOU LOSE 1 POINT!</h4> 
+                                            <button id="modal-btn-win" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                        </div>
+                                    </div>    
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

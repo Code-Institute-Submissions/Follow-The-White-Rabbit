@@ -98,9 +98,10 @@ body {
 }
 
 /*----  Level & Game cards ---*/
+
 .info-card {
     height: max-content;
-    width: auto;
+    width: 50px;
     background-color: rgb(124, 139, 185);
     border: black solid 1px;
     padding: 10px;
@@ -304,10 +305,17 @@ body {
     font-size: 25px;
 }
 
-.win-lose-modal-bgr {
-    background-image: url("../images/modal_bgr.jpg");    
-    /* background-color: */
+.win-modal-bgr {
+    background-image: url("../images/modal_bgr_win.jpg");
+    background-size: cover;
+    background-position: center center;    
 }
+.lose-modal-bgr {
+    background-image: url("../images/modal_bgr_lose.jpg");
+    background-size: cover;
+    background-position: center center;    
+}
+
 
 /*  Difficulty level Bubbble info on hover above level image on the main page */
 /* Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
