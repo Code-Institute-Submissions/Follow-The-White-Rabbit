@@ -19,33 +19,49 @@ let modal = document.getElementById('myModal'),
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
- speed = 500;
+ speed = 500,
+ level;
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
-        let level = $(this).attr("id");
-        if (level == "imageE") b = easyCards, a = b.length, c = "#game-board-easy";
-        if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
-        if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
-       $('#myModal').hide();
-       $("#main, #player-board").show();
-       $(c).show();
-       randomPics(a,b);
-       $(".game-card,.card-image").css({"pointer-events": "none"});       
+        let levelImg = $(this).attr("id");
+        if (levelImg == "imageE") b = easyCards, a = b.length, level = "#game-board-easy";
+        if (levelImg == "imageM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
+        if (levelImg == "imageH") b = hardCards, a = b.length, level = "#game-board-hard"; 
+        $('#myModal').hide();
+        $("#main, #player-board").show();
+        $(level).show(); // shows level game board
+        userName();
+        randomPics(a,b); // generates random images into cards
+        $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
+        console.log(level);
+        return level;
     }); 
 });  
 
+
+function userName() {
+	    userName = $('#username').val();
+	    localStorage.setItem("userName", userName);
+        $('.username').text(userName);
+        console.log(userName);
+}
+
+
 /* Change Level funciton  */
-$(".info-level-image").on("click", function() {    
-        let level = $(this).attr("id");
-        if (level == "imageE") b = easyCards, a = b.length, c = "#game-board-easy";
-        if (level == "imageM") b = mediumCards, a = b.length, c = "#game-board-medium"; 
-        if (level == "imageH") b = hardCards, a = b.length, c = "#game-board-hard"; 
-       $("#main, #player-board").show();
-       console.log(c);
-       $(".board").hide();
-       $(c).show();
+$(".info-level-image").on("click", function() { 
+        console.log("level: " + level)
+        let board = level;
+        console.log("board: " + board)
+        let levelImg = $(this).attr("id");
+        if (levelImg == "pictureE") b = easyCards, a = b.length, level = "#game-board-easy";
+        if (levelImg == "pictureM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
+        if (levelImg == "pictureH") b = hardCards, a = b.length, level = "#game-board-hard"; 
+       console.log(levelImg);
+       console.log("level: " + level);
+       $(board).hide();
+       $(level).show();
        randomPics(a,b);
        $(".game-card,.card-image").css({"pointer-events": "none"});       
     }); 

@@ -20,6 +20,20 @@ body {
 .uppercase {
     text-transform: uppercase; 
 }
+.username {
+    font-family: "Alice", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+#avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0.3rem;
+  
+  border: black solid 1px;
+}
 
 #title {
     text-align: center;
