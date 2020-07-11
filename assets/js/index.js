@@ -15,12 +15,20 @@ let modal = document.getElementById('myModal'),
  imageH = document.getElementById('imageH'),
  main = document.getElementById('main'),
  playerBoard = document.getElementById('player-board'),
+ userName,
  board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
  speed = 500,
  level;
+
+function getUserName() {
+	    userName = $('#username').val();
+	    localStorage.setItem("userName", userName);
+        $('.username').text(userName);
+        console.log(userName);
+}
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
@@ -29,24 +37,21 @@ $(document).ready(function(){
         if (levelImg == "imageE") b = easyCards, a = b.length, level = "#game-board-easy";
         if (levelImg == "imageM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
         if (levelImg == "imageH") b = hardCards, a = b.length, level = "#game-board-hard"; 
-        $('#myModal').hide();
-        $("#main, #player-board").show();
-        $(level).show(); // shows level game board
-        userName();
-        randomPics(a,b); // generates random images into cards
-        $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
+        getUserName();
+        if ((userName != null) && (userName != "Player") && (userName != "")) {
+            $('#myModal').hide();
+            $("#main, #player-board").show();
+            $(level).show(); // shows level game board
+            randomPics(a,b); // generates random images into cards
+            $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         console.log(level);
+        }
         return level;
     }); 
 });  
 
 
-function userName() {
-	    userName = $('#username').val();
-	    localStorage.setItem("userName", userName);
-        $('.username').text(userName);
-        console.log(userName);
-}
+
 
 
 /* Change Level funciton  */

@@ -84,72 +84,57 @@
             </div>
         </div>
     </div>
-
    
     <!-- Game container with card grids -->
     <div id="main" class="container container-fluid">
 
-    <!-- Player/level/score info board -->
-        <div id="player-board" class="row jquery-content-center">
-         <!--   <a href="index.html"><button type="button">Reset</button></a>
-           <div class="column">
-                <div class="row"> -->
-                    <div id="player-info" class="row">
-                        <div id="#" class="info-card column">
-                            <div class="row align-middle">
-                                <div class="column">                                                              
-                                    <div class="row"> 
-                                        <div class="col-12">
-                                            <h4 class="username">Name</h4>
-                                        </div> 
-                                         <div class="col-12">
-                                            <figure  class="background-cover-center avatar-default box-white-curved-corners" title="Avatar">
-                                                <img id="avatar" type="image" src="assets/images/rabbit_avatar.jpg" alt="Rabbit" class="avatar">
-                                            </figure>
-                                        </div> 
-                                    </div>
-                                    <div id="#" class="info-card column">
-                            
-                                    <div class="row">
-                                        <h3>Score info</h3>
-                                    </div>
-                                    <div class="row"> Image </div>
-                                    
-                               
-                        </div>
+        <!-- Player/level/score info board -->
+        <div id="player-board" class="container-fluid justify-content-center">
+            <div id="player-info" class="row">
+                <div id="user-score" class=" column">                                                
+                    <div class="row"> 
+                        <!-- Username goes here -->
+                        <div id="avatar-info" class="col-12 info-card">
+                            <div class="row"> 
+                                <h3 class="username">Name</h3>
+                            </div>
+                            <div class="row ">
+                                <div class="avatar">
+                                    <img id="avatar" type="image" src="assets/images/rabbit_avatar.jpg" alt="Rabbit" class="avatar">
                                 </div>
-                            </div>   
-                        </div>
-                        <div id="#" class="info-card column">
-                            <div class="row align-middle">
+                            </div> 
+                        </div> 
+                        <div id="score-info" class="col-12 info-card">
+                            <div class="row"> 
+                                <h4 class="score">SCORE</h4>
+                            </div>
+                            <div class="row">
+                                <h4 class="score">SCORE NUMBER</h4>
+                            </div> 
+                        </div> 
+                    </div>     
+                </div>
+                
+                <div id="level-info" class="info-card column">
+                            <div id="change-level" class="row">
+                                <div  class="column d-flex justify-content-center">
+                                    <div id="easy" class="level-card">
+                                        <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
+                                    </div>
+                                </div>
                                 <div class="column">
-                                    <div class="row">
-                                        <h3>Level info</h3>
-                                    </div>
-                                    <div id="change-level" class="row">
-                                        <div  class="column d-flex justify-content-center">
-                                            <div id="easy" class="level-card">
-                                                <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div id="medium" class="level-card">
-                                                <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div id="hard" class="level-card">
-                                                
-                                                <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
-                                            </div>
-                                        </div>
+                                    <div id="medium" class="level-card">
+                                        <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
                                     </div>
                                 </div>
-                            </div>   
-                        </div>
-                        
-                    </div>
-            
+                                <div class="column">
+                                    <div id="hard" class="level-card">
+                                        <a href="#"><img id="imageH" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
+                                    </div>
+                                </div>
+                            </div>
+                </div> 
+            </div>
         </div>
 
         <!-- Images for game cards-->
