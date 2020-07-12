@@ -20,23 +20,13 @@ body {
 .uppercase {
     text-transform: uppercase; 
 }
-.username {
-    font-family: "Alice", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: red;
-}
 
 #avatar {
   width: 100px;
   height: 100px;
   margin: 0.3rem;
-  
-  border: black solid 1px;
-}
-
-#title {
-    text-align: center;
+  border:  #cfb747 solid 1px;
+  border-radius: 5%;
 }
 
 .hidden {
@@ -44,6 +34,7 @@ body {
 }
 
 /*-- Game Containers  --- */
+
 #main {
     display: none;
 }
@@ -55,12 +46,14 @@ body {
   align-items: center;
 }
 
+/*-- Player info board -- */
+
 #player-board {
     height: max-content;
     width: max-content;
     min-width: 40%;
     min-height: 40%;
-    
+    padding: 5px 15px;
     align-content: center;
     background-color: rgb(211, 231, 31);
     border: black solid 0.2em;
@@ -73,7 +66,6 @@ body {
     display: none;
 }
 
-#avatar-info, 
 #score-info {
     width: 200px;
     display: inline-block;
@@ -82,21 +74,67 @@ body {
 }
 
 #level-info {
-    width: 300px;
+    width: 250px;
     float: right;
+    vertical-align: middle;
 }
 
-#rose-small {
-    height: 30px;
-    width: 30px;
+
+
+.info-card {
+    height: max-content;
+    width: 50px;
+    background-color: rgb(124, 139, 185);
+    border: black solid 1px;
+    padding:3px;
+    float: left;
+    margin: auto;
 }
 
+.level-button {
+    height: max-content;
+    width: max-content;
+    padding: 0.2em;
+    border: black solid 0.5px;
+    border-radius: 8%;
+    margin: none;
+}
+
+#small_rabbit {
+    height: 75px;
+    width: 75px;
+    margin: 10px 5px 5px 15px;
+}
+
+#score-info {
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+}
+
+#score-title {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+#score {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.score-box {
+    margin: 0;
+}
+
+/* -- Game card boards -- */
 #game-board-easy,
 #game-board-medium,
 #game-board-hard {
     height: max-content;
     width: max-content;
-    padding: 2% 5%;
+    padding: 1% 5%;
     background-color: #cfb747;
     border: black solid 0.2em;
     border-radius: 3%;
@@ -122,28 +160,12 @@ body {
 }
 
 /*----  Level & Game cards ---*/
-
-.info-section {
-    width: max-content;
-    height: max-content;
-  margin: 1rem;
-  padding: 1rem 0rem;
-   background-color: rgb(139, 121, 135);
+.levels {
+    margin-top: 5%;
+    max-width: 100%;
 }
 
-.info-card {
-    height: max-content;
-    width: 50px;
-    background-color: rgb(124, 139, 185);
-    border: black solid 1px;
-    padding: 10px;
-    font-size: 10px;
-    font-family: 'Alice', Courier, monospace;
-    color: black;
-    float: left;
-    margin: auto;
-}
-
+/*  Hide card images */
 #card-images {
     display: none;
 }
@@ -188,18 +210,8 @@ body {
     width: 50px;
 }
 
-.levels {
-    margin-top: 5%;
-    max-width: 100%;
-}
-.level-button {
-    height: max-content;
-    width: max-content;
-    padding: 0.2em;
-    margin: 0 5px;
-    border: black solid 1px;
-    border-radius: 10%;
-}
+
+
 
 .level-card {    
     height: 9em;
@@ -216,7 +228,7 @@ body {
     font-size: 7px;
 }
 
-/*---- Modal ----*/
+/*---- Main page Modal ----*/
 
 .modal { 
     position: fixed;
@@ -228,33 +240,25 @@ body {
     max-height: 100%;
 }
 
-.modal-guts {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px 50px 20px 20px;
-  overflow: auto;
+.modal-title {
+    margin-bottom: 10px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 10px;
 }
-
 
 /* Fixing non working links in modal */
 .modal-dialog {
     pointer-events: all;
 }
 
-.modal-title {
-    margin-bottom: 10px;
-}
-
 #myModal {    
-    height: 80vh;
+    height: max-content;
     min-height: 400px;
-    width: 80%;
+    width: max-content;
     display: block;
     background-color: #F0DEB4;
-    color: #C70018;
+    color: rgb(177, 4, 24);
     border: #3F2800 solid 0.2em;
     position: fixed;
     margin-top: 1.5em;
@@ -265,12 +269,8 @@ body {
     border-radius: 10%;
 }
 
-#modal-title {
-    font-family: "Sunshiney", sans-serif;
-    text-align: right;
-    margin-bottom: 2em;
-    font-size: 600;
-}
+
+
 
 /*-- Colors to convey difficulty levels */
 #easy, 
@@ -301,6 +301,90 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+/*-- Modals: WIN & LOSE */
+.btn-modal {
+    color: rgb(4, 180, 4);
+    font-size: 25px;
+}
+
+.win-modal-bgr {
+    background-image: url("../images/modal_bgr_win.jpg");
+    background-size: cover;
+    background-position: center center;    
+}
+.lose-modal-bgr {
+    background-image: url("../images/modal_bgr_lose.jpg");
+    background-size: cover;
+    background-position: center center;    
+}
+
+.modal-lose-title,
+.modal-win-title {
+    font-family: "Alice", sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    text-align: center;
+    
+}
+
+.score-win-title,
+.score-lose-title {
+    font-family: "Alice", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.score-lose-title,
+.modal-lose-title {
+    color: rgb(247, 237, 231); 
+}
+
+.modal-btn-win {
+    margin-bottom: 10px;
+}
+
+/*  Difficulty level Bubbble info on hover above level image on the main page */
+/* Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
+dfn { 
+  padding: 0 0.4em;
+  font-family: "Alice", sans-serif;
+  font-style: normal;
+  position: relative;
+  }
+
+dfn::after {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 0; left: 12px;
+  opacity: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  /* background: rgba(0,0,0,0.8); */
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+
+dfn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px; left: 15px;
+  opacity: 0;
+  width: 0; height: 0;
+} 
+
+dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {opacity: 1;}
+dfn:hover::after {top: 2px;}
+dfn:hover::before {top: 15px;} 
+/* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
 
 /*----------------------------------- MEDIA QUERIES */
 
@@ -363,64 +447,4 @@ body {
     #myModal {
         max-width: 95%;
     }
-    }
-
-
-/*-- Modals: WIN & LOSE */
-.btn-modal {
-    color: rgb(4, 180, 4);
-    font-size: 25px;
 }
-
-.win-modal-bgr {
-    background-image: url("../images/modal_bgr_win.jpg");
-    background-size: cover;
-    background-position: center center;    
-}
-.lose-modal-bgr {
-    background-image: url("../images/modal_bgr_lose.jpg");
-    background-size: cover;
-    background-position: center center;    
-}
-
-
-/*  Difficulty level Bubbble info on hover above level image on the main page */
-/* Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
-dfn { 
-  padding: 0 0.4em;
-  font-family: "Alice", sans-serif;
-  font-style: normal;
-  position: relative;
-  }
-
-dfn::after {
-  content: attr(data-info);
-  display: inline;
-  position: absolute;
-  top: 0; left: 12px;
-  opacity: 0;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.5em;
-  padding: 0.5em 0.8em;
-  /* background: rgba(0,0,0,0.8); */
-  color: #fff;
-  pointer-events: none; /* This prevents the box from apearing when hovered. */
-  transition: opacity 250ms, top 250ms;
-}
-
-dfn::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -10px; left: 15px;
-  opacity: 0;
-  width: 0; height: 0;
-} 
-
-dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
-dfn:hover::after,
-dfn:hover::before {opacity: 1;}
-dfn:hover::after {top: 2px;}
-dfn:hover::before {top: 15px;} 
-/* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */

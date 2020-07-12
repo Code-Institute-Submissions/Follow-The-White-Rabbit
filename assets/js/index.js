@@ -15,7 +15,7 @@ let modal = document.getElementById('myModal'),
  imageH = document.getElementById('imageH'),
  main = document.getElementById('main'),
  playerBoard = document.getElementById('player-board'),
- userName,
+ // userName,
  board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
@@ -23,12 +23,12 @@ let modal = document.getElementById('myModal'),
  speed = 500,
  level,
  score = 0;
-
+/*
 function getUserName() {
 	    userName = $('#username').val();
 	    localStorage.setItem("userName", userName);
         $('.username').text(userName);
-}
+} */
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
@@ -37,14 +37,14 @@ $(document).ready(function(){
         if (levelImg == "imageE") b = easyCards, a = b.length, level = "#game-board-easy";
         if (levelImg == "imageM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
         if (levelImg == "imageH") b = hardCards, a = b.length, level = "#game-board-hard"; 
-        getUserName();
-        if ((userName != null) && (userName != "Player") && (userName != "")) {
-            $('#myModal').hide();
-            $("#main, #player-board").show();
-            $(level).show(); // shows level game board
-            randomPics(a,b); // generates random images into game cards
-            $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
-        }
+        /* getUserName();
+        if ((userName != null) && (userName != "Player") && (userName != ""))*/ 
+        $('#myModal').hide();
+        $("#main, #player-board").show();
+        $(level).show(); // shows level game board
+        randomPics(a,b); // generates random images into game cards
+        $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
+        
         board = b;
         return board, level;
     }); 
@@ -238,6 +238,6 @@ $(".btn-modal").on("click", function() {
     console.log(btn);
     if (btn == "modal-btn-win") score++, console.log(score);
     if ((btn == "modal-btn-lose" && score > 0)) score--, console.log(score);
-    $(".score").text(score);    
+    $("#score").text(score);    
     console.log(score);
 });

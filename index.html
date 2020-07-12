@@ -30,19 +30,17 @@
 
     <!-- Modal - Main screen -->
     <!-- Initial code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load, and adjusted to my needs -->
-    <div id="myModal" class="modal-lg modal-bgr modal-guts">
+    <div id="myModal" class="modal-lg modal-bgr">
         <div class="modal-dialog">
             <div class="row modal-body">
                 <div class="container-fluid flex-container">
                     <div class="row">
-                        <div class="modal-title">
-                            <h2 class="modal-title uppercase">Let's Catch the White Rabbit</h2>
+                        <div class="modal-title column" >
+                            <h2 class="modal-title uppercase">Let's Catch</h2>
+                            <h2 class="modal-title uppercase">the White Rabbit</h2>
                         </div>
-                        <!-- Username field form -->
-                        <div>
-                            <form id=username-form>
-                                <input type="text" class="form-control" id="username" name="username" maxlength="16" placeholder="Your name.." required>
-                            </form>
+                        <div class="modal-image column" >
+                            <img id="avatar" type="image" src="assets/images/rabbit_avatar.jpg" alt="Rabbit" class="avatar">
                         </div>
                     </div>
 
@@ -90,35 +88,10 @@
         <!-- Player/level/score info board -->
         <div id="player-board" class="container-fluid flex-container justify-content-center">
             <div id="player-info" class="row">
-                <div id="user-score" class="info-section column col-6">                                                
-                    <div class="row"> 
-                        <!-- Username goes here -->
-                        <div id="avatar-info" class="col-6 col-md-6 info-card">
-                            <div class="row"> 
-                                <h3 class="username">Name</h3>
-                            </div>
-                            <div class="row ">
-                                <div class="avatar">
-                                    <img id="avatar" type="image" src="assets/images/rabbit_avatar.jpg" alt="Rabbit" class="avatar">
-                                </div>
-                            </div> 
-                        </div> 
-                        <!-- Score goes here -->
-                        <div id="score-info" class="ccol-6 col-md-6 info-card">
-                            <div class="row"> 
-                                <h4 class="score-title">YOU HAVE</h4>
-                            </div>
-                            <div class="row">
-                                <h4 class="score text-center">SCORE NUMBER</h4>
-                                <img id="rose-small" type="image" src="assets/images/rose_small.jpg" alt="Small Rose" class="points">
-                            </div> 
-                        </div> 
-                    </div>     
-                </div>
                 <!-- Level choice buttons -->
-                <div id="level-info" class="info-section column col-6">
-                    <div id="change-level" class="row">
-                        <div class="column d-flex justify-content-center card-holder col-4">
+                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="column col-4">
                             <div id="easy-sm" class="level-button">
                                 <a href="#"><img id="pic_E" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
                             </div>
@@ -133,6 +106,31 @@
                                 <a href="#"><img id="pic_H" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
                             </div>
                         </div>
+                    </div>
+                </div> 
+
+                <!-- Score board -->
+                <div id="score-info" class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="row"> 
+                        <div class="column justify-content-center">
+                            <div class="row score-box">
+                                <div class="col justify-content-center">
+                                    <h4 id="score-title">CAUGHT</h4>
+                                </div>
+                            </div>
+                            <div class="row score-box">
+                                <div class="col justify-content-center">
+                                    <h4 id="score" class="text-center">0</h4>
+                                </div>
+                            </div> 
+                        </div> 
+                         <div class="column">
+                            <div class="row">
+                                <div class="col justify-content-center">
+                                    <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
+                                </div> 
+                            </div>
+                        </div> 
                     </div>
                 </div> 
             </div>
@@ -155,9 +153,9 @@
         </div>
 
         <!-- Easy Level cards grid -->
-        <div id="game-board-easy" class="row board">
-            <div class="column col-12">
-                <div class="row col-12">
+        <div id="game-board-easy" class="row board grid">
+            <div class="column">
+                <div class="row">
                     <div class="column">
                         <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
                         <button class="btn-reset btn-outline-succes btn-large" type="button"><i class="fa fa-undo" aria-hidden="true"></i></button> 
@@ -168,27 +166,32 @@
                         </div>  
                     </div>
                 </div>
-                <div  class="column">
-                    <div id="rowOne" class="row">
-                        <div id="col_1" class="column">
-                            <div id="card01" class="game-card easy-card"></div>
+                
+                <div class="row">
+                    <div class="column grid">
+                        <div id="rowOne" class="row">
+                            <div id="col_1" class="column">
+                                <div id="card01" class="game-card easy-card"></div>
+                            </div>
+                            <div id="col_2" class="column">
+                                <div id="card02" class="game-card easy-card"></div>
+                            </div>
                         </div>
-                        <div id="col_2" class="column">
-                            <div id="card02" class="game-card easy-card"></div>
+                        <div id="rowTwo" class="row">
+                            <div id="col_3" class="column">
+                                <div id="card03" class="game-card easy-card"></div>
+                            </div>
+                            <div id="col_3" class="column">
+                                <div id="card04" class="game-card easy-card"></div>
+                            </div>
                         </div>
                     </div>
-                    <div id="rowTwo" class="row">
-                        <div id="col_4" class="column">
-                            <div id="card03" class="game-card easy-card"></div>
-                        </div>
-                        <div id="col_5" class="column">
-                            <div id="card04" class="game-card easy-card"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div> 
+            </div> 
         </div>
-
+        
+        
+        
         <!-- Medium Level cards grid -->
         <div id="game-board-medium" class="row board">        
             <div class="column col-12">
@@ -233,6 +236,7 @@
         <!-- Hard Level cards grid -->
         <div id="game-board-hard" class="row board">
             <div class="column col-12">
+
                 <div class="row">
                     <div class="column">
                             <button id="btn-play-hard" class="btn-play btn-large btn-success" type="button">PLAY</button>
@@ -295,12 +299,12 @@
                             <div class="col-12 win-modal-bgr">
                                 <div class="row justify-content-center">
                                     <div>
-                                        <h4 class="modal-title">CAUGHT ME!</h4>
-                                            <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
+                                        <h4 class="modal-win-title">CAUGHT ME!</h4>
+                                        <img id="win-image" type="image" src="assets/images/win_image.jpg" alt="White Rabbit" class="win-lose-image">
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="row">
                                         <div class="col-12 text-center">
-                                            <h4 class="score-win-title">CONGRATULATIONS! YOU GET 1 POINT!</h4> 
+                                            <h4 class="score-win-title">CONGRATULATIONS! YOU GET A RABBIT!</h4> 
                                             <button id="modal-btn-win" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                         </div>
                                     </div>    
@@ -321,15 +325,15 @@
                 <div class="modal-body">
                     <div class="container-fluid lose-modal-bgr">
                         <div class="row">
-                            <div class="col-12 ">
+                            <div class="col-12">
                                 <div class="row justify-content-center">
                                     <div>
-                                        <h4 class="modal-title">I AM GONE!</h4>
+                                        <h4 class="modal-lose-title">I AM GONE!</h4>
                                             <img id="win-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="row">
                                         <div class="col-12 text-center">
-                                            <h4 class="score-win-title">SORRY! YOU LOSE 1 POINT!</h4> 
+                                            <h4 class="score-lose-title">SORRY! YOU LOSE A RABBIT!</h4> 
                                             <button id="modal-btn-lose" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                         </div>
                                     </div>    
@@ -342,8 +346,6 @@
         </div>
     </div>
     
-    </div>
-
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
