@@ -192,12 +192,27 @@ $(".btn-reset, .btn-modal").on("click", function() {
     $('.click-counter').text("Clicks left: " + clicksCounter);
 });
 
+
+
 /* Cicks countdown while a player is clicking through cards */
 $(".game-card").on("click", function() {
     clicksCounter--;
     let countedClicks = ("Clicks left: " + clicksCounter);
     $('.click-counter').text(countedClicks);
+    
 });
+
+/*
+//Additing click reaction to a game card
+$(".game-card").on("click", function() {
+    let card = $(this).attr("id");
+    $(card).css({"border":"orange solid 2px"});
+    console.log(card);
+    setTimeout(function() {
+        $(card).css({"border":"white solid 2px"});
+        console.log(card);
+    }, 2000);
+});  */
 
 /* Resetting the whole game board on closing the win-lose modal */
 $(".btn-reset, .btn-modal").on("click", function() {
@@ -217,6 +232,7 @@ $(".btn-reset, .btn-modal").on("click", function() {
         randomPics(a,b);  
 });  
 
+/* Calculating score on closing modal */
 $(".btn-modal").on("click", function() {
     let btn = $(this).attr("id");
     console.log(btn);

@@ -9,7 +9,7 @@ html, body {
 
 body {
     font-family: "Alice", sans-serif;
-    font-size: 15px;    
+    font-size: 15px;   
     background-image: url("../images/bg_med.png");    
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,23 +48,47 @@ body {
     display: none;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #player-board {
-    height: 300px;
-    width: 70%;
-    min-width: 60%;
+    height: max-content;
+    width: max-content;
+    min-width: 40%;
     min-height: 40%;
-    padding: 20px;
+    
     align-content: center;
     background-color: rgb(211, 231, 31);
     border: black solid 0.2em;
     margin-top: 2em;
-    color: black;
-    display: none;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     border-radius: 10%;
+    display: none;
+}
+
+#avatar-info, 
+#score-info {
+    width: 200px;
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
+#level-info {
+    width: 300px;
+    float: right;
+}
+
+#rose-small {
+    height: 30px;
+    width: 30px;
 }
 
 #game-board-easy,
@@ -99,6 +123,14 @@ body {
 
 /*----  Level & Game cards ---*/
 
+.info-section {
+    width: max-content;
+    height: max-content;
+  margin: 1rem;
+  padding: 1rem 0rem;
+   background-color: rgb(139, 121, 135);
+}
+
 .info-card {
     height: max-content;
     width: 50px;
@@ -117,18 +149,18 @@ body {
 }
 
 .easy-card {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 
 .medium-card {
-    height: 165px;
-    width: 165px;
+    height: 135px;
+    width: 135px;
 }
 
 .hard-card {
-    height: 160px;
-    width: 160px;
+    height: 125px;
+    width: 125px;
 }
 
 .game-card {
@@ -136,14 +168,9 @@ body {
     border: black solid 1px;
     border-radius: 10%;
     margin: 15px;
-    font-size: 10px;
-    font-family: 'Alice', Courier, monospace;
-    color: black;
 }
     
-
-
-.game-card:hover {
+.game-card:hover  {
     border: white solid 2px;
 }
 
@@ -156,9 +183,22 @@ body {
     border-radius: 9.5%;
 }
 
+.info-level-image {
+    height: 50px;
+    width: 50px;
+}
+
 .levels {
     margin-top: 5%;
     max-width: 100%;
+}
+.level-button {
+    height: max-content;
+    width: max-content;
+    padding: 0.2em;
+    margin: 0 5px;
+    border: black solid 1px;
+    border-radius: 10%;
 }
 
 .level-card {    
@@ -177,6 +217,27 @@ body {
 }
 
 /*---- Modal ----*/
+
+.modal { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modal-guts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 50px 20px 20px;
+  overflow: auto;
+}
+
 
 /* Fixing non working links in modal */
 .modal-dialog {
@@ -212,21 +273,27 @@ body {
 }
 
 /*-- Colors to convey difficulty levels */
-#easy {
+#easy, 
+#easy-sm {
     background-color: rgba(25, 207, 25, 1);
 }
 
-#medium {
+#medium,
+#medium-sm {
     background-color: rgb(255, 251, 24);
 }
 
-#hard {
+#hard,
+#hard-sm {
     background-color: rgb(207, 13, 1);
 }
 
 #easy:hover,
 #medium:hover,
-#hard:hover {
+#hard:hover,
+#easy-sm:hover,
+#medium-sm:hover,
+#hard-sm:hover {
     background-color: rgb(247, 243, 243);
 }
 
