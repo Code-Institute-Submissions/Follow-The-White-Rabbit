@@ -44,3 +44,6 @@ This document is intended to record testing at various stages of development of 
 
 7. Swithcing between difficulty levels on player info board
     BUG: If a game is played on of the boards, and then levels switched, the Clicks left number does not get updated according to a board swhitched to, keeps showing the number from the a board where last game was played.
+    The bug is fixed.
+    BUG: If button Play is pressed, but no cards are played, button Play stays inactive, and if you switch between levels, and come back to the level where Play was pressed, it is still inactive.
+    Fixed. 

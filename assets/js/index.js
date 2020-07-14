@@ -33,10 +33,7 @@ $(document).ready(function(){
         if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard" }; 
         $('#myModal').hide();
         $("#main, #player-board").show();
-        console.log(level);
-        // $(level).removeClass(".invisible").addClass(".visible");
-        $(level).show(); // shows level game board
-        console.log(a,b);
+        $(level).show(); // shows level game cards board - 4, 6 or 9 cards
         randomPics(a,b); // generates random images into game cards
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         board = b;
@@ -44,31 +41,36 @@ $(document).ready(function(){
     }); 
 });  
 
-// Switching between difficulty levels on the player info board
+/* Switching between difficulty levels on the player info board  */
 $(".info-level-image").on("click", function() { 
         let currentBoard;
         if (board.length === 4) currentBoard = "#game-board-easy";
         if (board.length === 6) currentBoard = "#game-board-medium"; 
         if (board.length === 9) currentBoard = "#game-board-hard"; 
-        index = 0; 
-        while (index < board.length) {
+        
+        index = 0; // while loop removes images from the board to be closed, so that if it is reopened, images are not double inserted
+        while (index < board.length) { 
             card = board[index];
             $("#" + card).find("img:last").remove();
         index++;    
         }
-        $(currentBoard).hide();
+        $(currentBoard).hide(); // current card board is hidden
         
         let levelImg = $(this).attr("id");
-        console.log(levelImg)
-        if (levelImg === "pic_E") b = easyCards, a = b.length, level = "#game-board-easy";
-        if (levelImg === "pic_M")  b = mediumCards, a = b.length, level = "#game-board-medium"; 
-        if (levelImg === "pic_H") b = hardCards, a = b.length, level = "#game-board-hard"; 
+        if (levelImg === "pic_E") { b = easyCards, a = b.length, level = "#game-board-easy" };
+        if (levelImg === "pic_M")  { b = mediumCards, a = b.length, level = "#game-board-medium" }; 
+        if (levelImg === "pic_H") { b = hardCards, a = b.length, level = "#game-board-hard" }; 
         board = b;
-        $(level).show();
+        $(level).show(); //  new card board is shown
         images = [];
         rabbitRun = [];
         followRabbit = [];
-        randomPics(a,b);
+        score = 0;  // Score count to zero upon level switch
+        $("#score").text(score); 
+        // Below: makes PlayButton active, in case it was clicked on any board, then levels switched, 
+        //  and switched back to the first board, so PlayButton does not stay deactivated
+        $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); 
+        randomPics(a,b); // inserts new set of randomly generated images into the new card board "level"
         return board;
 });  
 
@@ -82,7 +84,7 @@ function randomPics(a,b) {
         i++;
         }
     }
-    console.log("images: " + images);
+    
     let index = 0;
     while (index < images.length) {   
         let imgToPlace = document.getElementById(randomImageArr[ images [index] ]);
@@ -151,7 +153,7 @@ $(".game-card").on("click", function() {
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
-// JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays
+/* JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays */
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
         {  displayModal("#win-modal-1", "#caughtMe"), console.log("#win-modal-1")};  
@@ -163,7 +165,7 @@ $(".game-card").on("click", function() {
         { displayModal("#lose-modal, #rabbitIsGone") };
 });
 
-// Delay in showing win-lose modal //
+/* Delay in showing win-lose modal after last cards has been clicked */
 function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show")
@@ -194,7 +196,7 @@ $(".btn-play").on("click", function() {
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */
-$(".btn-reset, .btn-modal").on("click", function() {    
+$(".btn-reset, .btn-modal, .info-level-image").on("click", function() {    
     if (board == easyCards) { clicksCounter = clicksCounterEasy }; 
     if (board == mediumCards) { clicksCounter = clicksCounterMedium };
     if (board == hardCards) { clicksCounter = clicksCounterHard };
