@@ -41,3 +41,6 @@ This document is intended to record testing at various stages of development of 
     
     BUG: If reset button(on game board) is pressed while Rabbit Run, inserted images are added on top of each in one cards, some cards have no images.
     Fixed: Blcoked reset button for the period of time it takes to complete Rabbit Run on each diff.level board
+
+7. Swithcing between difficulty levels on player info board
+    BUG: If a game is played on of the boards, and then levels switched, the Clicks left number does not get updated according to a board swhitched to, keeps showing the number from the a board where last game was played.
