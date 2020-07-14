@@ -2,11 +2,12 @@
 The code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load */ 
 
 /* Array of images from assets/images/random folder  --  index.html div id="card-images" */
-const easyCards = ["card01","card02","card03","card04"];
-const mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"];
-const hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"];
-const randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
 var images = [];
+const easyCards = ["card01","card02","card03","card04"],
+ mediumCards = ["card_1","card_2","card_3","card_4","card_5","card_6"],
+ hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"],
+ randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
+
 
 /* Choosing difficulty level and closing the modal   */
 let modal = document.getElementById('myModal'),
@@ -15,57 +16,61 @@ let modal = document.getElementById('myModal'),
  imageH = document.getElementById('imageH'),
  main = document.getElementById('main'),
  playerBoard = document.getElementById('player-board'),
- // userName,
  board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
- speed = 500,
+ speed = 400,
  level,
  score = 0;
-/*
-function getUserName() {
-	    userName = $('#username').val();
-	    localStorage.setItem("userName", userName);
-        $('.username').text(userName);
-} */
 
 /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
         let levelImg = $(this).attr("id");
-        if (levelImg == "imageE") b = easyCards, a = b.length, level = "#game-board-easy";
-        if (levelImg == "imageM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
-        if (levelImg == "imageH") b = hardCards, a = b.length, level = "#game-board-hard"; 
-        /* getUserName();
-        if ((userName != null) && (userName != "Player") && (userName != ""))*/ 
+        if (levelImg === "imageE") { b = easyCards, a = b.length, level = "#game-board-easy" };
+        if (levelImg === "imageM") { b = mediumCards, a = b.length, level = "#game-board-medium" }; 
+        if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard" }; 
         $('#myModal').hide();
         $("#main, #player-board").show();
+        console.log(level);
+        // $(level).removeClass(".invisible").addClass(".visible");
         $(level).show(); // shows level game board
+        console.log(a,b);
         randomPics(a,b); // generates random images into game cards
-        $(".game-card,.card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
-        
+        $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         board = b;
         return board, level;
     }); 
 });  
 
-/* Change Level funciton  */
+// Switching between difficulty levels on the player info board
 $(".info-level-image").on("click", function() { 
-        console.log("level: " + level)
-        let board = level;
-        console.log("board: " + board)
+        let currentBoard;
+        if (board.length === 4) currentBoard = "#game-board-easy";
+        if (board.length === 6) currentBoard = "#game-board-medium"; 
+        if (board.length === 9) currentBoard = "#game-board-hard"; 
+        index = 0; 
+        while (index < board.length) {
+            card = board[index];
+            $("#" + card).find("img:last").remove();
+        index++;    
+        }
+        $(currentBoard).hide();
+        
         let levelImg = $(this).attr("id");
-        if (levelImg == "pictureE") b = easyCards, a = b.length, level = "#game-board-easy";
-        if (levelImg == "pictureM") b = mediumCards, a = b.length, level = "#game-board-medium"; 
-        if (levelImg == "pictureH") b = hardCards, a = b.length, level = "#game-board-hard"; 
-       console.log(levelImg);
-       console.log("level: " + level);
-       $(board).hide();
-       $(level).show();
-       randomPics(a,b);
-       $(".game-card,.card-image").css({"pointer-events": "none"});       
-    }); 
+        console.log(levelImg)
+        if (levelImg === "pic_E") b = easyCards, a = b.length, level = "#game-board-easy";
+        if (levelImg === "pic_M")  b = mediumCards, a = b.length, level = "#game-board-medium"; 
+        if (levelImg === "pic_H") b = hardCards, a = b.length, level = "#game-board-hard"; 
+        board = b;
+        $(level).show();
+        images = [];
+        rabbitRun = [];
+        followRabbit = [];
+        randomPics(a,b);
+        return board;
+});  
 
 /* Function inseriting random pictures into game cards */
 function randomPics(a,b) {    
@@ -77,7 +82,7 @@ function randomPics(a,b) {
         i++;
         }
     }
-    
+    console.log("images: " + images);
     let index = 0;
     while (index < images.length) {   
         let imgToPlace = document.getElementById(randomImageArr[ images [index] ]);
@@ -85,15 +90,16 @@ function randomPics(a,b) {
         document.getElementById(b[index]).appendChild(img); 
         index++;
     }
+    return images;
 }
 
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
 $(".btn-play").on("click", function() {    
     let btnId = $(this).attr("id");
-    if (btnId == "btn-play-easy") b = easyCards, a = easyCards.length; 
-    if (btnId == "btn-play-medium") b = mediumCards, a = mediumCards.length; 
-    if (btnId == "btn-play-hard") b = hardCards, a = hardCards.length; 
+    if (btnId === "btn-play-easy") { b = easyCards, a = easyCards.length }; 
+    if (btnId === "btn-play-medium") { b = mediumCards, a = mediumCards.length }; 
+    if (btnId === "btn-play-hard") { b = hardCards, a = hardCards.length }; 
     
     let i = 0;
     while (i < a) { 
@@ -129,16 +135,16 @@ $(".btn-play").on("click", function() {
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
 $(".board").on("click", function() {    
     let boardId = $(this).attr("id");
-    if (boardId == "game-board-easy") board = easyCards;
-    if (boardId == "game-board-medium") board = mediumCards;
-    if (boardId == "game-board-hard") board = hardCards;
+    if (boardId === "game-board-easy") { board = easyCards };
+    if (boardId === "game-board-medium") { board = mediumCards };
+    if (boardId === "game-board-hard") { board = hardCards };
 });
 
 /* Capturing players' clicks through game cards  */
 let followRabbit = []; 
 $(".game-card").on("click", function() {     
     if (followRabbit.length === images.length) 
-        return followRabbit;
+        return followRabbit ;
     else 
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
@@ -148,10 +154,13 @@ $(".game-card").on("click", function() {
 // JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
-        displayModal("#win-modal", "#caughtMe");
+        {  displayModal("#win-modal-1", "#caughtMe"), console.log("#win-modal-1")};  
+    /* if (score === 2) { 
+        setTimeout(function() {
+            displayModal("#win-modal-2", "#caughtMe"), console.log("#win-modal-2");
+        }, 300)};  */
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
-        displayModal("#lose-modal, #rabbitIsGone");
-    
+        { displayModal("#lose-modal, #rabbitIsGone") };
 });
 
 // Delay in showing win-lose modal //
@@ -167,39 +176,36 @@ $(".btn-play").on("click", function() {
     $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
     $(".btn-reset").prop("disabled",true);
     let btnId = $(this).attr("id");
-    if (btnId == "btn-play-easy") clicksCounter = clicksCounterEasy,
+    if (btnId == "btn-play-easy") { clicksCounter = clicksCounterEasy,
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
             $(".btn-reset").prop("disabled",false);
-        }, speed*4); // Delayed activation of game cards, so a player cannot click while Rabbit Run
-    if (btnId == "btn-play-medium") clicksCounter = clicksCounterMedium, 
+        }, speed*4)}; // Delayed activation of game cards, so a player cannot click while Rabbit Run
+    if (btnId == "btn-play-medium") { clicksCounter = clicksCounterMedium, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
             $(".btn-reset").prop("disabled",false);
-        }, speed*6); // Delayed activation of game cards, so a player cannot click while Rabbit Run
-    if (btnId == "btn-play-hard") clicksCounter = clicksCounterHard, 
+        }, speed*6)}; // Delayed activation of game cards, so a player cannot click while Rabbit Run
+    if (btnId == "btn-play-hard") { clicksCounter = clicksCounterHard, 
         setTimeout(function() {
             $(".game-card, .card-image").css({"pointer-events": "auto"});
             $(".btn-reset").prop("disabled",false);
-        }, speed*9); // Delayed activation of game cards, so a player cannot click while Rabbit Run
+        }, speed*9)}; // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 
 /* Resetting clicks countdown on closing the win-lose modal */
 $(".btn-reset, .btn-modal").on("click", function() {    
-    if (board == easyCards) clicksCounter = clicksCounterEasy; 
-    if (board == mediumCards) clicksCounter = clicksCounterMedium;
-    if (board == hardCards) clicksCounter = clicksCounterHard;
+    if (board == easyCards) { clicksCounter = clicksCounterEasy }; 
+    if (board == mediumCards) { clicksCounter = clicksCounterMedium };
+    if (board == hardCards) { clicksCounter = clicksCounterHard };
     $('.click-counter').text("Clicks left: " + clicksCounter);
 });
-
-
 
 /* Cicks countdown while a player is clicking through cards */
 $(".game-card").on("click", function() {
     clicksCounter--;
     let countedClicks = ("Clicks left: " + clicksCounter);
     $('.click-counter').text(countedClicks);
-    
 });
 
 /*
@@ -226,8 +232,6 @@ $(".btn-reset, .btn-modal").on("click", function() {
         rabbitRun = [];
         followRabbit = [];
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success");
-        
-        // $(".btn-play").addClass(".active"); maybe add active class to the button???? 
         $(".game-card,.card-image").css({"pointer-events": "none"});
         randomPics(a,b);  
 });  
@@ -236,8 +240,7 @@ $(".btn-reset, .btn-modal").on("click", function() {
 $(".btn-modal").on("click", function() {
     let btn = $(this).attr("id");
     console.log(btn);
-    if (btn == "modal-btn-win") score++, console.log(score);
-    if ((btn == "modal-btn-lose" && score > 0)) score--, console.log(score);
+    if (btn == "modal-btn-win") { score++ }; 
+    if ((btn == "modal-btn-lose" && score > 0)) { score-- };
     $("#score").text(score);    
-    console.log(score);
 });

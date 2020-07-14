@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*----  General styles ---*/
 @import url('https://fonts.googleapis.com/css?family=Alice:200,300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sunshiney:200,300,400,500,600,700&display=swap');
@@ -34,26 +41,36 @@ body {
 }
 
 /*-- Game Containers  --- */
-
 #main {
     display: none;
 }
 
 .flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 /*-- Player info board -- */
-
 #player-board {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     min-width: 40%;
     min-height: 40%;
     padding: 5px 15px;
+    -ms-flex-line-pack: center;
     align-content: center;
     background-color: rgb(211, 231, 31);
     border: black solid 0.2em;
@@ -79,9 +96,9 @@ body {
     vertical-align: middle;
 }
 
-
-
 .info-card {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
     width: 50px;
     background-color: rgb(124, 139, 185);
@@ -92,7 +109,11 @@ body {
 }
 
 .level-button {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     padding: 0.2em;
     border: black solid 0.5px;
@@ -108,8 +129,12 @@ body {
 
 #score-info {
     border: black solid 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #score-title {
@@ -132,21 +157,38 @@ body {
 #game-board-easy,
 #game-board-medium,
 #game-board-hard {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     padding: 1% 5%;
     background-color: #cfb747;
     border: black solid 0.2em;
     border-radius: 3%;
+    -ms-flex-line-pack: center;
     align-content: center;
     margin-top: 0.5em;
     color: black;
-    display: none;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+    display: none;
 }
+
+/*
+.invisible {
+    display: none;
+    visibility: hidden;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+}
+*/
 
 .board {
     max-width: 100%; 
@@ -210,9 +252,6 @@ body {
     width: 50px;
 }
 
-
-
-
 .level-card {    
     height: 9em;
     width: 9em;
@@ -229,11 +268,12 @@ body {
 }
 
 /*---- Main page Modal ----*/
-
 .modal { 
     position: fixed;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 600px;
     max-width: 100%;
@@ -253,24 +293,29 @@ body {
 }
 
 #myModal {    
+    height: -webkit-max-content;    
+    height: -moz-max-content;    
     height: max-content;
     min-height: 400px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     display: block;
     background-color: #F0DEB4;
     color: rgb(177, 4, 24);
     border: #3F2800 solid 0.2em;
-    position: fixed;
+    border-radius: 10%;
     margin-top: 1.5em;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
-    border-radius: 10%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
 }
-
-
-
 
 /*-- Colors to convey difficulty levels */
 #easy, 
@@ -304,7 +349,7 @@ body {
 
 /*-- Modals: WIN & LOSE */
 .btn-modal {
-    color: rgb(4, 180, 4);
+    color: rgb(209, 179, 9);
     font-size: 25px;
 }
 
@@ -313,6 +358,7 @@ body {
     background-size: cover;
     background-position: center center;    
 }
+
 .lose-modal-bgr {
     background-image: url("../images/modal_bgr_lose.jpg");
     background-size: cover;
@@ -367,6 +413,8 @@ dfn::after {
   /* background: rgba(0,0,0,0.8); */
   color: #fff;
   pointer-events: none; /* This prevents the box from apearing when hovered. */
+  -webkit-transition: opacity 250ms, top 250ms;
+  -o-transition: opacity 250ms, top 250ms;
   transition: opacity 250ms, top 250ms;
 }
 
@@ -386,8 +434,9 @@ dfn:hover::after {top: 2px;}
 dfn:hover::before {top: 15px;} 
 /* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
 
-/*----------------------------------- MEDIA QUERIES */
 
+
+/*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 992px) {
       /*phones and tablets*/
     #myModal {
@@ -402,29 +451,35 @@ dfn:hover::before {top: 15px;}
     }
 
 .easy-card {
-    resize: both;
+    height: 150px;
+    width: 150px;
 }
 
 .medium-card {
-    resize: both;
+    height: 135px;
+    width: 135px;
 }
 
 .hard-card {
-    resize: both;
+    height: 125px;
+    width: 125px;
 }
     
 @media screen and (max-width: 767px) {
       /*phones*/
-.easy-card{
-    resize: both;
+.easy-card {
+    height: 100px;
+    width: 100px;
 }
 
-.medium-card{
-    resize: both;
+.medium-card {
+    height: 80px;
+    width: 80px;
 }
 
 .hard-card {
-    resize: both;
+    height: 65px;
+    width: 65px;
 }
 
 #myModal {
