@@ -172,6 +172,10 @@ function displayModal(id) {
     }, 300);
 }
 
+$(".rules-button").on("click", function() {
+    $("#rules").modal("show");
+});
+
 /* Clicks countdown setup for a new game, for each game board  */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
@@ -200,13 +204,13 @@ $(".btn-reset, .btn-modal, .info-level-image").on("click", function() {
     if (board == easyCards) { clicksCounter = clicksCounterEasy }; 
     if (board == mediumCards) { clicksCounter = clicksCounterMedium };
     if (board == hardCards) { clicksCounter = clicksCounterHard };
-    $('.click-counter').text("Clicks left: " + clicksCounter);
+    $('.click-counter').text(clicksCounter);
 });
 
 /* Cicks countdown while a player is clicking through cards */
 $(".game-card").on("click", function() {
     clicksCounter--;
-    let countedClicks = ("Clicks left: " + clicksCounter);
+    let countedClicks = (clicksCounter);
     $('.click-counter').text(countedClicks);
 });
 

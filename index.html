@@ -148,14 +148,21 @@
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row board grid">
             <div class="column">
-                <div class="row">
-                    <div class="column">
-                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
-                        <button class="btn-reset btn-outline-succes btn-large" type="button"><i class="fa fa-undo" aria-hidden="true"></i></button> 
+                <div class="row dashboard">
+                    <div class="col-3 align-center">
+                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, Watch, & Click"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
+                    </div>   
+                    <div class="col-3 align-center"> 
+                        <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset the cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
                     </div>
-                    <div class="column">
+                    <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <h5 class="click-counter">Clicks left: 4</h5>
+                            <button class="btn-info btn-outline-succes btn-large rules-button" type="button" title="How to Play"><i class="far fa-question-circle"></i></button>
+                        </div>  
+                    </div>
+                    <div class="col-3 align-center">
+                        <div class="clicks-counter">
+                            <p class="click-counter">4</p5>
                         </div>  
                     </div>
                 </div>
@@ -185,14 +192,21 @@
         <!-- Medium Level cards grid -->
         <div id="game-board-medium" class="row board grid">        
             <div class="column col-12">
-                <div class="row">
-                    <div class="column">
-                        <button id="btn-play-medium" class="btn-play btn-large btn-success" type="button">PLAY</button>
-                        <button class="btn-reset btn-outline-succes btn-large" type="button"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                <div class="row dashboard">
+                    <div class="col-3 align-center">
+                        <button id="btn-play-medium" class="btn-play btn-large btn-success"  type="button" title="Press, Watch, & Click"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
+                    </div>   
+                    <div class="col-3 align-center"> 
+                        <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset the cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
                     </div>
-                    <div class="column">
+                    <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <h5 class="click-counter">Clicks left: 6</h5>
+                            <button class="btn-info btn-outline-succes btn-large rules-button" type="button" title="How to Play"><i class="far fa-question-circle"></i></button>
+                        </div>  
+                    </div>
+                    <div class="col-3 align-center">
+                        <div class="clicks-counter">
+                            <p class="click-counter">4</p5>
                         </div>  
                     </div>
                 </div>
@@ -226,14 +240,21 @@
         <!-- Hard Level cards grid -->
         <div id="game-board-hard" class="row board grid">
             <div class="column col-12">
-                <div class="row">
-                    <div class="column">
-                            <button id="btn-play-hard" class="btn-play btn-large btn-success" type="button">PLAY</button>
-                            <button class="btn-reset btn-outline-succes btn-large" type="button"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                <div class="row dashboard">
+                    <div class="col-3 align-center">
+                        <button id="btn-play-hard" class="btn-play btn-large btn-success"  type="button" title="Press, Watch, & Click"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
+                    </div>   
+                    <div class="col-3 align-center"> 
+                        <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset the cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
                     </div>
-                    <div class="column">
+                    <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <h5 class="click-counter">Clicks left: 9</h5>
+                            <button class="btn-info btn-outline-succes btn-large rules-button" type="button" title="How to Play"><i class="far fa-question-circle"></i></button>
+                        </div>  
+                    </div>
+                    <div class="col-3 align-center">
+                        <div class="clicks-counter">
+                            <p class="click-counter">4</p5>
                         </div>  
                     </div>
                 </div>
@@ -353,6 +374,39 @@
                                         <div class="col-12 text-center">
                                             <h4 class="score-lose-title">SORRY! YOU LOST A RABBIT!</h4> 
                                             <button id="modal-btn-lose" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                        </div>
+                                    </div>    
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INFO/Rules Modal-->
+    <div id="rules" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid lose-modal-bgr">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row justify-content-center">
+                                    <div class="row">
+                                        <h4 class="modal-lose-title">RULES OF THE GAME</h4>
+                                            </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <ol type="1">
+                                                <li>Press Play and watch the White Rabbit "run" across the cards</li>
+                                                <li>Memorise the Rabbit Run pattern</li>
+                                                <li>Click the cards following the same sequence of the Rabbit Run</li>
+                                                <li>If the game feels too easy, choose a different level</li>
+                                            </ol>
+                                            <button id="rules-close" type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                         </div>
                                     </div>    
                                 </div>    

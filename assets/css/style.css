@@ -178,28 +178,26 @@ body {
     display: none;
 }
 
-/*
-.invisible {
-    display: none;
-    visibility: hidden;
+.dashboard {
+    border: #cfb747 ridge 1px;
+    align-items: center;
 }
-
-.visible {
-    display: block;
-    visibility: visible;
-}
-*/
 
 .board {
     max-width: 100%; 
 }
 
-.click-counter {
+/* Text itself - numbers  */
+.click-counter {   
     font-family: Arial, Helvetica, sans-serif;
     color: red;
-    font-size: 2em;
-    text-align: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border: #3F2800 double 1px;
+    vertical-align: middle;
 }
+
 
 /*----  Level & Game cards ---*/
 .levels {
