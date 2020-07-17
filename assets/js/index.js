@@ -24,7 +24,7 @@ let modal = document.getElementById('myModal'),
  level,
  score = 0;
 
-/* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
+ /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
         let levelImg = $(this).attr("id");
@@ -123,15 +123,22 @@ $(".btn-play").on("click", function() {
         $("#" + card).find("img:first").show(); // find first image and show it 
             index++;
             card = b[rabbitRun[index]];
-            
+        
         $("#" + card).find("img:first").hide(); // hide the first image
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
         if  (index >= rabbitRun.length) {
             clearInterval(myInterval);
         }      
     }, speed);
+    
+    console.log("rabbitRun: " + rabbitRun);
     return rabbitRun;
-    // finish - Code here was writtne with help from tutors: Stephen & Tim  
+    // finish - Code here was writtne with help from tutors: Stephen & Tim
+});
+
+$(".btn-play").on("click", function() {    
+    $("#steps")[0].currentTime = 0;
+    $("#steps")[0].play();
 });
 
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
@@ -146,10 +153,21 @@ $(".board").on("click", function() {
 let followRabbit = []; 
 $(".game-card").on("click", function() {     
     if (followRabbit.length === images.length) 
-        return followRabbit ;
+        return followRabbit;
     else 
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
+});
+
+/* Makes cards-images inactive after respectively 4-6-9 clicks  */
+$(".game-card").on("click", function() {     
+    if (followRabbit.length === images.length) 
+    { $(".game-card, .card-image").css({"pointer-events": "none"}) };    
+});
+
+$('.game-card').on("click", function() {
+    $("#cardClick")[0].currentTime = 0;
+    $("#cardClick")[0].play();
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
@@ -168,7 +186,12 @@ $(".game-card").on("click", function() {
 /* Delay in showing win-lose modal after last cards has been clicked */
 function displayModal(id) {
     setTimeout(function() {
-        $(id).modal("show")
+        $(id).modal("show");
+        console.log("id: " + id);
+        if (id === "#lose-modal, #rabbitIsGone") {
+            $("#lose")[0].currentTime = 0;
+            $("#lose")[0].play();
+        }
     }, 300);
 }
 
