@@ -98,6 +98,8 @@ function randomPics(a,b) {
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
 $(".btn-play").on("click", function() {    
+    $("#steps")[0].currentTime = 0;     //Sound for Rabbit Run
+    $("#steps")[0].play();              //Sound for Rabbit Run
     let btnId = $(this).attr("id");
     if (btnId === "btn-play-easy") { b = easyCards, a = easyCards.length }; 
     if (btnId === "btn-play-medium") { b = mediumCards, a = mediumCards.length }; 
@@ -123,22 +125,15 @@ $(".btn-play").on("click", function() {
         $("#" + card).find("img:first").show(); // find first image and show it 
             index++;
             card = b[rabbitRun[index]];
-        
         $("#" + card).find("img:first").hide(); // hide the first image
         $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
         if  (index >= rabbitRun.length) {
             clearInterval(myInterval);
         }      
     }, speed);
-    
     console.log("rabbitRun: " + rabbitRun);
     return rabbitRun;
     // finish - Code here was writtne with help from tutors: Stephen & Tim
-});
-
-$(".btn-play").on("click", function() {    
-    $("#steps")[0].currentTime = 0;
-    $("#steps")[0].play();
 });
 
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
@@ -152,6 +147,8 @@ $(".board").on("click", function() {
 /* Capturing players' clicks through game cards  */
 let followRabbit = []; 
 $(".game-card").on("click", function() {     
+    $("#cardClick")[0].currentTime = 0; //Game card click sound
+    $("#cardClick")[0].play();          //Game card click sound
     if (followRabbit.length === images.length) 
         return followRabbit;
     else 
@@ -165,22 +162,17 @@ $(".game-card").on("click", function() {
     { $(".game-card, .card-image").css({"pointer-events": "none"}) };    
 });
 
-$('.game-card').on("click", function() {
-    $("#cardClick")[0].currentTime = 0;
-    $("#cardClick")[0].play();
-});
-
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
 /* JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays */
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
-        {  displayModal("#win-modal-1", "#caughtMe"), console.log("#win-modal-1")};  
+        {  displayModal("#win-modal-1"), console.log("#win-modal-1")};  
     /* if (score === 2) { 
         setTimeout(function() {
             displayModal("#win-modal-2", "#caughtMe"), console.log("#win-modal-2");
         }, 300)};  */
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
-        { displayModal("#lose-modal, #rabbitIsGone") };
+        { displayModal("#lose-modal") };
 });
 
 /* Delay in showing win-lose modal after last cards has been clicked */
@@ -188,15 +180,24 @@ function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show");
         console.log("id: " + id);
-        if (id === "#lose-modal, #rabbitIsGone") {
+        if (id === "#win-modal-1") {
+            console.log("win win");
+            $("#win")[0].currentTime = 0;
+            $("#win")[0].play();
+        }
+        if (id === "#lose-modal") {
+            console.log("lose lose");
             $("#lose")[0].currentTime = 0;
             $("#lose")[0].play();
         }
     }, 300);
 }
 
+/*  Game rules modal loading + sound */
 $(".rules-button").on("click", function() {
     $("#rules").modal("show");
+    $("#rulesModal")[0].currentTime = 0;
+    $("#rulesModal")[0].play();
 });
 
 /* Clicks countdown setup for a new game, for each game board  */
@@ -264,6 +265,12 @@ $(".btn-reset, .btn-modal").on("click", function() {
         $(".game-card,.card-image").css({"pointer-events": "none"});
         randomPics(a,b);  
 });  
+
+/* Sound for game cards reset */
+$(".btn-reset").on("click", function() {
+    $("#resetSound")[0].currentTime = 0;
+    $("#resetSound")[0].play();
+});
 
 /* Calculating score on closing modal */
 $(".btn-modal").on("click", function() {
