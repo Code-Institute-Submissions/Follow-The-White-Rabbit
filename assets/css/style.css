@@ -351,7 +351,7 @@ body {
     margin-right: auto;
 }
 
-/*-- Modals: WIN & LOSE */
+/*-- Modals: WIN, LOSE, INFO, LevelUp */
 .btn-modal {
     color: rgb(209, 179, 9);
     font-size: 25px;
@@ -393,6 +393,25 @@ body {
 
 .modal-btn-win {
     margin-bottom: 10px;
+}
+
+.level-up-image {
+    height: 200px;
+    width: auto;
+}
+
+#levelup-close-btn, 
+#final-win-btn, 
+#rules-close-btn {
+    margin: 10px 0;
+}
+
+.rules {
+    font-size: 18px;
+}
+
+.info-modal-bgr {
+    background-color: #cfb747;
 }
 
 /*  Difficulty level Bubbble info on hover above level image on the main page */

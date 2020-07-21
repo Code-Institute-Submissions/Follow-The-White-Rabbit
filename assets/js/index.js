@@ -20,7 +20,7 @@ let modal = document.getElementById('myModal'),
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
- speed = 400,
+ speed = 350,
  level,
  score = 0;
 
@@ -67,7 +67,7 @@ $(".info-level-image").on("click", function() {
         followRabbit = [];
         score = 0;  // Score count to zero upon level switch
         $("#score").text(score); 
-        // Below: makes PlayButton active, in case it was clicked on any board, then levels switched, 
+        // Below: makes PlayButton active, in case it was clicked on any board and became inactive, then levels switched, 
         //  and switched back to the first board, so PlayButton does not stay deactivated
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); 
         randomPics(a,b); // inserts new set of randomly generated images into the new card board "level"
@@ -166,11 +166,7 @@ $(".game-card").on("click", function() {
 /* JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays */
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
-        {  displayModal("#win-modal-1"), console.log("#win-modal-1")};  
-    /* if (score === 2) { 
-        setTimeout(function() {
-            displayModal("#win-modal-2", "#caughtMe"), console.log("#win-modal-2");
-        }, 300)};  */
+        {  displayModal("#win-modal")};  
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) !== JSON.stringify(rabbitRun))
         { displayModal("#lose-modal") };
 });
@@ -179,14 +175,11 @@ $(".game-card").on("click", function() {
 function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show");
-        console.log("id: " + id);
-        if (id === "#win-modal-1") {
-            console.log("win win");
+        if (id === "#win-modal") {
             $("#win")[0].currentTime = 0;
             $("#win")[0].play();
         }
         if (id === "#lose-modal") {
-            console.log("lose lose");
             $("#lose")[0].currentTime = 0;
             $("#lose")[0].play();
         }
@@ -225,9 +218,9 @@ $(".btn-play").on("click", function() {
 
 /* Resetting clicks countdown on closing the win-lose modal */
 $(".btn-reset, .btn-modal, .info-level-image").on("click", function() {    
-    if (board == easyCards) { clicksCounter = clicksCounterEasy }; 
-    if (board == mediumCards) { clicksCounter = clicksCounterMedium };
-    if (board == hardCards) { clicksCounter = clicksCounterHard };
+    if (board === easyCards) { clicksCounter = clicksCounterEasy }; 
+    if (board === mediumCards) { clicksCounter = clicksCounterMedium };
+    if (board === hardCards) { clicksCounter = clicksCounterHard };
     $('.click-counter').text(clicksCounter);
 });
 
@@ -237,18 +230,6 @@ $(".game-card").on("click", function() {
     let countedClicks = (clicksCounter);
     $('.click-counter').text(countedClicks);
 });
-
-/*
-//Additing click reaction to a game card
-$(".game-card").on("click", function() {
-    let card = $(this).attr("id");
-    $(card).css({"border":"orange solid 2px"});
-    console.log(card);
-    setTimeout(function() {
-        $(card).css({"border":"white solid 2px"});
-        console.log(card);
-    }, 2000);
-});  */
 
 /* Resetting the whole game board on closing the win-lose modal */
 $(".btn-reset, .btn-modal").on("click", function() {
@@ -276,7 +257,18 @@ $(".btn-reset").on("click", function() {
 $(".btn-modal").on("click", function() {
     let btn = $(this).attr("id");
     console.log(btn);
-    if (btn == "modal-btn-win") { score++ }; 
-    if ((btn == "modal-btn-lose" && score > 0)) { score-- };
+    if (btn === "modal-btn-win") { score++ }
+    if ((btn === "modal-btn-lose" && score > 0)) { score-- }
     $("#score").text(score);    
+});
+
+$("#modal-btn-win").on("click", function() {
+    if (score === 2 && (board === easyCards || board === mediumCards)) { 
+        displayModal("#levelUp");
+    } 
+    if (score === 2 && board === hardCards) { 
+        displayModal("#finalWin");
+        $("#final-win")[0].currentTime = 0;
+        $("#final-win")[0].play();
+    } 
 });
