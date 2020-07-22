@@ -28,9 +28,9 @@
             <div class="row modal-body">
                 <div class="container-fluid flex-container">
                     <div class="row">
-                        <div class="modal-title column" >
-                            <h2 class="modal-title uppercase">Let's Catch</h2>
-                            <h2 class="modal-title uppercase">the White Rabbit</h2>
+                        <div class="modal-title column ">
+                            <h2 class="uppercase text-center">Let's Catch</h2>
+                            <h2 class="uppercase text-center">the White Rabbit</h2>
                         </div>
                         <div class="modal-image column" >
                             <img id="avatar" type="image" src="assets/images/rabbit_avatar.jpg" alt="Rabbit" class="avatar">
@@ -38,20 +38,20 @@
                     </div>
 
                     <!-- Difficulty level choice images -->
-                    <div class="row">
-                        <div class="levels">
-                                <h4 class="modal-title uppercase">select difficulty level</h4>
+                    <div class="row levels">
+                        <div class="column">
+                                <h4 id="select-level" class="modal-title uppercase">select difficulty level</h4>
                             <div class="row">
                                 <div class="column">
-                                    <div id="modal-row" class="row">
-                                        <div  class="column d-flex justify-content-center">
+                                    <div id="modal-row" class="row justify-content-center">
+                                        <div  class="column d-flex ">
                                             <dfn data-info="EASY">
                                                 <div id="easy" class="level-card">
                                                     <a  href="#"><img id="imageE" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image"></a>
                                                 </div>
                                             </dfn>
                                         </div>
-                                        <div class="column  d-flex justify-content-center">
+                                        <div class="column  d-flex">
                                             <dfn data-info="MEDIUM">
                                                 <div id="medium" class="level-card">
                                                     <a href="#"><img id="imageM" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image"></a>
@@ -79,22 +79,22 @@
     <div id="main" class="container-fluid">
 
         <!-- Player/level/score info board -->
-        <div id="player-board" class="container-fluid flex-container justify-content-center">
+        <div id="player-board" class="justify-content-center">
             <div id="player-info" class="row">
                 <!-- Level choice buttons -->
-                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12">
-                    <div class="row">
-                        <div class="column col-4">
+                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 justify-content-center">
+                    <div class="row  ">
+                        <div class="column card-holder col-4">
                             <div id="easy-sm" class="level-button">
                                 <a href="#"><img id="pic_E" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
                             </div>
                         </div>
-                        <div class="column d-flex justify-content-center card-holder col-4">
+                        <div class="column card-holder col-4">
                             <div id="medium-sm" class="level-button">
                                 <a href="#"><img id="pic_M" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
                             </div>
                         </div>
-                        <div class="column d-flex justify-content-center card-holder col-4">
+                        <div class="column card-holder col-4">
                             <div id="hard-sm" class="level-button">
                                 <a href="#"><img id="pic_H" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
                             </div>
@@ -103,28 +103,27 @@
                 </div> 
 
                 <!-- Score board -->
-                <div id="score-info" class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="row"> 
+                <div id="score-info" class="col-12 col-md-12 col-sm-12">
                         <div class="column justify-content-center">
                             <div class="row score-box">
-                                <div class="col justify-content-center">
-                                    <h4 id="score-title">CAUGHT</h4>
+                                <div class="col-12 justify-content-center">
+                                    <h4 class="score-title text-center">CAUGHT</h4>
                                 </div>
                             </div>
                             <div class="row score-box">
-                                <div class="col justify-content-center">
-                                    <h4 id="score" class="text-center">0</h4>
+                                <div class="col-12 justify-content-center">
+                                    <h4 id="score" class="score-title text-center">0</h4>
                                 </div>
                             </div> 
                         </div> 
                          <div class="column">
                             <div class="row">
-                                <div class="col justify-content-center">
+                                <div class="col-12 justify-content-center">
                                     <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
                                 </div> 
                             </div>
                         </div> 
-                    </div>
+                    
                 </div> 
             </div>
         </div>
@@ -150,7 +149,7 @@
             <div class="column">
                 <div class="row dashboard">
                     <div class="col-3 align-center">
-                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true"></i></button>
+                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
                     </div>   
                     <div class="col-3 align-center"> 
                         <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
@@ -162,11 +161,11 @@
                     </div>
                     <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <p class="click-counter">4</p5>
+                            <p class="click-counter">4</p>
                         </div>  
                     </div>
                 </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="column grid">
                         <div id="rowOne" class="row">
                             <div id="col_1" class="column">
@@ -206,31 +205,33 @@
                     </div>
                     <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <p class="click-counter">4</p5>
+                            <p class="click-counter">6</p>
                         </div>  
                     </div>
                 </div>
-                <div  class="column">
-                    <div id="rowOne" class="box-white-curved-corners row ">
-                        <div id="col_1" class="column">
-                            <div id="card_1" class="game-card medium-card"></div>
+                <div class="row justify-content-center">
+                    <div class="column">
+                        <div id="rowOne" class="box-white-curved-corners row ">
+                            <div id="col_1" class="column">
+                                <div id="card_1" class="game-card medium-card"></div>
+                            </div>
+                            <div id="col_2" class="column">
+                                <div id="card_2" class="game-card medium-card"></div>
+                            </div>
+                            <div id="col_3" class="column">
+                                <div id="card_3" class="game-card medium-card"></div>
+                            </div>
                         </div>
-                        <div id="col_2" class="column">
-                            <div id="card_2" class="game-card medium-card"></div>
-                        </div>
-                        <div id="col_3" class="column">
-                            <div id="card_3" class="game-card medium-card"></div>
-                        </div>
-                    </div>
-                    <div id="rowTwo" class="row game-row justify-content-center">
-                        <div id="col_4" class="column">
-                            <div id="card_4" class="game-card medium-card"></div>
-                        </div>
-                        <div id="col_5" class="column">
-                            <div id="card_5" class="game-card medium-card"></div>
-                        </div>
-                        <div id="col_6" class="column">
-                            <div id="card_6" class="game-card medium-card"></div>
+                        <div id="rowTwo" class="row game-row justify-content-center">
+                            <div id="col_4" class="column">
+                                <div id="card_4" class="game-card medium-card"></div>
+                            </div>
+                            <div id="col_5" class="column">
+                                <div id="card_5" class="game-card medium-card"></div>
+                            </div>
+                            <div id="col_6" class="column">
+                                <div id="card_6" class="game-card medium-card"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,7 +255,7 @@
                     </div>
                     <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <p class="click-counter">4</p5>
+                            <p class="click-counter">9</p>
                         </div>  
                     </div>
                 </div>
