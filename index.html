@@ -147,7 +147,7 @@
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row board grid justify-content-center">
             <div class="column justify-content-center">
-            
+
                 <div class="row dashboard">
                     <div class="col-3 align-center">
                         <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
@@ -299,6 +299,8 @@
         </div>   
     </div>
 
+ 
+
     <!-- WIN modal  -->
     <div id="win-modal" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
@@ -340,7 +342,7 @@
                                 <div class="row justify-content-center">
                                     <div>
                                         <h4 class="modal-lose-title">I AM GONE!</h4>
-                                            <img id="win-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
+                                            <img id="lose-image" type="image" src="assets/images/lose_image.jpg" alt="Door" class="win-lose-image">
                                     </div>
                                     <div class="row">
                                         <div class="col-12 text-center">
@@ -361,14 +363,13 @@
     <div id="rules" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-body">
+    
                     <div class="container-fluid info-modal-bgr">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row justify-content-center">
                                     <div class="row">
-                                        <h4 class="modal-lose-title">RULES OF THE GAME</h4>
+                                        <h4 id="rules-modal-title">RULES OF THE GAME</h4>
                                             </div>
                                     <div class="row">
                                         <div class="col-12 text-left rules">
@@ -390,8 +391,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+       
         </div>
     </div>
 
@@ -445,6 +445,32 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- FOOTER -->
+    
+    <button id="btn-footer" type="button" class="btn sticky" data-toggle="modal" data-target="#footer"><i class="fas fa-copyright"></i></button>
+    
+    <!-- FOOTER Modal -->
+    <div id="footer" class="container-fluid modal fade justify-content-center" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg container-fluid info-modal-bgr footer">
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-4 col-md-5">
+                    <p id="copy-modal-title">Follow the White Rabbit!</p>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <p>Designed & Developed</p>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <a class="" href="https://github.com/OlekSt?tab=repositories" target="_blank" title="My Github profile">
+            			<p>O.Statsenko</p>
+            		</a>
+                </div>
+                <div class="col-lg-1 col-md-12 justify-content-center">
+                    <button id="btn-close-copyright" type="button" class="btn" data-dismiss="modal"><i class="far fa-check-circle"></i></button>   
                 </div>
             </div>
         </div>

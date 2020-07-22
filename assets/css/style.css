@@ -317,6 +317,7 @@ body {
 }
 #select-level {
     letter-spacing: 2px;
+    margin-bottom:10px;
 }
 
 /*-- Colors to convey difficulty levels */
@@ -409,6 +410,44 @@ body {
     background-image: url("../images/modal_bgr.jpg");
     background-size: cover;
     background-position: center center;    
+}
+
+/* Footer modal */
+
+#btn-footer {
+    font-size: 2em;
+    color: red;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+#footer .modal-dialog {
+    width: 90%;
+}
+
+#footer p {
+    font-size: 1em;
+}
+
+.footer {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10%;
+}
+
+#btn-close-copyright {
+    color: white;
+}
+
+#copy-modal-title {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /*  Difficulty level Bubbble info on hover above level image on the main page */
@@ -589,5 +628,9 @@ dfn:hover::before {top: 15px;}
         height: 55px;
         width: 55px;
         margin: 7px 3px 5px 10px;
+    }
+    #lose-image {
+        width: 250px;
+        height: auto;
     }
 }

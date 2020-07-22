@@ -36,6 +36,7 @@ $(document).ready(function(){
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
         randomPics(a,b); // generates random images into game cards
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
+        $("#btn-footer").show();  // show button for copyright info, which opens a modal with it
         board = b;
         return board, level;
     }); 
