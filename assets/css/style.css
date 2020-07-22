@@ -17,7 +17,7 @@ html, body {
 body {
     font-family: "Alice", sans-serif;
     font-size: 15px;   
-    background-image: url("../images/bg_med.png");    
+    background-image: url("../images/bg_med_02.jpg");    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -180,6 +180,8 @@ body {
 }
 
 .dashboard {
+    
+    margin: 0 auto;
     border: #cfb747 ridge 1px;
     align-items: center;
     padding: 5px 0;
@@ -549,7 +551,7 @@ dfn:hover::before {top: 15px;}
     dfn:hover::after {top: 10px;}
     
     #player-board {
-        width: 100%;
+        width: 95%;
     }
 
     .score-title {
@@ -563,7 +565,7 @@ dfn:hover::before {top: 15px;}
     #game-board-easy,
     #game-board-medium,
     #game-board-hard {
-        width: 100%;
+        width: 95%;
         height: auto;
         padding: 2% 2.5%;
     }
