@@ -21,14 +21,15 @@ This document is intended to record testing at various stages of development of 
     Testing on all difficulty level boards:
     - Incorrect RabbitRun returns both Win and Lost messages.
     Corrected the code for rabbitRun & followRaabit, tested clicking through all three difficulty levels, both correct and wrong set of clicks, at least 6 times each, now works correctly. 
-    
-    
+        
 
 4. Clicks Countdown
     Each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
     Tested clicks across three difficultty levels. Works correctly. 
     BUG: If reset button is pressed before Play Button for Rabbit Run after loading from the main screen, "Clicks left" shows "undefined" instead of 4/6/9.
         Fixed. 
+    BUG: Wrong number of clicks left after choosing a level from the initial page - 4 clicks for all the boards. Working correctly on reset button and level switching.
+        Fixed.
 
 5. Win-Lose modal
     Added modals for both cases. Tested, works correctly: Win Modal in case a player repeated the Rabbit's run correctly, and Lose modal if otherwise. 

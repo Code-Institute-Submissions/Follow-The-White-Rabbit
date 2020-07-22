@@ -150,14 +150,14 @@
             <div class="column">
                 <div class="row dashboard">
                     <div class="col-3 align-center">
-                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, Watch, & Click"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
+                        <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true"></i></button>
                     </div>   
                     <div class="col-3 align-center"> 
-                        <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset the cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
+                        <button class="btn-reset btn-outline-succes btn-large" type="button" title="Reset cards"><i class="fa fa-undo" aria-hidden="true"></i></button> 
                     </div>
                     <div class="col-3 align-center">
                         <div class="clicks-counter">
-                            <button class="btn-info btn-outline-succes btn-large rules-button" type="button" title="How to Play"><i class="far fa-question-circle"></i></button>
+                            <button class="btn-info btn-outline-succes btn-large rules-button" type="button" title="How to play"><i class="far fa-question-circle"></i></button>
                         </div>  
                     </div>
                     <div class="col-3 align-center">
@@ -298,7 +298,7 @@
     </div>
 
     <!-- WIN modal  -->
-    <div id="win-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="win-modal" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -314,7 +314,7 @@
                                     <div class="row">
                                         <div class="col-12 text-center">
                                                 <h4 class="score-win-title">CONGRATULATIONS! YOU CAUGHT A RABBIT!</h4> 
-                                            <button id="modal-btn-win" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                            <button id="modal-btn-win" type="button" class="btn btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                         </div>
                                     </div>    
                                 </div>    
@@ -327,7 +327,7 @@
     </div>
 
     <!-- LOSE Modal -->
-    <div id="lose-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="lose-modal" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -343,7 +343,7 @@
                                     <div class="row">
                                         <div class="col-12 text-center">
                                             <h4 class="score-lose-title">SORRY! YOU LOST A RABBIT!</h4> 
-                                            <button id="modal-btn-lose" type="button" class="btn btn-success btn-lg btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                            <button id="modal-btn-lose" type="button" class="btn btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                         </div>
                                     </div>    
                                 </div>    
@@ -356,7 +356,7 @@
     </div>
 
     <!-- INFO/Rules Modal-->
-    <div id="rules" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="rules" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -380,7 +380,7 @@
                                         </div>
                                         <div class="col-12 ">
                                             <div class="row justify-content-center">
-                                                <button id="rules-close-btn" type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                                <button id="rules-close-btn" type="button" class="btn btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                             </div>
                                         </div>
                                     </div>    
@@ -394,12 +394,12 @@
     </div>
 
     <!-- Level Up modal (suggesting to switch to a more difficult level) -->
-    <div id="levelUp" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="levelUp" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="container-fluid lose-modal-bgr">
+                    <div class="container-fluid level-up-bgr">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row justify-content-center">
@@ -407,10 +407,10 @@
                                     <h4 class="modal-lose-title">TRY ANOTHER LEVEL!</h4>
                                 </div>   
                                 <div class="col-12 text-center">            
-                                    <img id="level-up" type="image" src="assets/images/level_up.jpg" alt="rabbit" class="level-up-image">         
+                                    <img id="level-up-img" type="image" src="assets/images/level_up.jpg" alt="rabbit">         
                                 </div>            
                                 <div class="col-12 text-center">
-                                    <button id="levelup-close-btn" type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                    <button id="levelup-close-btn" type="button" class="btn btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                 </div> 
                             </div>
                         </div>
@@ -421,12 +421,12 @@
     </div>
 
     <!-- FINAL WIN modal (after 7 completed games) -->
-    <div id="finalWin" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="finalWin" class="modal fade centered" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="container-fluid lose-modal-bgr">
+                    <div class="container-fluid final-modal-bgr">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row justify-content-center">
@@ -435,10 +435,10 @@
                                     <h3 class="modal-lose-title">YOU WIN!</h3>
                                 </div>   
                                 <div class="col-12 text-center">            
-                                    <img id="level-up" type="image" src="assets/images/level_up.jpg" alt="rabbit" class="level-up-image">         
+                                    <img id="final-win-img" type="image" src="assets/images/level_up.jpg" alt="rabbit" >         
                                 </div>            
                                 <div class="col-12 text-center">
-                                    <button id="final-win-btn" type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
+                                    <button id="final-win-btn" type="button" class="btn btn-modal" data-dismiss="modal"><i class="l far fa-check-circle"></i></button>
                                 </div> 
                             </div>
                         </div>

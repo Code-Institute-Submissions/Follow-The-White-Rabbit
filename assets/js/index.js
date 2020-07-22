@@ -264,10 +264,10 @@ $(".btn-modal").on("click", function() {
 
 /* Modal suggesting to go a level up  */
 $("#modal-btn-win").on("click", function() {
-    if (score === 2 && (board === easyCards || board === mediumCards)) { 
+    if (score === 1 && (board === easyCards || board === mediumCards)) { 
         displayModal("#levelUp");
     } 
-    if (score === 2 && board === hardCards) { 
+    if (score === 1 && board === hardCards) { 
         displayModal("#finalWin");
         $("#final-win")[0].currentTime = 0;
         $("#final-win")[0].play();
