@@ -28,9 +28,9 @@ let modal = document.getElementById('myModal'),
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
         let levelImg = $(this).attr("id");
-        if (levelImg === "imageE") { b = easyCards, a = b.length, level = "#game-board-easy" };
-        if (levelImg === "imageM") { b = mediumCards, a = b.length, level = "#game-board-medium" }; 
-        if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard" }; 
+        if (levelImg === "imageE") { b = easyCards, a = b.length, level = "#game-board-easy", clicksCounter = clicksCounterEasy };
+        if (levelImg === "imageM") { b = mediumCards, a = b.length, level = "#game-board-medium", clicksCounter = clicksCounterMedium }; 
+        if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard", clicksCounter = clicksCounterHard }; 
         $('#myModal').hide();
         $("#main, #player-board").show();
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
@@ -44,9 +44,9 @@ $(document).ready(function(){
 /* Switching between difficulty levels on the player info board  */
 $(".info-level-image").on("click", function() { 
         let currentBoard;
-        if (board.length === 4) currentBoard = "#game-board-easy";
-        if (board.length === 6) currentBoard = "#game-board-medium"; 
-        if (board.length === 9) currentBoard = "#game-board-hard"; 
+        if (board.length === 4) { currentBoard = "#game-board-easy" };
+        if (board.length === 6) { currentBoard = "#game-board-medium" }; 
+        if (board.length === 9) { currentBoard = "#game-board-hard" }; 
         
         index = 0; // while loop removes images from the board to be closed, so that if it is reopened, images are not double inserted
         while (index < board.length) { 
@@ -142,6 +142,7 @@ $(".board").on("click", function() {
     if (boardId === "game-board-easy") { board = easyCards };
     if (boardId === "game-board-medium") { board = mediumCards };
     if (boardId === "game-board-hard") { board = hardCards };
+    return board;
 });
 
 /* Capturing players' clicks through game cards  */
@@ -216,8 +217,8 @@ $(".btn-play").on("click", function() {
         }, speed*9)}; // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 
-/* Resetting clicks countdown on closing the win-lose modal */
-$(".btn-reset, .btn-modal, .info-level-image").on("click", function() {    
+/* Resetting clicks countdown on closing the win-lose modal, switching levels */
+$(".btn-reset, .btn-modal, .info-level-image, .level-card").on("click", function() {    
     if (board === easyCards) { clicksCounter = clicksCounterEasy }; 
     if (board === mediumCards) { clicksCounter = clicksCounterMedium };
     if (board === hardCards) { clicksCounter = clicksCounterHard };
@@ -256,12 +257,12 @@ $(".btn-reset").on("click", function() {
 /* Calculating score on closing modal */
 $(".btn-modal").on("click", function() {
     let btn = $(this).attr("id");
-    console.log(btn);
     if (btn === "modal-btn-win") { score++ }
     if ((btn === "modal-btn-lose" && score > 0)) { score-- }
     $("#score").text(score);    
 });
 
+/* Modal suggesting to go a level up  */
 $("#modal-btn-win").on("click", function() {
     if (score === 2 && (board === easyCards || board === mediumCards)) { 
         displayModal("#levelUp");
