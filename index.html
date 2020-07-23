@@ -77,63 +77,50 @@
    
     <!-- Game container with card grids -->
     <div id="main" class="container-fluid">
-
-        <!-- Player/level/score info board -->
-        <div id="player-board" class="justify-content-center">
-            <div id="player-info" class="row">
-                <!-- Level choice buttons -->
-                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 justify-content-center">
-                    <div class="row  ">
-                        <div class="column card-holder col-4">
-                            <div id="easy-sm" class="level-button">
-                                <a href="#"><img id="pic_E" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
-                            </div>
-                        </div>
-                        <div class="column card-holder col-4">
-                            <div id="medium-sm" class="level-button">
-                                <a href="#"><img id="pic_M" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
-                            </div>
-                        </div>
-                        <div class="column card-holder col-4">
-                            <div id="hard-sm" class="level-button">
-                                <a href="#"><img id="pic_H" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-
-                <!-- Score board -->
-                <div id="score-info" class="col-12 col-md-12 col-sm-12">
-                        <div class="column justify-content-center">
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 class="score-title text-center">CAUGHT</h4>
-                                </div>
-                            </div>
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 id="score" class="score-title text-center">0</h4>
-                                </div>
-                            </div> 
-                        </div> 
-                         <div class="column">
-                            <div class="row">
-                                <div class="col-12 justify-content-center">
-                                    <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
-                                </div> 
-                            </div>
-                        </div> 
-                    
-                </div> 
-            </div>
-        </div>
-
-        
+       
 
         <!-- Easy Level cards grid -->
-        <div id="game-board-easy" class="row board grid justify-content-center">
-            <div class="column justify-content-center">
-
+        <div id="game-board-easy" class="container board justify-content-center">
+            
+            <div id="info-board" class="row">
+                    
+                        <!--  Level choice buttons -->
+                <div id="level-info" class="col-lg-6 col-sm-12 justify-content-center">
+                    <div class="row">
+                        <div id="easy-sm" class="col-4 level-button">
+                            <a href="#"><img id="pic_E" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
+                        </div>
+                        <div id="medium-sm" class="col-4 level-button">
+                            <a href="#"><img id="pic_M" type="image" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
+                        </div>
+                        <div id="hard-sm" class="col-4 level-button">
+                            <a href="#"><img id="pic_H" type="image" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
+                        </div>
+                    </div>
+                </div>    
+                    
+                <!-- Score board -->
+                <div id="score-info" class="col-lg-6 col-sm-12 justify-content-center">
+                    <div class="col-6 justify-content-center">
+                        <div class="row">
+                            <div class="col-12 justify-content-center">
+                                <h4 class="score-title text-center">CAUGHT</h4>
+                            
+                                <div class="row">
+                                    <div class="col-6 justify-content-center">
+                                        <h4 id="score" class="score-title text-center">0</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div> 
+                
+                    
+                </div>
                 <div class="row dashboard">
                     <div class="col-3 align-center">
                         <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
@@ -172,7 +159,7 @@
                         </div>
                     </div>
                 </div> 
-            </div> 
+        
         </div>
 
         <!-- Medium Level cards grid -->
@@ -283,6 +270,8 @@
                 </div>
             </div>    
         </div>   
+            </div>
+        </div>
     </div>
 
     <!-- WIN modal  -->

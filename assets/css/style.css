@@ -69,8 +69,7 @@ body {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    min-width: 40%;
-    min-height: 40%;
+   
     padding: 5px 15px;
     -ms-flex-line-pack: center;
     align-content: center;
@@ -81,21 +80,33 @@ body {
     margin-right: auto;
     border-radius: 5%;
     display: none;
-    top: 50%;
-    left: 50%;
+ 
 }
 
 #score-info {
-    width: 100px;
+    width: 60px;
     display: inline-block;
     margin: auto;
     text-align: center;
+    border: black solid 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    float: right;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
+
+
 #level-info {
-    width: 250px;
+    width: max-content;
     float: right;
     vertical-align: middle;
+}
+#info-board {
+    border: #3F2800 solid 1px;
+    width: 120%;
 }
 
 .info-card {
@@ -111,33 +122,24 @@ body {
 }
 
 .level-button {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    padding: 0.2em;
+    width: 50;
+    padding: 0.3em;
     border: black solid 0.5px;
     border-radius: 8%;
-    margin: none;
+    margin: 0 2px;
+    float: right;
 }
 
+
+
 #small_rabbit {
-    height: 75px;
-    width: 75px;
+    height: 55px;
+    width: 55px;
     margin: 10px 5px 5px 15px;
 }
 
-#score-info {
-    border: black solid 1px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
+
 
 .score-title {
     font-size: 25px;
@@ -151,10 +153,6 @@ body {
     font-weight: bold;
 }
 
-.score-box {
-    margin: 0;
-    padding: 0;
-}
 
 /* -- Game card boards -- */
 #game-board-easy,
@@ -333,7 +331,7 @@ body {
 
 #hard,
 #hard-sm {
-    background-color: rgb(c);
+    background-color: rgb(255,0,0);
 }
 
 #easy:hover,
@@ -644,7 +642,9 @@ dfn:hover::before {top: 15px;}
     dfn:hover::after {top: 10px;}
     
     #player-board {
-        width: 95%;
+        width: max-content;
+        height: max-content;
+        
     }
 
     .score-title {
