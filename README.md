@@ -2,9 +2,9 @@
 
 !!!!Image to be inserted!!!!
 
-## Memory Game .....?
+## Memory Matching Game - Follow The White Rabbit
 
-[Github Pages link](link to be inserted/)
+[Follow The White Rabbit - Github Pages link](https://olekst.github.io/Follow-The-White-Rabbit/)
 
 The project is a website f
 The business goals of this website are:
@@ -71,10 +71,31 @@ Images:
 
 
 ## Technologies Used
+- This project is built using HTML, CSS & JavaScript programming languages.
+- [JQuery](https://jquery.com) to simplify DOM manipulation
+- [Gitpod](https://gitpod.io/) for coding the project.
+- [GitHub](https://github.com/) to store & share the project's code. 
+- [ChromeDevtools](https://developers.google.com/web/tools/chrome-devtools) to check created code and possible inconsistences, find best parameters for various code items. 
+- [Bootstrap](https://www.bootstrapcdn.com/) to simplify website's structure. 
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) for button icons.
+- [Google Fonts](https://fonts.google.com/) for fonts.
+- [AutoPrefixer](https://autoprefixer.github.io/) to make sure css prefixes cover all browser versions.
 
 
 ## Testing
+The validity of the code and potential errors were checked for both HTML and CSS using the following validators:
 
+[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
+
+* *Got warnings for a number of added by the Autoprefixer parameters, e.g. "-webkit-box-sizing".*
+
+[W3C Markup Validation](https://validator.w3.org/)
+
+* 
+
+The responsiveness of the website for various screen sizes was tested via this website: 
+
+[Am I responsive](http://ami.responsivedesign.is/). Though it tests for various Apple devices, it gave a solid idea whether the website is responsive. 
 
 
 ## Testing client stories 
@@ -95,11 +116,42 @@ Images:
 
 [GitHub Pages Website](link to be added)
 
-.....
+[GitHub Pages Website](https://olekst.github.io/STOdrones---aerial-photography/)
+
+Gitpod was used to code this project. It was then committed and pushed to Github using the command line and deployed on GitHub pages from the repository.
+
+In order to deploy the site, firstly I logged into GitHub Pages. Following this I chose OlekSt/User-Centric-Frontend-Milestone-Project-1 and then clicked on ‘Settings’. I then scrolled down to ‘Github Pages’ and changed the ‘Source’ to ‘master branch’. From this, the page automatically refreshed and I scrolled up and found the link to the deployed website. 
 
 ### Running the project locally
 
-.....
+In order to clone this project, it is necessary to follow these steps:
+
+1. Go to the [Project Repository](https://olekst.github.io/Follow-The-White-Rabbit/).
+2. Click 'Clone or Download'.
+3. In the Clone with HTTPs section, click he clone URL for the repository.
+4. Open the Terminal and change the working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL you copied in Step 2.
+
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+6. Press Enter.
+
+These instructions were taken from the following link: [Cloning a Repository](https://help.github.com/en/articles/cloning-a-repository).
+
+
+### Running the project locally
+
+In order to clone this project, it is necessary to follow these steps:
+
+1. Go to the [Project Repository](https://olekst.github.io/Follow-The-White-Rabbit/).
+2. Click 'Clone or Download'.
+3. In the Clone with HTTPs section, click he clone URL for the repository.
+4. Open the Terminal and change the working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL you copied in Step 2.
+
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+6. Press Enter.
 
 These instructions were taken from the following link: [Cloning a Repository](https://help.github.com/en/articles/cloning-a-repository).
 
@@ -111,10 +163,17 @@ These instructions were taken from the following link: [Cloning a Repository](ht
 Content of the website is created or curated by Alexey Statsenko. 
 
 #### Media
-1. 
-2. 
 
+##### Images
+- Main background image, B&W & colored images of the white rabbit were downloaded from a blog of [Pan Macmillan UK publishing house](https://www.panmacmillan.com/)
+- Images for game cards, win, lose modals were downloaded from [Jose Avalos' website](https://www.tumbex.com/josepeacock.tumblr/posts).
 
+##### Audio
+- All audio files were downloaded from [Free Sound Library](https://www.freesoundslibrary.com/).
+
+##### Code
+- Main modal code was copied from [Code Lab](https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load).
+- Code for other modals was copied from [W3Schools](https://www.w3schools.com/bootstrap/bootstrap_modal.asp).
 
 #### Acknowledgements
 
@@ -123,3 +182,6 @@ Content of the website is created or curated by Alexey Statsenko.
 
 Special thanks to: 
 * My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
+
+#### Disclaimer
+The content of this website, including the images used, are for educational purposes only.
