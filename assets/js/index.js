@@ -31,7 +31,7 @@ $(document).ready(function(){
         if (levelImg === "imageE") { b = easyCards, a = b.length, level = "#game-board-easy", clicksCounter = clicksCounterEasy };
         if (levelImg === "imageM") { b = mediumCards, a = b.length, level = "#game-board-medium", clicksCounter = clicksCounterMedium }; 
         if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard", clicksCounter = clicksCounterHard }; 
-        $('#myModal').hide();
+        $(modal).hide();
         $("#main, #player-board").show();
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
         randomPics(a,b); // generates random images into game cards
