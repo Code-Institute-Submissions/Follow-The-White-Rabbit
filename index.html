@@ -79,11 +79,11 @@
     <div id="main" class="container-fluid">
 
         <!-- Player/level/score info board -->
-        <div id="player-board" class="justify-content-center">
-            <div id="player-info" class="row">
+        <div id="player-board">
+            <div id="player-info" class="row justify-content-center">
                 <!-- Level choice buttons -->
-                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 justify-content-center">
-                    <div class="row  ">
+                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xm-12">
+                    <div id="level-images" class="row justify-content-center">
                         <div class="column card-holder col-4">
                             <div id="easy-sm" class="level-button">
                                 <a href="#"><img id="pic_E" type="image" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
@@ -103,37 +103,23 @@
                 </div> 
 
                 <!-- Score board -->
-                <div id="score-info" class="col-12 col-md-12 col-sm-12">
-                        <div class="column justify-content-center">
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 class="score-title text-center">CAUGHT</h4>
-                                </div>
-                            </div>
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 id="score" class="score-title text-center">0</h4>
-                                </div>
-                            </div> 
+                <div id="score-info" class="col-lg-6 col-md-12 col-sm-12 col-xm-12">
+                        
+                        <div id="score-box" class="col-4">
+                            <h5 class="score-title">CAUGHT</h5>
+                            <h4 id="score" class="score-title">0</h4> 
+                        </div>
+                        <div class="col-4">
+                            <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
                         </div> 
-                         <div class="column">
-                            <div class="row">
-                                <div class="col-12 justify-content-center">
-                                    <img id="small_rabbit" type="image" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
-                                </div> 
-                            </div>
-                        </div> 
-                    
+                    </div>
                 </div> 
             </div>
-        </div>
-
-        
+        </div>        
 
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row board grid justify-content-center">
             <div class="column justify-content-center">
-
                 <div class="row dashboard">
                     <div class="col-3 align-center">
                         <button id="btn-play-easy" class="btn-play btn-large btn-success"  type="button" title="Press, watch, & follow"><i class="fa fa-play-circle-o" aria-hidden="true">PLAY</i></button>
@@ -269,7 +255,7 @@
                             <div id="card6" class="game-card hard-card"></div>
                         </div>
                     </div>
-                    <div id="rowThree" class="row game-row">
+                    <div id="rowThree" class="row game-row justify-content-center">
                         <div id="col_7" class="column">
                             <div id="card7" class="game-card hard-card"></div>
                         </div>
