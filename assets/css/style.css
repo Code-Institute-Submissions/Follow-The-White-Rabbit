@@ -320,6 +320,11 @@ body {
     margin-bottom:10px;
 }
 
+#easy, 
+#medium,
+#hard {
+    margin-top: 5px;
+}
 /*-- Colors to convey difficulty levels */
 #easy, 
 #easy-sm {
@@ -543,8 +548,8 @@ dfn::after {
 dfn::before {
   content: '';
   display: block;
-  position: absolute;
-  top: -10px; left: 15px;
+  position: fixed;
+  top: 0px; left: 15px;
   opacity: 0;
   width: 0; height: 0;
 } 
@@ -560,7 +565,7 @@ dfn:hover::before {top: 15px;}
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 992px) {
-      /*phones and tablets*/
+      /*bigger mobile phones and tablets*/
     #myModal {
         max-width: 95%;
     }
@@ -586,27 +591,31 @@ dfn:hover::before {top: 15px;}
     height: 125px;
     width: 125px;
 }
-    
-@media screen and (max-width: 767px) {
-      /*phones*/
-.easy-card {
-    height: 100px;
-    width: 100px;
-}
 
-.medium-card {
-    height: 80px;
-    width: 80px;
-}
+@media screen and (max-width: 768px) {
+      /* bigger phones and tablets */
+    #game-board-easy,
+    #game-board-medium,
+    #game-board-hard {
+        width: 85%;
+        height: auto;
+        padding: 2% 2.5%;
+    }
+    .easy-card {
+        height: 150px;
+        width: 150px;
+    }
+    .medium-card,
+    .hard-card {
+        height: 125px;
+        width: 125px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 
-.hard-card {
-    height: 65px;
-    width: 65px;
-}
-
-#myModal {
-    max-width: 95%;
- }
+    #myModal {
+        max-width: 95%;
+    }
 
     .info-card {
         height: 50px;
@@ -619,8 +628,30 @@ dfn:hover::before {top: 15px;}
         font-size: 17px;
     }
 
-    @media screen and (max-width: 375px) {
-      /*small phones*/
+@media screen and (max-width: 576px) {
+    /*mobile phones*/
+    #game-board-easy,
+    #game-board-medium,
+    #game-board-hard {
+        width: 95%;
+        height: auto;
+        padding: 2% 2.5%;
+    }
+    .easy-card {
+        height: 130px;
+        width: 130px;
+    }
+    .medium-card,
+    .hard-card {
+        height: 100px;
+        width: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    /*small phones*/
     #myModal {
         max-width: 95%;
     }
