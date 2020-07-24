@@ -333,7 +333,7 @@ body {
 
 #hard,
 #hard-sm {
-    background-color: rgb(c);
+    background-color: rgb(255,0,0);
 }
 
 #easy:hover,
@@ -356,6 +356,10 @@ body {
     color: white;
 }
 
+#main-win-title {
+    margin-top: 10px;
+}
+
 .win-modal-bgr {
     background-image: url("../images/modal_bgr_win.jpg");
     background-size: cover;
@@ -364,7 +368,8 @@ body {
 }
 
 #lose-modal {
-    padding: 0;
+    padding-right: 0;
+    margin: 0;
 }
 
 .lose-modal-bgr {
@@ -375,12 +380,14 @@ body {
 }
 
 .modal-lose-title,
-.modal-win-title {
+.modal-win-title, 
+.level-up-title, 
+.final-win-title {
     font-family: "Alice", sans-serif;
     font-size: 32px;
     font-weight: 100;
     text-align: center;
-    
+    color: white;
 }
 
 .score-win-title,
@@ -389,6 +396,8 @@ body {
     font-size: 20px;
     font-weight: 100;
     text-align: center;
+    color: white;
+    margin: 0 5px;
 }
 
 .score-lose-title,
@@ -406,6 +415,7 @@ body {
 .rules-list {
     font-size: 18px;
     color:rgba(0, 0, 0, 0.678);
+    
 }
 
 .info-modal-bgr {
@@ -434,11 +444,6 @@ body {
     background-position: center center;    
 }
 
-.final-win-title {
-    color: white;
-    font-size: 1.5em;
-}
-
 #you-win {
     color: rgb(17, 0, 255);
     font-weight: bold;
@@ -456,6 +461,7 @@ body {
 
 #footer {
     padding: 0;
+    position: fixed;
 }
 
 #footer .modal-dialog {
@@ -470,8 +476,8 @@ body {
     width: max-content;
     height: max-content;
     position: absolute;
-    
-    left: 50%;
+    right: 0;
+    left: 0;
     bottom: 0;
     border-radius: 10%;
     border: #cfb747 solid 0.5px;
@@ -480,7 +486,6 @@ body {
 .footer-box {
     margin: 0;
     padding: 0;
-    
 }
 
 #btn-close-copyright {
@@ -496,12 +501,16 @@ body {
 #rabbit-icon {
     height: 20px;
     width: 20px;
-    margin-bottom: 3px;
-    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .pull-right{
   float:right;
+}
+
+#disclaimer {
+    font-size: 1px;
 }
 
 /*  Difficulty level Bubbble info on hover above level image on the main page */
@@ -691,8 +700,8 @@ dfn:hover::before {top: 15px;}
     #footer .modal-dialog {
     width: 60%;
     }
+
     .footer {
-        right: 0;
-        left: 0;
+        align-content: center;
     }
 }

@@ -63,6 +63,7 @@ $(".info-level-image").on("click", function() {
         if (levelImg === "pic_H") { b = hardCards, a = b.length, level = "#game-board-hard" }; 
         board = b;
         $(level).show(); //  new card board is shown
+        
         images = [];
         rabbitRun = [];
         followRabbit = [];
@@ -72,6 +73,8 @@ $(".info-level-image").on("click", function() {
         //  and switched back to the first board, so PlayButton does not stay deactivated
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); 
         randomPics(a,b); // inserts new set of randomly generated images into the new card board "level"
+        $("#level-change")[0].currentTime = 0;
+        $("#level-change")[0].play();
         return board;
 });  
 
@@ -267,6 +270,8 @@ $(".btn-modal").on("click", function() {
 $("#modal-btn-win").on("click", function() {
     if (score === 1 && (board === easyCards || board === mediumCards)) { 
         displayModal("#levelUp");
+        $("#level-up")[0].currentTime = 0;
+        $("#level-up")[0].play();
     } 
     if (score === 1 && board === hardCards) { 
         displayModal("#finalWin");
