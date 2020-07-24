@@ -44,21 +44,21 @@
                             <div class="row">
                                 <div class="column">
                                     <div id="modal-row" class="row justify-content-center">
-                                        <div class="column d-flex ">
+                                        <div class="column d-flex">
                                             <dfn data-info="EASY">
                                                 <div id="easy" class="level-card">
                                                     <img id="imageE" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="level-image">
                                                 </div>
                                             </dfn>
                                         </div>
-                                        <div class="column  d-flex">
+                                        <div class="column d-flex">
                                             <dfn data-info="MEDIUM">
                                                 <div id="medium" class="level-card">
                                                     <img id="imageM" src="assets/images/cat.jpg" alt="Cheshire Cat" class="level-image">
                                                 </div>
                                             </dfn>
                                         </div>
-                                        <div class="column  d-flex">
+                                        <div class="column d-flex">
                                             <dfn data-info="HARD">   
                                                 <div id="hard" class="level-card">                                                
                                                     <a href="#"><img id="imageH" src="assets/images/queen.jpg" alt="Queen of Hearts" class="level-image"></a>
@@ -82,19 +82,19 @@
         <div id="player-board" class="justify-content-center">
             <div id="player-info" class="row">
                 <!-- Level choice buttons -->
-                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 justify-content-center">
-                    <div class="row  ">
-                        <div class="column card-holder col-4">
+                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 ">
+                    <div class="row justify-content-center">
+                        <div class="card-holder col-4">
                             <div id="easy-sm" class="level-button">
                                 <a href="#"><img id="pic_E" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
                             </div>
                         </div>
-                        <div class="column card-holder col-4">
+                        <div class="card-holder col-4 justify-content-center">
                             <div id="medium-sm" class="level-button">
                                 <a href="#"><img id="pic_M" src="assets/images/cat.jpg" alt="Cheshire Cat" class="info-level-image"></a>
                             </div>
                         </div>
-                        <div class="column card-holder col-4">
+                        <div class="card-holder col-4 justify-content-center">
                             <div id="hard-sm" class="level-button">
                                 <a href="#"><img id="pic_H" src="assets/images/queen.jpg" alt="Queen of Hearts" class="info-level-image"></a>
                             </div>
@@ -122,13 +122,10 @@
                                     <img id="small_rabbit" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
                                 </div> 
                             </div>
-                        </div> 
-                    
+                        </div>
                 </div> 
             </div>
         </div>
-
-        
 
         <!-- Easy Level cards grid -->
         <div id="game-board-easy" class="row board grid justify-content-center">
@@ -348,6 +345,8 @@
                                         <li>Click the cards <u>following</u> the same <u>sequence</u> as the Rabbit Run. <br>Clicks Countdown shows how many clicks left.</li>
                                         <li><u>Reset</u> the cards if you've <u>missed</u> the Rabbit Run.</li>
                                         <li>Choose a <u>different</u> level, if the game feels <u>too easy</u>.</li>
+                                        <li>Catch 7 rabbits at each level & <u>switch</u> a level <u>up</u>.</li>
+                                        <li>Once you've caugth <u>7</u> rabbits on <u>HARD</u> level, you are a <u>Winner</u>!!!</li>
                                     </ol>
                                 </div>
                             </div>
@@ -373,8 +372,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row justify-content-center modal-title-box">
-                                    <h4 class="level-up-title">YOU ARE FAST!</h4>
-                                    <h4 class="level-up-title">TRY ANOTHER LEVEL!</h4>
+                                    <h4 class="level-up-title">YOU'VE COMPLETED THIS LEVEL!</h4>
+                                    <h4 class="level-up-title">SWITCH TO THE NEXT ONE!</h4>
                                 </div>   
                                 <div class="col-12 text-center">            
                                     <img id="level-up-img" type="image" src="assets/images/level_up.jpg" alt="rabbit">         
@@ -390,7 +389,7 @@
         </div>
     </div>
 
-    <!-- FINAL WIN modal (after 7 completed games) -->
+    <!-- FINAL WIN modal (after 7 completed games on HARD level) -->
     <div id="finalWin" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -402,7 +401,7 @@
                                 <div class="row justify-content-center modal-title-box">
                                     <h4 class="final-win-title">YOU ARE VERY FAST!</h4>
                                     <h4 class="final-win-title">CAN'T RUN AWAY FROM YOU!</h4></br>
-                                    <h4 id="you-win" class="final-win-title">YOU WIN!</h4>
+                                    <h3 id="you-win" class="final-win-title">YOU WIN!</h3>
                                 </div>   
                                 <div class="col-12 text-center">            
                                     <img id="final-win-img" type="image" src="assets/images/level_up.jpg" alt="rabbit">         
@@ -424,20 +423,20 @@
     </div>
     
     <!-- FOOTER Modal -->
-    <div id="footer" class="container-fluid modal fade justify-content-center" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div id="footer" class="container-fluid modal fade justify-content-center " role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg info-modal-bgr footer">
             <div class="row text-center justify-content-center ">
                 <div class="footer-box col-lg-2 col-md-2">
-                    <img id="rabbit-icon" type="image" src="assets/images/rabbit_icon.jpg" alt="Follow The White Rabbit">
+                    <img id="rabbit-icon" class="vertical-aligned" src="assets/images/rabbit_icon.jpg" alt="Follow The White Rabbit">
                 </div>
                 <div class="footer-box col-lg-3 col-md-4">
-                    <p id="copy-modal-title">Follow the White Rabbit!</p>
+                    <p class="vertical-aligned" id="copy-modal-title">Follow the White Rabbit!</p>
                 </div>
                 <div class="footer-box col-lg-3 col-md-3">
-                    <p>Designed & Developed</p>
-                <div>
+                    <p class="vertical-aligned">Designed & Developed</p>
+                </div>
                 <div class="footer-box col-lg-2 col-md-3">
-                    <a class="" href="https://github.com/OlekSt?tab=repositories" target="_blank" title="My Github profile">
+                    <a class="vertical-aligned" href="https://github.com/OlekSt?tab=repositories" target="_blank" title="My Github profile">
             			<p>Ol.Statsenko</p>
             		</a>
                 </div>

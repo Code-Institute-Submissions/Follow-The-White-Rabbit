@@ -216,6 +216,9 @@ body {
     max-width: 100%;
 }
 
+.card-holder {
+    align-self: middle;
+}
 /*  Hide card images */
 #card-images {
     display: none;
@@ -287,6 +290,7 @@ body {
 /* Fixing non working links in modal */
 .modal-dialog {
     pointer-events: all;
+    vertical-align: middle;
 }
 
 #myModal {    
@@ -356,6 +360,10 @@ body {
 }
 
 /*-- Modals: WIN, LOSE, INFO, LevelUp, Final Win */
+.modal {
+    vertical-align: middle;
+}
+
 .btn-modal {
     font-size: 45px;
     color: white;
@@ -459,8 +467,8 @@ body {
 #btn-footer {
     font-size: 2em;
     color: red;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
     display: none;
 }
 
@@ -471,6 +479,7 @@ body {
 
 #footer .modal-dialog {
     width: 90%;
+    
 }
 
 #footer p {
@@ -488,9 +497,15 @@ body {
     border: #cfb747 solid 0.5px;
 }
 
+.vertical-aligned {
+    vertical-align: middle;
+}
+
+
 .footer-box {
     margin: 0;
     padding: 0;
+    align-items: middle;
 }
 
 #btn-close-copyright {
@@ -564,11 +579,27 @@ dfn:hover::before {top: 15px;}
 
 
 /*----------------------------------- MEDIA QUERIES */
-@media screen and (max-width: 992px) {
-      /*bigger mobile phones and tablets*/
+@media screen and (max-width: 1024px) {
+      /*bigger tablets*/
     #myModal {
         max-width: 95%;
     }
+
+    #small_rabbit {
+    height: 75px;
+    width: 75px;
+    margin: 10px 5px 5px 15px;
+    }
+
+    #game-board-easy,
+    #game-board-medium,
+    #game-board-hard {
+        width: 85%;
+        height: auto;
+        padding: 2% 2.5%;
+    }
+
+
 
     .info-card {
         height: 60px;
@@ -597,7 +628,7 @@ dfn:hover::before {top: 15px;}
     #game-board-easy,
     #game-board-medium,
     #game-board-hard {
-        width: 85%;
+        width: 70%;
         height: auto;
         padding: 2% 2.5%;
     }
@@ -609,8 +640,8 @@ dfn:hover::before {top: 15px;}
     .hard-card {
         height: 125px;
         width: 125px;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     #myModal {
@@ -736,11 +767,13 @@ dfn:hover::before {top: 15px;}
     }
 
     #footer .modal-dialog {
-    width: 60%;
+        width: 60%;
     }
 
     .footer {
-        align-content: center;
+        right: 0;
+        left: 0;
+        bottom: 0;
     }
 }
 
