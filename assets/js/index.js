@@ -102,12 +102,26 @@ function randomPics(a,b) {
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
 $(".btn-play").on("click", function() {    
-    $("#steps")[0].currentTime = 0;     //Sound for Rabbit Run
-    $("#steps")[0].play();              //Sound for Rabbit Run
+    
     let btnId = $(this).attr("id");
-    if (btnId === "btn-play-easy") { b = easyCards, a = easyCards.length }; 
-    if (btnId === "btn-play-medium") { b = mediumCards, a = mediumCards.length }; 
-    if (btnId === "btn-play-hard") { b = hardCards, a = hardCards.length }; 
+    if (btnId === "btn-play-easy") { 
+        b = easyCards;
+        a = easyCards.length;
+        $("#steps-4")[0].currentTime = 0;     //Sound for Rabbit Run
+        $("#steps-4")[0].play();              //Sound for Rabbit Run 
+    }; 
+    if (btnId === "btn-play-medium") { 
+        b = mediumCards;
+        a = mediumCards.length;
+        $("#steps-6")[0].currentTime = 0;     //Sound for Rabbit Run
+        $("#steps-6")[0].play();              //Sound for Rabbit Run 
+    }; 
+    if (btnId === "btn-play-hard") { 
+        b = hardCards;
+        a = hardCards.length;
+        $("#steps-9")[0].currentTime = 0;     //Sound for Rabbit Run
+        $("#steps-9")[0].play();              //Sound for Rabbit Run 
+    }; 
     
     let i = 0;
     while (i < a) { 

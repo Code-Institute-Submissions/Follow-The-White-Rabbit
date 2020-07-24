@@ -648,6 +648,14 @@ dfn:hover::before {top: 15px;}
         margin-left: 5px;
         margin-right: 5px;
     }
+    h2 {
+        font-size: 25px;
+        text-align: justify;
+    }
+    h4 {
+        font-size: 18px;
+        text-align: justify;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -662,7 +670,6 @@ dfn:hover::before {top: 15px;}
     h4 {
         font-size: 16px;
         text-align: justify;
-        
     }
     #avatar {
         width: 80px;
@@ -734,5 +741,31 @@ dfn:hover::before {top: 15px;}
 
     .footer {
         align-content: center;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    /*small phones*/
+    .level-card{
+        height: 100px;
+        width: 100px;
+    }
+
+    .easy-card {
+        height: 95px;
+        width: 95px;
+    }
+    .medium-card,
+    .hard-card {
+        height: 70px;
+        width: 70px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #small_rabbit {
+        height: 45px;
+        width: 45px;
+        margin: 4px 1px 3px 7px;
+        justify-content: center;
     }
 }
