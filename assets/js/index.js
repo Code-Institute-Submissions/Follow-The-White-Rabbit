@@ -38,6 +38,8 @@ $(document).ready(function(){
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         $("#btn-footer").show();  // show button for copyright info, which opens a modal with it
         board = b;
+        $("#level-choice")[0].currentTime = 0;
+        $("#level-choice")[0].play();
         return board, level;
     }); 
 });  
@@ -273,11 +275,13 @@ $(".btn-reset").on("click", function() {
 });
 
 /* Calculating score on closing modal */
-$(".btn-modal").on("click", function() {
+$(".btn-modal, .close-modal").on("click", function() {
     let btn = $(this).attr("id");
     if (btn === "modal-btn-win") { score++ }
     if ((btn === "modal-btn-lose" && score > 0)) { score-- }
     $("#score").text(score);    
+    $("#close-modal")[0].currentTime = 0;
+    $("#close-modal")[0].play();
 });
 
 /* Modal suggesting to go a level up  */
