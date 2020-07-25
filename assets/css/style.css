@@ -165,7 +165,8 @@ body {
     height: max-content;
     width: -webkit-max-content;
     width: -moz-max-content;
-    width: max-content;
+    width: 40%;
+    min-width: max-content;
     padding: 1% 5%;
     background-color: #cfb747;
     border: black solid 0.2em;
@@ -186,6 +187,11 @@ body {
     border: #cfb747 ridge 1px;
     align-items: center;
     padding: 5px 0;
+    width: 100%;
+}
+
+.dashboard-holder {
+    width: 100%;
 }
 
 .board {
@@ -195,7 +201,7 @@ body {
 /* Text itself - numbers  */
 .click-counter {   
     font-family: Arial, Helvetica, sans-serif;
-    color: orange;
+    color: white;
     font-size: 1.7em;
     font-weight: bold;
     text-align: center;
@@ -203,16 +209,33 @@ body {
     vertical-align: middle;
     margin: auto;
     padding: 0;
+    border-radius: 30%;
 }
 
 .clicks-counter {
-    background-color: blue;
+    background-color: rgb(17, 177, 17);
+    border-radius: 30%;
 }
 
+.btn-play,
+.btn-reset,
+.btn-info {
+    border-radius: 30%;
+}
 
-.btn-info,
-.btn-reset {
+.btn-rest {
+    background-color: orange;
+}
+
+.btn-dashboard {
     margin: auto;
+    font-size: 1.3em;
+}
+
+.button-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*----  Level & Game cards ---*/
@@ -782,6 +805,10 @@ dfn:hover::before {top: 15px;}
         left: 0;
         bottom: 0;
     }
+    .btn-dashboard {
+        margin: auto;
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 325px) {
@@ -807,5 +834,10 @@ dfn:hover::before {top: 15px;}
         width: 45px;
         margin: 4px 1px 3px 7px;
         justify-content: center;
+    }
+
+    .btn-dashboard {
+        margin: auto;
+        font-size: 0.9em;
     }
 }
