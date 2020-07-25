@@ -83,19 +83,25 @@ body {
     display: none;
     top: 50%;
     left: 50%;
+    vertical-align: middle;
 }
 
-#score-info {
-    width: 100px;
+#player-info {
+    padding: 0 5px;
+    
+}
+
+#score-info { 
     display: inline-block;
     margin: auto;
     text-align: center;
+    padding: 0;
 }
 
 #level-info {
     width: 250px;
-    float: right;
-    vertical-align: middle;
+    margin-bottom: 2px;  
+    padding: 10px 20px 10px 10px;
 }
 
 .info-card {
@@ -123,13 +129,22 @@ body {
     margin: none;
 }
 
-#small_rabbit {
-    height: 75px;
-    width: 75px;
-    margin: 10px 5px 5px 15px;
+#small-rabbit {
+    height: 65px;
+    width: 65px;
+}
+
+.score-box {
+    padding-bottom: 5px;
+}
+
+.score-box-img {
+    vertical-align: middle;
 }
 
 #score-info {
+    width: 150px;
+    height: 70px;
     border: black solid 1px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -140,20 +155,22 @@ body {
 }
 
 .score-title {
-    font-size: 25px;
+    font-size: 18px;
     color: white;
     font-weight: bold;
 }
 
 #score {
-    font-size: 40px;
+    font-size: 28px;
     color: white;
     font-weight: bold;
-}
-
-.score-box {
     margin: 0;
     padding: 0;
+}
+
+#score-title {
+    margin: 0;
+    padding-top: 10px;
 }
 
 /* -- Game card boards -- */
@@ -173,7 +190,7 @@ body {
     border-radius: 3%;
     -ms-flex-line-pack: center;
     align-content: center;
-    margin-top: 0.5em;
+    margin-top: 0.05em;
     color: black;
     margin-left: auto;
     margin-right: auto;
@@ -245,8 +262,13 @@ body {
 }
 
 .card-holder {
-    align-self: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 0;
 }
+
 /*  Hide card images */
 #card-images {
     display: none;
@@ -273,7 +295,7 @@ body {
     border-radius: 10%;
     margin: 15px;
 }
-    
+
 .game-card:hover  {
     border: white solid 2px;
 }
@@ -456,7 +478,7 @@ body {
 .rules-list {
     font-size: 18px;
     color:rgba(0, 0, 0, 0.678);
-    
+    padding-right: 8%;
 }
 
 .info-modal-bgr {
@@ -470,7 +492,7 @@ body {
 }
 
 #rules {
-    padding: 0;
+    padding-right: 0;
 }
 
 #rules-modal-title {
@@ -494,19 +516,18 @@ body {
 #btn-footer {
     font-size: 2em;
     color: red;
-    top: 50%;
-    left: 50%;
     display: none;
 }
 
 #footer {
     padding: 0;
-    position: fixed;
+    position: block;
 }
 
 #footer .modal-dialog {
     width: 90%;
-    
+    right: 0;
+    left: 0;
 }
 
 #footer p {
@@ -612,16 +633,16 @@ dfn:hover::before {top: 15px;}
         max-width: 95%;
     }
 
-    #small_rabbit {
-    height: 75px;
-    width: 75px;
+    #small-rabbit {
+    height: 65px;
+    width: 65px;
     margin: 10px 5px 5px 15px;
     }
 
     #game-board-easy,
     #game-board-medium,
     #game-board-hard {
-        width: 85%;
+        width: 65%;
         height: auto;
         padding: 2% 2.5%;
     }
@@ -649,6 +670,7 @@ dfn:hover::before {top: 15px;}
     height: 125px;
     width: 125px;
 }
+
 
 @media screen and (max-width: 768px) {
       /* bigger phones and tablets */
@@ -685,6 +707,13 @@ dfn:hover::before {top: 15px;}
     h4 {
         font-size: 17px;
     }
+    #small-rabbit {
+        height: 50px;
+        width: 50px;
+        margin: 4px 1px 3px 7px;
+        justify-content: center;
+    }
+
 
 @media screen and (max-width: 576px) {
     /*mobile phones*/
@@ -716,6 +745,15 @@ dfn:hover::before {top: 15px;}
     }
     #footer .modal-dialog {
         width: 60%;
+    }
+    #small-rabbit {
+        height: 50px;
+        width: 50px;
+        margin: 4px 1px 3px 7px;
+        justify-content: center;
+    }
+    #level-info {
+        padding: 10px ;
     }
 }
 
@@ -751,18 +789,25 @@ dfn:hover::before {top: 15px;}
     }
     dfn:hover::after {top: 10px;}
     
-    #player-board {
+    #player-board {    
         width: 95%;
+        vertical-align: middle;
     }
+
+    
 
     .score-title {
         font-size: 15px;
         margin-top: 15px;
+        vertical-align: middle;
     }
+
     #score {
         font-size: 25px;
         margin: 0;
+        vertical-align: middle;
     }
+
     #game-board-easy,
     #game-board-medium,
     #game-board-hard {
@@ -786,7 +831,7 @@ dfn:hover::before {top: 15px;}
         font-size: 1.2em;
     }
 
-    #small_rabbit {
+    #small-rabbit {
         height: 55px;
         width: 55px;
         margin: 7px 3px 5px 10px;
@@ -805,10 +850,15 @@ dfn:hover::before {top: 15px;}
         left: 0;
         bottom: 0;
     }
+    
     .btn-dashboard {
         margin: auto;
         font-size: 1em;
     }
+    #level-info {
+        padding: 10px ;
+    }
+   
 }
 
 @media screen and (max-width: 325px) {
@@ -829,7 +879,7 @@ dfn:hover::before {top: 15px;}
         margin-left: 5px;
         margin-right: 5px;
     }
-    #small_rabbit {
+    #small-rabbit {
         height: 45px;
         width: 45px;
         margin: 4px 1px 3px 7px;
@@ -840,4 +890,13 @@ dfn:hover::before {top: 15px;}
         margin: auto;
         font-size: 0.9em;
     }
+
+    #score-info {
+        width: 80%;
+    }
+    
+    #level-info {
+        padding: 10px ;
+    }
+    
 }

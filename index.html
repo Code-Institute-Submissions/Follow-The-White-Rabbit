@@ -79,12 +79,12 @@
     <div id="main" class="container-fluid">
 
         <!-- Player/level/score info board -->
-        <div id="player-board" class="justify-content-center">
-            <div id="player-info" class="row">
+        <div id="player-board">
+            <div id="player-info" class="row justify-content-center">
                 <!-- Level choice buttons -->
-                <div id="level-info" class="column col-lg-6 col-md-12 col-sm-12 col-xsm-12 ">
+                <div id="level-info" class="col-lg-6 col-md-6 col-sm-12 col-xsm-12">
                     <div class="row justify-content-center">
-                        <div class="card-holder col-4">
+                        <div class="card-holder col-4 justify-content-center">
                             <div id="easy-sm" class="level-button">
                                 <a href="#"><img id="pic_E" src="assets/images/alice.jpg" alt="Alice in Wonderland" class="info-level-image"></a>
                             </div>
@@ -101,28 +101,21 @@
                         </div>
                     </div>
                 </div> 
-
                 <!-- Score board -->
-                <div id="score-info" class="col-12 col-md-12 col-sm-12">
-                        <div class="column justify-content-center">
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 class="score-title text-center">CAUGHT</h4>
-                                </div>
-                            </div>
-                            <div class="row score-box">
-                                <div class="col-12 justify-content-center">
-                                    <h4 id="score" class="score-title text-center">0</h4>
-                                </div>
-                            </div> 
-                        </div> 
-                         <div class="column">
-                            <div class="row">
-                                <div class="col-12 justify-content-center">
-                                    <img id="small_rabbit" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
-                                </div> 
-                            </div>
+                <div id="score-info" class="col-lg-6 col-md-6 col-sm-12 col-xsm-12">
+                    <div class="row score-box">
+                        <div class="col-12 justify-content-center">
+                            <h4 id="score-title" class="score-title text-center">CAUGHT</h4>
                         </div>
+                        <div class="col-12 justify-content-center">
+                            <h4 id="score" class="score-title text-center">0</h4>
+                        </div> 
+                    </div> 
+                    <div class="row">
+                        <div class="col-lg-12 justify-content-center score-box-img">
+                            <img id="small-rabbit" src="assets/images/rabbit_avatar.jpg" alt="Small Rabbit" class="points">
+                        </div>
+                    </div>
                 </div> 
             </div>
         </div>
@@ -339,7 +332,7 @@
                                         <li>Click the cards <b>following</b> the same <b>sequence</b> as the Rabbit Run. 
                                         <li><b>Reset</b> the cards if you've <b>missed</b> the Rabbit Run.</li>
                                         <li>Catch <b>seven</b> rabbits at <b>each</b> level & <b>switch</b> a level <b>up</b>.</li>
-                                        <li>Once you've caugth <b>seven rabbits</b>  on <b>HARD</b> level, you are a <b>Winner</b>!!!</li>
+                                        <li>Once you've caugth <b>seven rabbits</b>  on <b>HARD</b> level, you are a <b>WINNER</b>!!!</li>
                                     </ol>
                                 </div>
                             </div>
@@ -416,9 +409,9 @@
     </div>
     
     <!-- FOOTER Modal -->
-    <div id="footer" class="container-fluid modal fade justify-content-center " role="dialog" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog modal-lg info-modal-bgr footer">
-            <div class="row text-center justify-content-center ">
+    <div id="footer" class="container-fluid modal fade justify-content-center" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg info-modal-bgr footer center">
+            <div class="row text-center">
                 <div class="footer-box col-lg-2 col-md-2">
                     <img id="rabbit-icon" class="vertical-aligned" src="assets/images/rabbit_icon.jpg" alt="Follow The White Rabbit">
                 </div>
