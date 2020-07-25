@@ -38,7 +38,7 @@ $(document).ready(function(){
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         $("#btn-footer").show();  // show button for copyright info, which opens a modal with it
         board = b;
-        $("#level-choice")[0].currentTime = 0;
+        $("#level-choice")[0].currentTime = 0; // INITIAL Level choice sound
         $("#level-choice")[0].play();
         return board, level;
     }); 
@@ -104,7 +104,6 @@ function randomPics(a,b) {
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
 $(".btn-play").on("click", function() {    
-    
     let btnId = $(this).attr("id");
     if (btnId === "btn-play-easy") { 
         b = easyCards;
@@ -133,7 +132,6 @@ $(".btn-play").on("click", function() {
         i++;
         }
     }
-    
     // START - Code here was written with help from tutors: Stephen & Tim  
     let index = 0, 
      rabbitImg = $("#rabbit").clone();
@@ -153,7 +151,7 @@ $(".btn-play").on("click", function() {
     }, speed);
     console.log("rabbitRun: " + rabbitRun);
     return rabbitRun;
-    // finish - Code here was writtne with help from tutors: Stephen & Tim
+    // Finish - Code here was writtne with help from tutors: Stephen & Tim
 });
 
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
@@ -172,7 +170,7 @@ $(".game-card").on("click", function() {
     $("#cardClick")[0].play();          //Game card click sound
     if (followRabbit.length === images.length) 
         return followRabbit;
-    else 
+    else
         index = board.indexOf($(this).attr("id"));
         followRabbit.push(index);
 });
@@ -197,11 +195,11 @@ function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show");
         if (id === "#win-modal") {
-            $("#win")[0].currentTime = 0;
+            $("#win")[0].currentTime = 0; //WIN Modal sound
             $("#win")[0].play();
         }
         if (id === "#lose-modal") {
-            $("#lose")[0].currentTime = 0;
+            $("#lose")[0].currentTime = 0; // LOSE Modal sound
             $("#lose")[0].play();
         }
     }, 300);
@@ -210,7 +208,7 @@ function displayModal(id) {
 /*  Game rules modal loading + sound */
 $(".rules-button").on("click", function() {
     $("#rules").modal("show");
-    $("#rulesModal")[0].currentTime = 0;
+    $("#rulesModal")[0].currentTime = 0; //RULES Modal opening sound
     $("#rulesModal")[0].play();
 });
 
@@ -280,20 +278,28 @@ $(".btn-modal, .close-modal").on("click", function() {
     if (btn === "modal-btn-win") { score++ }
     if ((btn === "modal-btn-lose" && score > 0)) { score-- }
     $("#score").text(score);    
-    $("#close-modal")[0].currentTime = 0;
+    $("#close-modal")[0].currentTime = 0; // CLOSE Modal sound
     $("#close-modal")[0].play();
 });
 
 /* Modal suggesting to go a level up  */
 $("#modal-btn-win").on("click", function() {
-    if (score === 1 && (board === easyCards || board === mediumCards)) { 
-        displayModal("#levelUp");
-        $("#level-up")[0].currentTime = 0;
-        $("#level-up")[0].play();
-    } 
-    if (score === 1 && board === hardCards) { 
+    if (score === 7 && (board === easyCards || board === mediumCards)) { 
+        setTimeout(function() {
+            displayModal("#levelUp");
+            $("#level-up")[0].currentTime = 0;
+            $("#level-up")[0].play();    
+        }, 1000)}; 
+    
+    if (score === 7 && board === hardCards) { 
         displayModal("#finalWin");
         $("#final-win")[0].currentTime = 0;
         $("#final-win")[0].play();
     } 
+});
+
+/* Sound to open copyright info  */
+$("#btn-footer").on("click", function() {
+    $("#close-modal")[0].currentTime = 0;
+    $("#close-modal")[0].play();
 });
