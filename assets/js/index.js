@@ -56,21 +56,9 @@ $(document).ready(function(){
 /* Switching between difficulty levels on the player info board  */
 $(".info-level-image").on("click", function() { 
         let currentBoard;
-        if (board.length === 4) { 
-            currentBoard = "#game-board-easy";
-            $("#pic_E").removeClass("inactive").addClass("active"); //show which level is currently active
-            $("#pic_M, #pic_H").removeClass("active").addClass("inactive");
-        };
-        if (board.length === 6) { 
-            currentBoard = "#game-board-medium";
-            $("#pic_M").removeClass("inactive").addClass("active"); //show which level is currently active
-            $("#pic_E, #pic_H").removeClass("active").addClass("inactive");
-        }; 
-        if (board.length === 9) { 
-            currentBoard = "#game-board-hard";
-            $("#pic_H").removeClass("inactive").addClass("active"); //show which level is currently active
-            $("#pic_E, #pic_M").removeClass("active").addClass("inactive");
-        }; 
+        if (board.length === 4) { currentBoard = "#game-board-easy" };
+        if (board.length === 6) { currentBoard = "#game-board-medium" }; 
+        if (board.length === 9) { currentBoard = "#game-board-hard"  };
         
         index = 0; // while loop removes images from the board to be closed, so that if it is reopened, images are not double inserted
         while (index < board.length) { 
@@ -100,6 +88,23 @@ $(".info-level-image").on("click", function() {
         $("#level-change")[0].play();
         return board;
 });  
+
+/* Highelight level button/image which is currently active */
+$(".info-level-image").on("click", function() {
+    let levelImg = $(this).attr("id");
+    if (levelImg === "pic_E") {
+        $("#pic_E").removeClass("inactive").addClass("active"); //show which level is currently active
+        $("#pic_M, #pic_H").removeClass("active").addClass("inactive"); 
+    }
+    if (levelImg === "pic_M") {
+        $("#pic_M").removeClass("inactive").addClass("active"); //show which level is currently active
+        $("#pic_E, #pic_H").removeClass("active").addClass("inactive"); 
+    }
+    if (levelImg === "pic_H") {
+        $("#pic_H").removeClass("inactive").addClass("active"); //show which level is currently active
+        $("#pic_E, #pic_M").removeClass("active").addClass("inactive"); 
+    }
+}); 
 
 /* Function inseriting random pictures into game cards */
 function randomPics(a,b) {    

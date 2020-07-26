@@ -48,3 +48,5 @@ This document is intended to record testing at various stages of development of 
     The bug is fixed.
     BUG: If button Play is pressed, but no cards are played, button Play stays inactive, and if you switch between levels, and come back to the level where Play was pressed, it is still inactive.
     Fixed. 
+    BUG: Added opacity to level images in player board to show which level is active. Does not change opacity correctly. Show correct active level only after second click on level image/button in player board.
+    Fixed.
