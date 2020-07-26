@@ -1,9 +1,36 @@
-# Interactive Frontend Project - TESTING write-up
+# Interactive Frontend Project - Testing
 
 This document is intended to record testing at various stages of development of the project, as well as different finctions, finctionalities, correct display of the project's page, etc. 
 
+[Main README.md file](README.md)
+
+[View website in GitHub Pages](https://olekst.github.io/Follow-The-White-Rabbit/)
+
 ## Memory Game 
 
+1. [**Automated Testing**](#automated-testing)
+    - [**Validation services**](#validation-services)
+2. [**Client Stories Testing**](#client-stories-testing)
+3. [**Manual Testing**](#manual-testing)
+    - [**Testing undertaken on desktop**](#testing-undertaken-on-desktop) Testing undertaken on tablet and phone devices
+    - [**Testing undertaken on tablet and phone devices**](#testing-undertaken-on-tablet-and-phone-devices)
+4. [**Bugs discovered**](#bugs-discovered)
+    - [**Solved bugs**](#solved-bugs)
+5. [**Further Testing**](#further-testing)
+
+
+## Automated Testing
+
+### Validation services
+The following validation services and linter were used to check the validity of the website code.
+- [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
+- [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
+- [JSHint](https://jshint.com/) was used to validate JavaScript.
+
+
+### Bugs discovered: 
+
+#### Solved bugs
 ### Functions:
 
 1. Random images generation and insertion into game cards.
@@ -19,9 +46,8 @@ This document is intended to record testing at various stages of development of 
 
 3. Capture of players' clicks and comparison to randomly generate White Rabbit "run" pattern
     Testing on all difficulty level boards:
-    - Incorrect RabbitRun returns both Win and Lost messages.
+    BUG: Incorrect RabbitRun returns both Win and Lost messages.
     Corrected the code for rabbitRun & followRaabit, tested clicking through all three difficulty levels, both correct and wrong set of clicks, at least 6 times each, now works correctly. 
-        
 
 4. Clicks Countdown
     Each board will have a counter of clicks starting at 4/6/9 and decreasing at each click, so that a player knows how many clicks left.
@@ -50,3 +76,8 @@ This document is intended to record testing at various stages of development of 
     Fixed. 
     BUG: Added opacity to level images in player board to show which level is active. Does not change opacity correctly. Show correct active level only after second click on level image/button in player board.
     Fixed.
+
+
+## Further testing: 
+1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
+2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store.
