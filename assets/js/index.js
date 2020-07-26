@@ -28,9 +28,18 @@ let modal = document.getElementById('myModal'),
 $(document).ready(function(){
     $(".level-image").on("click", function() {    
         let levelImg = $(this).attr("id");
-        if (levelImg === "imageE") { b = easyCards, a = b.length, level = "#game-board-easy", clicksCounter = clicksCounterEasy };
-        if (levelImg === "imageM") { b = mediumCards, a = b.length, level = "#game-board-medium", clicksCounter = clicksCounterMedium }; 
-        if (levelImg === "imageH") { b = hardCards, a = b.length, level = "#game-board-hard", clicksCounter = clicksCounterHard }; 
+        if (levelImg === "imageE") { 
+            b = easyCards, a = b.length, level = "#game-board-easy", 
+            clicksCounter = clicksCounterEasy, $("#pic_M, #pic_H").addClass("inactive"); //Show which level is currently active
+        };
+        if (levelImg === "imageM") { 
+            b = mediumCards, a = b.length, level = "#game-board-medium", 
+            clicksCounter = clicksCounterMedium, $("#pic_E, #pic_H").addClass("inactive"); 
+        }; 
+        if (levelImg === "imageH") { 
+            b = hardCards, a = b.length, level = "#game-board-hard", 
+            clicksCounter = clicksCounterHard, $("#pic_E, #pic_M").addClass("inactive"); 
+        }; 
         $(modal).hide();
         $("#main, #player-board").show();
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
@@ -47,9 +56,21 @@ $(document).ready(function(){
 /* Switching between difficulty levels on the player info board  */
 $(".info-level-image").on("click", function() { 
         let currentBoard;
-        if (board.length === 4) { currentBoard = "#game-board-easy" };
-        if (board.length === 6) { currentBoard = "#game-board-medium" }; 
-        if (board.length === 9) { currentBoard = "#game-board-hard" }; 
+        if (board.length === 4) { 
+            currentBoard = "#game-board-easy";
+            $("#pic_E").removeClass("inactive").addClass("active"); //show which level is currently active
+            $("#pic_M, #pic_H").removeClass("active").addClass("inactive");
+        };
+        if (board.length === 6) { 
+            currentBoard = "#game-board-medium";
+            $("#pic_M").removeClass("inactive").addClass("active"); //show which level is currently active
+            $("#pic_E, #pic_H").removeClass("active").addClass("inactive");
+        }; 
+        if (board.length === 9) { 
+            currentBoard = "#game-board-hard";
+            $("#pic_H").removeClass("inactive").addClass("active"); //show which level is currently active
+            $("#pic_E, #pic_M").removeClass("active").addClass("inactive");
+        }; 
         
         index = 0; // while loop removes images from the board to be closed, so that if it is reopened, images are not double inserted
         while (index < board.length) { 
