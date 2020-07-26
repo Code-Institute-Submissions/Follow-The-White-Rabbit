@@ -30,14 +30,6 @@ body {
     text-transform: uppercase; 
 }
 
-#avatar {
-  width: 100px;
-  height: 100px;
-  margin: 0.3rem;
-  border:  #cfb747 solid 1px;
-  border-radius: 5%;
-}
-
 .hidden {
     display: none;
 }
@@ -74,7 +66,7 @@ body {
     padding: 5px 15px;
     -ms-flex-line-pack: center;
     align-content: center;
-    background-color: rgb(211, 231, 31);
+    background-color: rgb(201, 219, 32);
     border: black solid 0.2em;
     margin-top: 2em;
     margin-left: auto;
@@ -91,11 +83,19 @@ body {
     
 }
 
-#score-info { 
-    display: inline-block;
+#score-info {
+    width: 150px;
+    height: 70px;
+    border: black solid 0.5px;
     margin: auto;
     text-align: center;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 #level-info {
@@ -137,21 +137,9 @@ body {
 .score-box {
     padding-bottom: 5px;
 }
-
 .score-box-img {
-    vertical-align: middle;
-}
-
-#score-info {
-    width: 150px;
-    height: 70px;
-    border: black solid 1px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    padding-top: 5px;
+    padding-right: 5px;
 }
 
 .score-title {
@@ -369,6 +357,15 @@ body {
     transform: translate(-50%, -50%);
     
 }
+
+#avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0.3rem;
+  border:  #cfb747 solid 1px;
+  border-radius: 5%;
+}
+
 #select-level {
     letter-spacing: 2px;
     margin-bottom:10px;
@@ -379,6 +376,7 @@ body {
 #hard {
     margin-top: 5px;
 }
+
 /*-- Colors to convey difficulty levels */
 #easy, 
 #easy-sm {
@@ -636,7 +634,9 @@ dfn:hover::before {top: 15px;}
     #small-rabbit {
     height: 65px;
     width: 65px;
-    margin: 10px 5px 5px 15px;
+    
+    margin-top: 8px;
+    margin-right: 8px;
     }
 
     #game-board-easy,
@@ -711,8 +711,7 @@ dfn:hover::before {top: 15px;}
         height: 50px;
         width: 50px;
         margin: 4px 1px 3px 7px;
-        justify-content: center;
-    }
+        }
 
 
 @media screen and (max-width: 576px) {
@@ -756,6 +755,12 @@ dfn:hover::before {top: 15px;}
         padding: 10px ;
     }
 }
+@media screen and (max-width: 435px) {
+    #player-board {    
+        width: 95%;
+        vertical-align: middle;
+    }
+}
 
 @media screen and (max-width: 375px) {
     /*small phones*/
@@ -794,8 +799,6 @@ dfn:hover::before {top: 15px;}
         vertical-align: middle;
     }
 
-    
-
     .score-title {
         font-size: 15px;
         margin-top: 15px;
@@ -806,6 +809,11 @@ dfn:hover::before {top: 15px;}
         font-size: 25px;
         margin: 0;
         vertical-align: middle;
+    }
+
+    .score-box-img {
+        padding-right: 5px;
+        padding-top: 0;
     }
 
     #game-board-easy,
@@ -882,7 +890,7 @@ dfn:hover::before {top: 15px;}
     #small-rabbit {
         height: 45px;
         width: 45px;
-        margin: 4px 1px 3px 7px;
+        margin: 3px;
         justify-content: center;
     }
 
