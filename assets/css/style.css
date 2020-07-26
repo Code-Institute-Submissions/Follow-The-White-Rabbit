@@ -148,7 +148,7 @@ body {
 }
 
 #score {
-    font-size: 28px;
+    font-size: 22px;
     color: white;
     font-weight: bold;
     margin: 0;
@@ -216,31 +216,41 @@ body {
     border-radius: 30%;
 }
 
+.clicks-holder {
+    justify-content: center;
+}
+
 .clicks-counter {
     background-color: rgb(17, 177, 17);
     border-radius: 30%;
+    width: 35px;
 }
 
 .btn-play,
 .btn-reset,
-.btn-info {
+.btn-info,
+.btn-mute {
     border-radius: 30%;
 }
 
-.btn-rest {
+.btn-reset {
     background-color: orange;
 }
 
 .btn-dashboard {
-    margin: auto;
-    font-size: 1.3em;
+    margin: auto 0;
+    font-size: 1.4em;
 }
 
 .button-holder {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0 3px;
 }
+
+#muteButton
 
 /*----  Level & Game cards ---*/
 .levels {
@@ -625,7 +635,7 @@ dfn::before {
 dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
 dfn:hover::after,
 dfn:hover::before {opacity: 1;}
-dfn:hover::after {top: 2px;}
+dfn:hover::after {top: 7px;}
 dfn:hover::before {top: 15px;} 
 /* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
 
@@ -920,9 +930,10 @@ dfn:hover::before {top: 15px;}
     }
     
     .btn-dashboard {
-        margin: auto;
+        margin: 0;
         font-size: 1em;
     }
+   
     #level-info {
         padding: 10px ;
     }

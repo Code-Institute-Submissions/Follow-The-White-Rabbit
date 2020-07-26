@@ -22,7 +22,8 @@ let modal = document.getElementById('myModal'),
  clicksCounterHard = 9,
  speed = 350,
  level,
- score = 0;
+ score = 0,
+ silence = false;
 
  /* Initial page load with level images, Difficulty level choice function, which generates randomly 4/6/9 pics  */
 $(document).ready(function(){
@@ -329,3 +330,23 @@ $("#btn-footer").on("click", function() {
     $("#close-modal")[0].currentTime = 0;
     $("#close-modal")[0].play();
 });
+
+/* The code is taken from Anna Greaves game's page - https://github.com/AJGreaves/picflip */
+$('.btn-mute').click(function() {
+    let allaudio = $('audio');
+    if (silence) {
+        for (let j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = false;
+        }
+        silence = false;
+    }
+    else {
+        for (let j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = true;
+        }
+        silence = true;
+    }
+    $('.btn-mute i').toggleClass('fas fa-volume-up');
+});
+
+

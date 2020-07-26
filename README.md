@@ -174,7 +174,9 @@ Content of the website is created or curated by Alexey Statsenko.
 ##### Code
 - Main modal code was copied from [Code Lab](https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load).
 - Code for other modals was copied from [W3Schools](https://www.w3schools.com/bootstrap/bootstrap_modal.asp).
-- JSON.stringify code taken from here [Atta-Ur-Rehman Shah's website](https://attacomsian.com/blog/javascript-compare-arrays#)
+- JSON.stringify code taken from here [Atta-Ur-Rehman Shah's website](https://attacomsian.com/blog/javascript-compare-arrays#).
+- Mute On/Off function code is taken from [Anna Greaves game's page](https://github.com/AJGreaves/picflip).
+
 
 #### Acknowledgements
 
