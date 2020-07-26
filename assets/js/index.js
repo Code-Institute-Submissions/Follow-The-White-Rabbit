@@ -31,15 +31,21 @@ $(document).ready(function(){
         let levelImg = $(this).attr("id");
         if (levelImg === "imageE") { 
             b = easyCards, a = b.length, level = "#game-board-easy", 
-            clicksCounter = clicksCounterEasy, $("#pic_M, #pic_H").addClass("inactive"); //Show which level is currently active
+            clicksCounter = clicksCounterEasy, 
+            $("#pic_E").css({"pointer-events": "none"}); // Make current level unclickable
+            $("#pic_M, #pic_H").addClass("inactive"); //Show which level is currently active
         };
         if (levelImg === "imageM") { 
             b = mediumCards, a = b.length, level = "#game-board-medium", 
-            clicksCounter = clicksCounterMedium, $("#pic_E, #pic_H").addClass("inactive"); 
+            clicksCounter = clicksCounterMedium, 
+            $("#pic_M").css({"pointer-events": "none"}); // Make current level unclickable
+            $("#pic_E, #pic_H").addClass("inactive"); 
         }; 
         if (levelImg === "imageH") { 
             b = hardCards, a = b.length, level = "#game-board-hard", 
-            clicksCounter = clicksCounterHard, $("#pic_E, #pic_M").addClass("inactive"); 
+            clicksCounter = clicksCounterHard, 
+            $("#pic_H").css({"pointer-events": "none"}); // Make current level unclickable
+            $("#pic_E, #pic_M").addClass("inactive"); 
         }; 
         $(modal).hide();
         $("#main, #player-board").show();
@@ -94,16 +100,16 @@ $(".info-level-image").on("click", function() {
 $(".info-level-image").on("click", function() {
     let levelImg = $(this).attr("id");
     if (levelImg === "pic_E") {
-        $("#pic_E").removeClass("inactive").addClass("active"); //show which level is currently active
-        $("#pic_M, #pic_H").removeClass("active").addClass("inactive"); 
+        $("#pic_E").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
+        $("#pic_M, #pic_H").removeClass("active").addClass("inactive").css({"pointer-events": "auto"});
     }
     if (levelImg === "pic_M") {
-        $("#pic_M").removeClass("inactive").addClass("active"); //show which level is currently active
-        $("#pic_E, #pic_H").removeClass("active").addClass("inactive"); 
+        $("#pic_M").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
+        $("#pic_E, #pic_H").removeClass("active").addClass("inactive").css({"pointer-events": "auto"}); 
     }
     if (levelImg === "pic_H") {
-        $("#pic_H").removeClass("inactive").addClass("active"); //show which level is currently active
-        $("#pic_E, #pic_M").removeClass("active").addClass("inactive"); 
+        $("#pic_H").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
+        $("#pic_E, #pic_M").removeClass("active").addClass("inactive").css({"pointer-events": "auto"});
     }
 }); 
 
