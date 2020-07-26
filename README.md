@@ -6,8 +6,7 @@
 
 [Follow The White Rabbit - Github Pages link](https://olekst.github.io/Follow-The-White-Rabbit/)
 
-The project is a website f
-The business goals of this website are:
+The project is a memory matching game.
 
 ## UX
 

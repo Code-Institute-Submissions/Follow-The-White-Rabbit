@@ -322,13 +322,14 @@ $("#modal-btn-win").on("click", function() {
             displayModal("#levelUp");
             $("#level-up")[0].currentTime = 0;
             $("#level-up")[0].play();    
-        }, 1000)}; 
-    
-    if (score === 7 && board === hardCards) { 
+        }, 800)}; 
+
+    if (score === 2 && board === hardCards) { 
+        setTimeout(function() {
         displayModal("#finalWin");
         $("#final-win")[0].currentTime = 0;
         $("#final-win")[0].play();
-    } 
+    }, 800)}; 
 });
 
 /* Sound to open copyright info  */

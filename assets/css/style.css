@@ -66,7 +66,7 @@ body {
     padding: 5px 15px;
     -ms-flex-line-pack: center;
     align-content: center;
-    background-color: rgb(176, 192, 37);
+    background-color: #e2c541;
     border: black solid 0.2em;
     margin-top: 2em;
     margin-left: auto;
@@ -148,7 +148,7 @@ body {
 }
 
 #score {
-    font-size: 22px;
+    font-size: 25px;
     color: white;
     font-weight: bold;
     margin: 0;
@@ -188,7 +188,7 @@ body {
 
 .dashboard {
     margin: 0 auto;
-    border: #cfb747 ridge 1px;
+    border: #b39d3b ridge 2px;
     align-items: center;
     padding: 5px 0;
     width: 100%;
@@ -258,8 +258,6 @@ body {
     margin: 0 3px;
 }
 
-#muteButton
-
 /*----  Level & Game cards ---*/
 .levels {
     margin-top: 40px;
@@ -323,7 +321,7 @@ body {
 }
 
 .inactive {
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
 .level-card {    
@@ -551,21 +549,15 @@ body {
     width: 90%;
     right: 0;
     left: 0;
+    height: max-content;
+    position: fixed;
+    bottom: 0;
+    border-radius: 10%;
+    border: #ac942b solid 0.5px;
 }
 
 #footer p {
     font-size: 1em;
-}
-
-.footer {
-    width: max-content;
-    height: max-content;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    border-radius: 10%;
-    border: #ac942b solid 0.5px;
 }
 
 .vertical-aligned {
@@ -660,6 +652,7 @@ dfn:hover::before {top: 15px;}
         width: 10%;
         min-width: max-content;
         padding: 1% 3%;
+        margin-top: 1em;
     }
     .easy-card {
         height: 190px;
@@ -686,6 +679,7 @@ dfn:hover::before {top: 15px;}
         width: 20%;
         min-width: max-content;
         padding: 1% 3%;
+        margin-top: 1em;
     }
 
     .easy-card {
@@ -722,6 +716,7 @@ dfn:hover::before {top: 15px;}
         width: 55%;
         height: auto;
         padding: 2% 2.5%;
+        margin-top: 1em;
     }
 
     .info-card {
@@ -746,15 +741,21 @@ dfn:hover::before {top: 15px;}
         width: 125px;
     }
 
+    #footer .modal-dialog {
+        width: 60%;
+        right: 0;
+        left: 0;
+    }
 
 @media screen and (max-width: 768px) {
-      /* bigger phones and tablets */
+    /* bigger phones and tablets */
     #game-board-easy,
     #game-board-medium,
     #game-board-hard {
         width: 70%;
         height: auto;
         padding: 2% 2.5%;
+        margin-top: 1em;
     }
     .easy-card {
         height: 150px;
@@ -782,12 +783,19 @@ dfn:hover::before {top: 15px;}
     h4 {
         font-size: 17px;
     }
+
     #small-rabbit {
         height: 50px;
         width: 50px;
         margin: 4px 1px 3px 7px;
-        }
+    }
 
+    #footer .modal-dialog {
+        width: 70%;
+        right: 0;
+        left: 0;
+    }
+}
 
 @media screen and (max-width: 576px) {
     /*mobile phones*/
@@ -797,6 +805,7 @@ dfn:hover::before {top: 15px;}
         width: 95%;
         height: auto;
         padding: 2% 2.5%;
+        margin-top: 1em;
     }
     .easy-card {
         height: 130px;
@@ -819,7 +828,10 @@ dfn:hover::before {top: 15px;}
     }
     #footer .modal-dialog {
         width: 60%;
+        right: 0;
+        left: 0;
     }
+
     #small-rabbit {
         height: 50px;
         width: 50px;
@@ -852,6 +864,7 @@ dfn:hover::before {top: 15px;}
         font-size: 16px;
         text-align: justify;
     }
+
     #avatar {
         width: 80px;
         height: 80px;
@@ -899,6 +912,7 @@ dfn:hover::before {top: 15px;}
         width: 95%;
         height: auto;
         padding: 2% 2.5%;
+        margin-top: 1em;
     }
     .easy-card {
         height: 110px;
@@ -928,14 +942,10 @@ dfn:hover::before {top: 15px;}
 
     #footer .modal-dialog {
         width: 60%;
-    }
-
-    .footer {
         right: 0;
         left: 0;
-        bottom: 0;
     }
-    
+
     .btn-dashboard {
         margin: 0;
         font-size: 1em;
@@ -983,6 +993,15 @@ dfn:hover::before {top: 15px;}
     
     #level-info {
         padding: 10px ;
+    }   
+
+    .clicks-holder {
+        padding-right: 5px;
     }
-    
+
+    #footer .modal-dialog {
+        width: 60%;
+        right: 0;
+        left: 0;
+    }
 }
