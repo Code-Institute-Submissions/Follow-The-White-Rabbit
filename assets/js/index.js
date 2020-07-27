@@ -146,52 +146,54 @@ function randomPics(a,b) {
 
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
 let rabbitRun = [];
-$(".btn-play").on("click", function() {    
-    let btnId = $(this).attr("id");
-    if (btnId === "btn-play-easy") { 
+$(".btn-play").on("click", function() { 
+     // To give some time between pressing Play and start of Rabbit Run
+        let btnId = $(this).attr("id");
+        if (btnId === "btn-play-easy") { 
         b = easyCards;
         a = easyCards.length;
         $("#steps-4")[0].currentTime = 0;     //Sound for Rabbit Run
         $("#steps-4")[0].play();              //Sound for Rabbit Run 
-    }
-    if (btnId === "btn-play-medium") { 
-        b = mediumCards;
-        a = mediumCards.length;
-        $("#steps-6")[0].currentTime = 0;     //Sound for Rabbit Run
-        $("#steps-6")[0].play();              //Sound for Rabbit Run 
-    }
-    if (btnId === "btn-play-hard") { 
-        b = hardCards;
-        a = hardCards.length;
-        $("#steps-9")[0].currentTime = 0;     //Sound for Rabbit Run
-        $("#steps-9")[0].play();              //Sound for Rabbit Run 
-    }
-    
-    let i = 0;
-    while (i < a) { 
-        let n = Math.floor(Math.random() * b.length);
-        if (rabbitRun.indexOf(n) < 0) {
-        rabbitRun.push(n);
-        i++;
         }
-    }
-    // START - Code here was written with help from tutors: Stephen & Tim  
-    let index = 0, 
-    rabbitImg = $("#rabbit").clone();
-    let card = b[rabbitRun[index]];  
-        $("#" + card).find("img:first").hide(); // hide the first image 
-        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
-    var myInterval = setInterval(function(){ 
-        $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
-        $("#" + card).find("img:first").show(); // find first image and show it 
-            index++;
-            card = b[rabbitRun[index]];
-        $("#" + card).find("img:first").hide(); // hide the first image
-        $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
-        if  (index >= rabbitRun.length) {
-            clearInterval(myInterval);
-        }      
-    }, speed);
+        if (btnId === "btn-play-medium") { 
+            b = mediumCards;
+            a = mediumCards.length;
+            $("#steps-6")[0].currentTime = 0;     //Sound for Rabbit Run
+            $("#steps-6")[0].play();              //Sound for Rabbit Run 
+        }
+        if (btnId === "btn-play-hard") { 
+            b = hardCards;
+            a = hardCards.length;
+            $("#steps-9")[0].currentTime = 0;     //Sound for Rabbit Run
+            $("#steps-9")[0].play();              //Sound for Rabbit Run 
+            }
+        
+        let i = 0;
+        while (i < a) { 
+            let n = Math.floor(Math.random() * b.length);
+            if (rabbitRun.indexOf(n) < 0) {
+            rabbitRun.push(n);
+            i++;
+            }
+        }
+        // START - Code here was written with help from tutors: Stephen & Tim  
+        let index = 0, 
+        rabbitImg = $("#rabbit").clone();
+        let card = b[rabbitRun[index]];  
+            $("#" + card).find("img:first").hide(); // hide the first image 
+            $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+        var myInterval = setInterval(function(){ 
+            $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+            $("#" + card).find("img:first").show(); // find first image and show it 
+                index++;
+                card = b[rabbitRun[index]];
+            $("#" + card).find("img:first").hide(); // hide the first image
+            $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and hide it
+            if  (index >= rabbitRun.length) {
+                clearInterval(myInterval);
+            }      
+        }, speed);
+   
     console.log("rabbitRun: " + rabbitRun);
     return rabbitRun;
     // Finish - Code here was writtne with help from tutors: Stephen & Tim
@@ -250,7 +252,7 @@ function displayModal(id) {
 }
 
 /*  Game rules modal loading + sound */
-$(".rules-button").on("click", function() {
+$(".btn-info").on("click", function() {
     $("#rules").modal("show");
     $("#rulesModal")[0].currentTime = 0; //RULES Modal opening sound
     $("#rulesModal")[0].play();
@@ -336,7 +338,7 @@ $("#modal-btn-win").on("click", function() {
             $("#level-up")[0].play();    
         }, 800); } 
 
-    if (score === 2 && board === hardCards) { 
+    if (score === 7 && board === hardCards) { 
         setTimeout(function() {
         displayModal("#finalWin");
         $("#final-win")[0].currentTime = 0;
@@ -344,8 +346,8 @@ $("#modal-btn-win").on("click", function() {
     }, 800); } 
 });
 
-/* Sound to open copyright info  */
-$("#btn-footer").on("click", function() {
+/* Sound to open copyright info & mute off button  */
+$("#btn-footer, .btn-mute").on("click", function() {
     $("#close-modal")[0].currentTime = 0;
     $("#close-modal")[0].play();
 });

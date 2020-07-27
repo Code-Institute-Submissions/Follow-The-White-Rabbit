@@ -227,26 +227,18 @@ body {
 }
 
 .clicks-counter {
-    background-color: rgb(17, 177, 17);
+    background-color:#3B914F;
     border-radius: 30%;
     width: 35px;
 }
 
-.btn-play,
-.btn-reset,
-.btn-info,
-.btn-mute {
-    border-radius: 30%;
-}
-
-.btn-reset {
-    background-color: orange;
-}
-
 .btn-dashboard {
+    border-radius: 30%;
+    background-color: #3B914F;
     margin: auto 0;
     font-size: 1.4em;
 }
+
 
 /* remove white border appearing after clicking a button */
 .btn-dashboard:focus, .btn-dashboard:active, .btn-dashboard.active, .btn-dashboard:focus:active {
@@ -254,6 +246,7 @@ body {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+ 
 }
 
 .button-holder {
@@ -591,6 +584,11 @@ body {
 
 #btn-close-copyright {
     color: white;
+}
+
+#footer #ed-purposes {
+    font-size: 8px;
+    font-family: "Alice", Courier, monospace;
 }
 
 #copy-modal-title {
