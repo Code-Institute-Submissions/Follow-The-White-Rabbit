@@ -8,6 +8,7 @@
 
 The project is a memory matching game.
 
+
 ## UX
 
 ### Goals 
@@ -159,13 +160,13 @@ These instructions were taken from the following link: [Cloning a Repository](ht
 
 
 #### Content
-Content of the website is created or curated by Alexey Statsenko. 
+The website is created by Alexey Statsenko, using the media described below. 
 
 #### Media
 
 ##### Images
-- Main background image, B&W & colored images of the white rabbit were downloaded from a blog of [Pan Macmillan UK publishing house](https://www.panmacmillan.com/)
-- Images for game cards, win, lose modals were downloaded from [Jose Avalos' website](https://www.tumbex.com/josepeacock.tumblr/posts).
+- Main background image, B&W & colored images of the white rabbit were downloaded from a blog of [Pan Macmillan UK publishing house](https://www.panmacmillan.com/). 
+- Images for game cards, win, lose modals were downloaded from [Jose Avalos' website](https://www.tumbex.com/josepeacock.tumblr/posts). 
 
 ##### Audio
 - All audio files were downloaded from [Free Sound Library](https://www.freesoundslibrary.com/).
@@ -179,11 +180,14 @@ Content of the website is created or curated by Alexey Statsenko.
 
 #### Acknowledgements
 
-1. I
-2. 
+1. Stephen Moody, CI tutor for shorting out the code for Rabbit Run/rabbit image moving across cards/, and other advice. 
+2. Tim Nelson, CI tutor for helping with Rabbit Run code.
+3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above througout the text), as well as ideas for structuring Readme.md & Testing.md. 
+4. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
 
 Special thanks to: 
 * My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
+
 
 #### Disclaimer
 The content of this website, including the images used, are for educational purposes only.
