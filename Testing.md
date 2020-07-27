@@ -26,12 +26,14 @@ The following validation services and linter were used to check the validity of 
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
+- [Am I responsive](http://ami.responsivedesign.is/) was used to check responsiveness of the website for various screen sizes - mobile, tab, laptop, desktop. 
+
 
 
 ### Bugs discovered: 
 
-#### Solved bugs
-### Functions:
+#### Solved bugs:
+
 
 1. Random images generation and insertion into game cards.
     Functionality has been tested and the function generates a random set of 4/6/9 cards and adds them as children into card-game divs. 
@@ -79,5 +81,4 @@ The following validation services and linter were used to check the validity of 
 
 
 ## Further testing: 
-1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
-2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store.
+1. Asked friends and family to look at the site on their devices & report any issues they found.
