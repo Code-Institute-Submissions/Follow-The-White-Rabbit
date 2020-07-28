@@ -110,8 +110,8 @@ $(".info-level-image").on("click", function() {
 $(".info-level-image").on("click", function() {
     let levelImg = $(this).attr("id");
     if (levelImg === "pic_E") {
-        $("#pic_E").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
-        $("#pic_M, #pic_H").removeClass("active").addClass("inactive").css({"pointer-events": "auto"});
+        $("#pic_E, #easy-sm").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
+        $("#pic_M, #pic_H, #medium-sm, #hard-sm").removeClass("active").addClass("inactive").css({"pointer-events": "auto"});
     }
     if (levelImg === "pic_M") {
         $("#pic_M").removeClass("inactive").addClass("active").css({"pointer-events": "none"}); //show which level is currently active
@@ -258,26 +258,26 @@ $(".btn-info").on("click", function() {
     $("#rulesModal")[0].play();
 });
 
-/* Clicks countdown setup for a new game, for each game board  */
+/* Clicks countdown setup for a new game, for each game board, PLay Button is deactivated, reset button re-activated after Rabbit Run is finished  */
 let clicksCounter;
 $(".btn-play").on("click", function() {    
-    $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success");
-    $(".btn-reset").prop("disabled",true);
+    $(this).prop("disabled",true).css({"color":"white"}).addClass("btn-outline-success"); // deactivate Play button when game cards are active
+    $(".btn-reset").prop("disabled",true); // Reset button is de-activated for the period of Rabbit Run
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") { clicksCounter = clicksCounterEasy,
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"});
-            $(".btn-reset").prop("disabled",false);
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
+            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
         }, speed*4); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-medium") { clicksCounter = clicksCounterMedium, 
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"});
-            $(".btn-reset").prop("disabled",false);
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
+            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
         }, speed*6); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-hard") { clicksCounter = clicksCounterHard, 
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"});
-            $(".btn-reset").prop("disabled",false);
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
+            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
         }, speed*9); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 

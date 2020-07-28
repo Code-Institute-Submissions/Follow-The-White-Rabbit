@@ -29,12 +29,168 @@ The following validation services and linter were used to check the validity of 
 - [Am I responsive](http://ami.responsivedesign.is/) was used to check responsiveness of the website for various screen sizes - mobile, tab, laptop, desktop. 
 
 
+## Client stories testing
+
+The user stories are described in the UX section of [README.md](README.md)
+
+**As a player, I want:**
+
+1.	Clear goal for the game
+    * The initial page displays a slogan “Let’s Catch the White Rabbit”, which complements the name of the game “Follow the White Rabbit”
+    * Difficulty level choice is suggested on the main page, with three images of Alice, The Cheshire Cat, & the Queen of Hearts, representing easy, medium and hard levels
+    * Mouse-over on computers and press on mobile/tab pops up a difficulty level Name over the level image, in case a player is confused
+
+2.	Clear instructions how to play
+    * The name of the game, and the main page slogan clearly state that we will be following the White Rabbit
+    * Each game board (4 / 6 / 9 cards) has an info button, which opens a modal with “How To Play” instructions
+    * A suggested number of points per level is 7, and once a player reaches 7 points on Easy & Medium, a modal will inform that the player has completed a level, and is ready to move up
+    * When a player has reached 7 points on Hard, a modal will inform that the player has won the game
+    * Each level is also marked by colour, with green for easy, yellow for medium, and red for hard
+
+3.	Have all the necessary control buttons & info in one place
+    * The main page provides difficulty level choice
+    * The player board (on the game boards section) shows level buttons, with a current level visually differentiated, where a player can switch between levels
+    * All the necessary buttons to control a game – Play, Reset, Info, Mute On/Off, plus Clicks countdown – are placed right above game cards on each of the game boards with respectively 4,6,9 cards
+    * Clicks countdown shows how many clicks left for a player at each game, as a player has to click cards 4,6,9 times for a game to be completed
+    * A player can reset a game, and start Rabbit Run over by pressing Play, in case he/she missed the Rabbit Run sequence, or clicked cards incorrectly. This won’t affect points.
+    * A point is given for each correctly complete game, a point is taken away for each incorrectly complete game, level is completed by achieving 7 points
+    * Score is displayed next to the level switching buttons, right above the game boards with cards
+
+4.	Ability to choose difficulty level, and go from easy to harder
+    * Levels can be chosen on the initial page, where they have clear descriptions, and colour differentiation, green for easy, yellow for medium, and red for hard
+    * During the game a player can switch between levels by using level buttons on the player board, placed right above the game boards with cards
+
+5.	Visual or audio feedback to my actions
+* Initial page has three clickable images for choosing a difficulty level, each image has a colour border, with green for easy, yellow for medium, and red for hard
+* Mouse-over or touch on mobile will reveal description for each level: Easy, Medium, Hard
+* Once a level choice image clicked a player is taken to a game board of 4,6,9 cards respectively, a melody is played on the transition from the main page to a game board
+* All the buttons have a mouse-over reaction, so a player can know that a button is active
+* Cards images & level images can be active and inactive. When they are active, a player can get a visual feedback, change of colour, opacity, or border colour
+* On pressing Play, an image of the White Rabbit starts its “run”, sequence of showing at each separate card and creating a pattern
+* Play button is inactive while a player is clicking game cards
+* A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a plyer indication that the “Run” is finished, and he/she can start
+* Cards are inactive(unclickable) during the Rabbit Run, and become clickable once it is finished, it is indicated by colour change of each cards border on mouse-over or touch
+* Click on a card is marked by a click sound, so that a plyer knows that a card has been clicked
+* Clicks Countdown deducts a number at each click, till it is zero, when a win or lose modal is displayed (triggered by the last click)
+* Reset button reshuffles game cards, and resets the Rabbit Run, it is accompanied by a melody
+* Reset button is inactive during Rabbit Run
+* Info button opens a modal with How to Play rules, accompanied by a sound 
+* Mute On/Off has a visual indication of switching between modes, plus when sounds are turned on, the action is accompanied by a click sound
+* Win and Lose modals are displayed with a happy and sad melody respectively
+* Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
+* Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
+* Closing of each modal is accompanied with a click sound
+* Opening and closing a footer is accompanied with a click sound
+
+6.	Positive/negative feedback for won/lost rounds, completed level/game
+* Gaining a point is shown by a Win modal with an encouraging message, positive melody, and adding a number to a Score window
+* Losing a point is shown by a Lose modal with a sad message and melody, and deducting a number from the Score
+* Win and Lose modals are displayed with a happy & sad melody respectively
+* Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
+* Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
+
+
+## Manual testing
+The section described in detail all the steps taken to confirm all the elements of the website work as intended. 
+
+### Testing undertaken on a laptop
+The game was tested on Lenovo Yoga 530, in both laptop & Pad modes, in Google Chrome, Mozilla Firefox, & Microsoft Edge
+
+1. The main page screen:
+- Confirmed that each level images has a description (Easy, Medium, Hard) floating in on mouse-over
+- Confirmed that each level image's border changes colour from green, yellow, red to white on mouse-over, and back to green, yellow, red on mouse out
+
+2. Game boards screen:
+*The process is the same for all 3 difficulty levels, I have combined them for saving space, and not creating too much duplicate text. Differences for 4 / 6 / 9 cards are clearly marked in this section below.*
+
+* Easy / Medium / Hard levels:
+
+- Melody played on transition from the main to level page
+- Cards are inactive on mouse-over
+- Clicks countdown shows "4" / "6" / "9"
+- Green controls buttons change colour on mouse over, meaning all active
+- Level button are changing border color on mouse over
+- Current easy level image is bright, other two - medium, hard - dimmed, or
+        medium is bright, and easy, hard - dimmed, or
+        hard is bright, and easy, medium - dimmed
+- Score shows "CAUGHT 0"
+- Clicking on Play button, launches Rabbit Run, accompanied by the appropriate melody
+- Reset button is blocked for the duration of the melody
+- Game cards are inactive
+- Once the Run & the melody stop, PLay button deactivates, game cards & Reset button activate
+- Each card click decreses the number in Clicks Countdown by 1, also accompanied by a sound, till it reaces 0, when a lose or win modal is triggered
+- Clicking Reset button reshuffles images in the game cards, and re-activates the Play button, accompanied by the appropriate melody
+- Each correct player's sequence adds a point to the Score and displays the Win modal with a positive melody
+- Each wrong player's sequence deducts a point from the Score (unless it was 0) and displays the Lose modal with a sad melody
+- Reaching 7 points triggers a Level Up modal with bell notification sound, informing that a player has completed the level, and can go a level up
+- Info modal with How to Play rules is opened by clicking the info button accompanied by a respective melody
+- Copyright modal is opened by clicking a Copyright symbol button at the right down bottom of the screen, accompanied by a click sound
+- Closing any modal is accompanied by a click sound
+- Mute Off/On button changes icon on click, showing "sound" when muted, and "muted" when sounds are on. Unmuting all sounds is accompanied by a click sound. 
+- Switching between levels works, and switches between game boards with 4 - 6 - 9 cards, while player boards with level switching buttons and score window stays the same. 
+- On switching levels Score is updated to 0, and visual effects showing active-inactive level change to show which level is currently active.
+- Went through all the levels to confirm: 
+    - all cards make click sounds
+    - after each click Countdown number decreases
+    - each correct sequence displays the Win modal
+    - after 7 points, Level Up modal is displayed 
+    - after 7 points on Hard the Final Win modal is displayed 
+    - all modals with respective melodies
+    - everything works as intended
+
+### Testing undertaken on mobile phone
+The game was tested on Samsung A7, Google Chrome & Mozilla Firefox
+
+1. The main page screen:
+- Confirmed that each level images has a description (Easy, Medium, Hard) floating in on touching a level image
+- Confirmed that each level image's border changes colour from green, yellow, red to white on touching a level image, and back to green, yellow, red on touching somewhere else on screen
+
+2. Game boards screen:
+*The process is the same for all 3 difficulty levels, I have combined them for saving space, and not creating too much duplicate text. Differences for 4 / 6 / 9 cards are clearly marked in this section below.*
+
+* Easy / Medium / Hard levels:
+
+- Melody played on transition from the main to level page
+- Cards are inactive on touch
+- Clicks countdown shows "4" / "6" / "9"
+- Green controls buttons change colour on touch, meaning all active
+- Level button are changing border color on touch, 
+- Current easy level image is bright, other two - medium, hard - dimmed, or
+        medium is bright, and easy, hard - dimmed, or
+        hard is bright, and easy, medium - dimmed
+- Score shows "CAUGHT 0"
+- Clicking on Play button, launches Rabbit Run, accompanied by the appropriate melody
+- Reset button is blocked for the duration of the melody
+- Game cards are inactive
+- Once the Run & the melody stop, Play button deactivates, game cards & Reset button activate
+- Each card click decreses the number in Clicks Countdown by 1, also accompanied by a sound, till it reaces 0, when a lose or win modal is triggered
+- Clicking Reset button reshuffles images in the game cards, and re-activates the Play button, accompanied by the appropriate melody
+- Each correct player's sequence adds a point to the Score and displays the Win modal with a positive melody
+- Each wrong player's sequence deducts a point from the Score (unless it was 0) and displays the Lose modal with a sad melody
+- Reaching 7 points triggers a Level Up modal with bell notification sound, informing that a player has completed the level, and can go a level up
+- Info modal with How to Play rules is opened by clicking the info button accompanied by a respective melody
+- Copyright modal is opened by clicking a Copyright symbol button at the right down bottom of the screen, accompanied by a click sound
+- Closing any modal is accompanied by a click sound
+- Mute Off/On button changes icon on click, showing "sound" when muted, and "muted" when sounds are on. Unmuting all sounds is accompanied by a click sound. 
+- Switching between levels works, and switches between game boards with 4 - 6 - 9 cards, while player boards with level switching buttons and score window stays the same. 
+- On switching levels Score is updated to 0, and visual effects showing active-inactive level change to show which level is currently active.
+- Went through all the levels to confirm: 
+    - all cards make click sounds
+    - after each click Countdown number decreases
+    - each correct sequence displays the Win modal
+    - after 7 points, Level Up modal is displayed 
+    - after 7 points on Hard the Final Win modal is displayed 
+    - all modals with respective melodies
+    - everything works as intended
+
+
+### Testing undertaken on in DevTools in Google Chrome
+The game was tested on all devices available there following the same procedire described in the section above for testing on a laptop, tab & mobile 
+
 
 ### Bugs discovered: 
 
 #### Solved bugs:
-
-
 1. Random images generation and insertion into game cards.
     Functionality has been tested and the function generates a random set of 4/6/9 cards and adds them as children into card-game divs. 
     Function is called by a click on Easy-, Medium-, Hard- level image on the initial page.
@@ -45,6 +201,7 @@ The following validation services and linter were used to check the validity of 
     The bug: White Rabbit image replaces game card image, and is displayed on each card according to randomly generated patters, but it happens too fast for a player to see it. 
     - Contacted tutor-support, a truto helped to partly solve the problem, but the "run" is still not visible.
     - Booked a screen one-on-one session.
+    BUG: Images are in serted with delay and blue background is visible for a split second in some cards. 
 
 3. Capture of players' clicks and comparison to randomly generate White Rabbit "run" pattern
     Testing on all difficulty level boards:
@@ -69,7 +226,7 @@ The following validation services and linter were used to check the validity of 
     Fixed: reset function works upon clicking modal button close, inserts new set of images into game cards, and Paly button is re-laucnhes the Rabbit Run across cards.
     
     BUG: If reset button(on game board) is pressed while Rabbit Run, inserted images are added on top of each in one cards, some cards have no images.
-    Fixed: Blcoked reset button for the period of time it takes to complete Rabbit Run on each diff.level board
+    Fixed: Blocked reset button for the period of time it takes to complete Rabbit Run on each diff.level board
 
 7. Swithcing between difficulty levels on player info board
     BUG: If a game is played on of the boards, and then levels switched, the Clicks left number does not get updated according to a board swhitched to, keeps showing the number from the a board where last game was played.
@@ -78,6 +235,9 @@ The following validation services and linter were used to check the validity of 
     Fixed. 
     BUG: Added opacity to level images in player board to show which level is active. Does not change opacity correctly. Show correct active level only after second click on level image/button in player board.
     Fixed.
+
+8. On mobile
+    BUG: Touch on level choice images, control buttons, level swithing images opens right-click menu of a browser, while showing necessary visual info of the game. 
 
 
 ## Further testing: 
