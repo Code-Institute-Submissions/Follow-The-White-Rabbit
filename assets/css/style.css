@@ -823,6 +823,10 @@ dfn:hover::before {top: 15px;}
         right: 0;
         left: 0;
     }
+
+     #score-info {
+        width: 65%;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -966,6 +970,9 @@ dfn:hover::before {top: 15px;}
         margin-right: 5px;
     }
     
+    .clicks-holder {
+        padding-right: 0 5px;
+    }
     .click-counter {
         font-size: 1.2em;
     }
@@ -1008,6 +1015,7 @@ dfn:hover::before {top: 15px;}
         height: 95px;
         width: 95px;
     }
+
     .medium-card,
     .hard-card {
         height: 70px;
@@ -1039,12 +1047,20 @@ dfn:hover::before {top: 15px;}
     }   
 
     .clicks-holder {
-        padding-right: 5px;
+        padding-right: 10px;
     }
 
     #footer .modal-dialog {
         width: 60%;
         right: 0;
         left: 0;
+    }
+
+    .dashboard-holder {
+        padding: 0;
+    }
+
+   .click-counter {
+        font-size: 1.2em;
     }
 }

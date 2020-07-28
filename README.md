@@ -73,6 +73,8 @@ Create a simple, easy to use game which provides challenging stimulative interac
 Referencing some famous characters to appeal to certain audience. 
 Create a game with reference to the characters from Alice in Wonderland, readers of which are smart peope and will be interested  in testing or training their attention & memory skills in a fun way. 
 
+The idea for the game was inspired by Simon says game. Some parts/features of the game were insipred by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
+
 ### Scope
 
 User Strories:
@@ -101,11 +103,12 @@ as simple as possible, with the focus on the game boards with 4/6/9 cards, which
 spearatly a player board featureing the Score results, and the level switching controls, with the current level being highlighted.
 
 Colors: 
+Images used for game cards are colorful, for this reason everything else was chosen to be dimmed, no bright colors, no multi-colored areas or elements 
 
 
 
 Fonts: 
-* Sunshiney & Alice, for resemblance to Alice in Wonderland font. 
+* Sunshiney & Alice, for resemblance to Alice in Wonderland font used in the Hollywood film. 
 
 Images:
 * Images featuring Alice, The Cheshire Cat and other characters were used
@@ -122,11 +125,9 @@ Images:
 
 
 ## Features
-
-
 ### Existing Features
 
-* 
+Main page 
 
 ### Features to Implement in the Future
 
@@ -202,11 +203,8 @@ The website is created by Alexey Statsenko, using the media described below.
 1. Stephen Moody, CI tutor for shorting out the code for Rabbit Run/rabbit image moving across cards/, and other advice. 
 2. Tim Nelson, CI tutor for helping with Rabbit Run code.
 3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above througout the text), as well as ideas for structuring Readme.md & Testing.md. 
-4. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
-
-Special thanks to: 
-* My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
-
+4. My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
+5. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
 
 #### Disclaimer
 The content of this website, including the images used, are for educational purposes only.

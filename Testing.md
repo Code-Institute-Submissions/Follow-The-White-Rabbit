@@ -61,33 +61,33 @@ The user stories are described in the UX section of [README.md](README.md)
     * During the game a player can switch between levels by using level buttons on the player board, placed right above the game boards with cards
 
 5.	Visual or audio feedback to my actions
-* Initial page has three clickable images for choosing a difficulty level, each image has a colour border, with green for easy, yellow for medium, and red for hard
-* Mouse-over or touch on mobile will reveal description for each level: Easy, Medium, Hard
-* Once a level choice image clicked a player is taken to a game board of 4,6,9 cards respectively, a melody is played on the transition from the main page to a game board
-* All the buttons have a mouse-over reaction, so a player can know that a button is active
-* Cards images & level images can be active and inactive. When they are active, a player can get a visual feedback, change of colour, opacity, or border colour
-* On pressing Play, an image of the White Rabbit starts its “run”, sequence of showing at each separate card and creating a pattern
-* Play button is inactive while a player is clicking game cards
-* A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a plyer indication that the “Run” is finished, and he/she can start
-* Cards are inactive(unclickable) during the Rabbit Run, and become clickable once it is finished, it is indicated by colour change of each cards border on mouse-over or touch
-* Click on a card is marked by a click sound, so that a plyer knows that a card has been clicked
-* Clicks Countdown deducts a number at each click, till it is zero, when a win or lose modal is displayed (triggered by the last click)
-* Reset button reshuffles game cards, and resets the Rabbit Run, it is accompanied by a melody
-* Reset button is inactive during Rabbit Run
-* Info button opens a modal with How to Play rules, accompanied by a sound 
-* Mute On/Off has a visual indication of switching between modes, plus when sounds are turned on, the action is accompanied by a click sound
-* Win and Lose modals are displayed with a happy and sad melody respectively
-* Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
-* Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
-* Closing of each modal is accompanied with a click sound
-* Opening and closing a footer is accompanied with a click sound
+    * Initial page has three clickable images for choosing a difficulty level, each image has a colour border, with green for easy, yellow for medium, and red for hard
+    * Mouse-over or touch on mobile will reveal description for each level: Easy, Medium, Hard
+    * Once a level choice image clicked a player is taken to a game board of 4,6,9 cards respectively, a melody is played on the transition from the main page to a game board
+    * All the buttons have a mouse-over reaction, so a player can know that a button is active
+    * Cards images & level images can be active and inactive. When they are active, a player can get a visual feedback, change of colour, opacity, or border colour
+    * On pressing Play, an image of the White Rabbit starts its “run”, sequence of showing at each separate card and creating a pattern
+    * Play button is inactive while a player is clicking game cards
+    * A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a plyer indication that the “Run” is finished, and he/she can start
+    * Cards are inactive(unclickable) during the Rabbit Run, and become clickable once it is finished, it is indicated by colour change of each cards border on mouse-over or touch
+    * Click on a card is marked by a click sound, so that a plyer knows that a card has been clicked
+    * Clicks Countdown deducts a number at each click, till it is zero, when a win or lose modal is displayed (triggered by the last click)
+    * Reset button reshuffles game cards, and resets the Rabbit Run, it is accompanied by a melody
+    * Reset button is inactive during Rabbit Run
+    * Info button opens a modal with How to Play rules, accompanied by a sound 
+    * Mute On/Off has a visual indication of switching between modes, plus when sounds are turned on, the action is accompanied by a click sound
+    * Win and Lose modals are displayed with a happy and sad melody respectively
+    * Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
+    * Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
+    * Closing of each modal is accompanied with a click sound
+    * Opening and closing a footer is accompanied with a click sound
 
 6.	Positive/negative feedback for won/lost rounds, completed level/game
-* Gaining a point is shown by a Win modal with an encouraging message, positive melody, and adding a number to a Score window
-* Losing a point is shown by a Lose modal with a sad message and melody, and deducting a number from the Score
-* Win and Lose modals are displayed with a happy & sad melody respectively
-* Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
-* Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
+    * Gaining a point is shown by a Win modal with an encouraging message, positive melody, and adding a number to a Score window
+    * Losing a point is shown by a Lose modal with a sad message and melody, and deducting a number from the Score
+    * Win and Lose modals are displayed with a happy & sad melody respectively
+    * Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
+    * Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
 
 
 ## Manual testing

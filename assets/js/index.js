@@ -1,6 +1,3 @@
-/* Modal loading on page loading 
-The code was taken from https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load */ 
-
 /* Array of images from assets/images/random folder  --  index.html div id="card-images" */
 var images = [];
 const easyCards = ["card01","card02","card03","card04"],
@@ -299,7 +296,7 @@ $(".game-card").on("click", function() {
 /* Resetting the whole game board on closing the win-lose modal */
 $(".btn-reset, .btn-modal").on("click", function() {
         index = 0; 
-  			let card;
+  		let card;
         while (index < board.length) {
             card = board[index];
             $("#" + card).find("img:last").remove();
@@ -331,18 +328,18 @@ $(".btn-modal, .close-modal").on("click", function() {
 
 /* Modal suggesting to go a level up  */
 $("#modal-btn-win").on("click", function() {
-    if (score === 7 && (board === easyCards || board === mediumCards)) { 
+    if (score === 2 && (board === easyCards || board === mediumCards)) { 
         setTimeout(function() {
             displayModal("#levelUp");
             $("#level-up")[0].currentTime = 0;
             $("#level-up")[0].play();    
-        }, 800); } 
+    }, 800); } 
 
-    if (score === 7 && board === hardCards) { 
+    if (score === 2 && board === hardCards) { 
         setTimeout(function() {
-        displayModal("#finalWin");
-        $("#final-win")[0].currentTime = 0;
-        $("#final-win")[0].play();
+            displayModal("#finalWin");
+            $("#final-win")[0].currentTime = 0;
+            $("#final-win")[0].play();
     }, 800); } 
 });
 
@@ -352,7 +349,7 @@ $("#btn-footer, .btn-mute").on("click", function() {
     $("#close-modal")[0].play();
 });
 
-/* The code is taken from Anna Greaves game's page - https://github.com/AJGreaves/picflip */
+/* Mute On / Off button function */
 $('.btn-mute').click(function() {
     let allaudio = $('audio');
     if (silence) {
@@ -367,7 +364,5 @@ $('.btn-mute').click(function() {
         }
         silence = true;
     }
-    $('.btn-mute i').toggleClass('fas fa-volume-up');
+    $('.btn-mute i').toggleClass('fa fa-volume-off');
 });
-
-
