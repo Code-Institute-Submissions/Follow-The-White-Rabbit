@@ -69,11 +69,17 @@ Developer's goals:
 
 ### Strategy
 
+Create a memory testing/challening game, which will be fun to play.
 Create a simple, easy to use game which provides challenging stimulative interactivity, with increasing difficulty levels. 
 Referencing some famous characters to appeal to certain audience. 
 Create a game with reference to the characters from Alice in Wonderland, readers of which are smart peope and will be interested  in testing or training their attention & memory skills in a fun way. 
 
-The idea for the game was inspired by Simon says game. Some parts/features of the game were insipred by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
+The idea for the game was inspired by:
+- Simon says game
+- [Visual Memory test from Human Benchmark website](https://humanbenchmark.com/tests/memory)
+- "Follow the White Rabbit" from the film Matrix
+- Secirity sequence drawn by a finger between 9 or 12 dots on mobile phones
+- Some parts/features of the game were insipred by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
 
 ### Scope
 
@@ -84,28 +90,43 @@ User Strories:
 
 ### Structure
 
-The main screen will have a slogan: "Follow the white Rabbit", and/or "Catch me if you can", prompt for "How to Play", three screens of difficulty levels with characters from the book: Alice/Easy, The Cheshire Cat/Medium, and The Queen of Hearts/Difficult. 
-How To Play: explains the objective, rules, etc of the game.
-Gameplay screen: will have a number of images with the book's characters. Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" throung images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). A user will be aksed to repeat the sequence by pressing respective images. If it is succesful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
-Easy: 4 images
-Medium: 6 images
-Difficult: 9 images
+- The main screen will have a slogan: "Follow the white Rabbit", and/or "Catch me if you can", prompt for "How to Play", three screens of difficulty levels with characters from the book: Alice/Easy, The Cheshire Cat/Medium, and The Queen of Hearts/Difficult. 
+- How To Play: explains the objective, rules, etc of the game.
+- Gameplay screen: will have a number of images with the book's characters. 
+        Easy: 4 images
+        Medium: 6 images
+        Hard: 9 images 
+    - Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" throung images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). 
+    - A user will be aksed to repeat the sequence by pressing respective images. If it is succesful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
+       
+- Info modals for won or lost game, finishing a level, completing the game.
 
 
 ### Skeleton
 
-Wireframes go here
+Balsamiq wireframes software was used to create wireframes for this project:
+* [Draft of the idea](assets/images/readme/wireframes/JS_Memory_game_draft_idea.pdf)
+Shows a mobile view of three different difficulty levels and screen-by-screen seuqence of possible game play. 
+* [Main screen + Hard level, computer view](assets/images/readme/wireframes/Main_Screen_Level_web.pdf)
+Shows initial game screen and hard level with 9 cards on a computer browser.
+* [Main screen + Hard level, mobile view](assets/images/readme/wireframes/Main_Screen_Level_mobile.pdf)
+
 
 ### Surface
 
 Design choices:
-as simple as possible, with the focus on the game boards with 4/6/9 cards, which contains all the necessary controls: Play, Reset, Info/Rules, Mute On/Off, Clicks countdown
-spearatly a player board featureing the Score results, and the level switching controls, with the current level being highlighted.
+- Main introductory screen will have a slogan Let's Catch the White Rabbit", and suggestion to choose a difficulty level, with three (clickable) images representing each level
+- Game screens should be as simple as possible, with the focus on the game boards with 4/6/9 cards, which contains all the necessary controls: Play, Reset, Info/Rules, Mute On/Off, Clicks countdown
+- Have a player board to show an active difficulty level, where a player will be able to switch between levels.
+- The player board will display Score results
 
 Colors: 
-Images used for game cards are colorful, for this reason everything else was chosen to be dimmed, no bright colors, no multi-colored areas or elements 
+- The main colors were chosen based on the colors used in the main background of the whole game. For purposes of not distracting attention, the main background was dimmed and unfocused.
+- Images used for game cards are colorful, for this reason everything else was chosen to be dimmed, no bright colors, no multi-colored areas or elements 
+- Backgrounds for all the main modals, game boards, buttons, where chosen using [ColorSpace website](https://mycolor.space/).
 
-
+- The starter color for most of the backgrounds, an other colors from the palette, was the color of some card suits on the main background: #c5a304. 
+<img src="assets/images/readme/backgound_pallette.jpg" alt="Color Palette" style="margin: 0 10px;" width="60%"/>
 
 Fonts: 
 * Sunshiney & Alice, for resemblance to Alice in Wonderland font used in the Hollywood film. 
@@ -127,11 +148,74 @@ Images:
 ## Features
 ### Existing Features
 
-Main page 
+Main page has:
+- an image of the White Rabbit with the game's slogan - "Let's Catch The White Rabbit", which complements the name of the game "Follow The White Rabbit"
+- suggestion to select a difficulty level, represented by three images: 
+        - Alice for easy level, 
+        - The Cheshire Car - medium
+        - The Queen of Hearts - hard
+- each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see [**Acknowledgements**](#acknowledgements) below:
+        - green for easy
+        - yellow for medium
+        - red for 
+- each image has a title (EASY, MEDIUM, or HARD) float on if a mouse is moved over an image, so a player can easily understand which level is which
+- each image changes its border color on mouse over so a player knows which image is clickable at the moment
+- pressing each of the levels closes the main page modal, and opens the player board with level switch buttons/images, and Score window and game board of 4/6/9 cards
+    - on opening a game board the game randomly inserts images into the game cards
+
+Game screen has:
+
+* Player boards at the top:
+    - Level switching buttons/images
+    - Switching between levels closes a current game board(eg. easy, 4 cards) and opens a target one(eg. medium, 6 cards), also updates the Score to 0
+
+    - Active level image is bright, the other two are dimmed
+    - Images change their border color on mouse-over, so a player knows its active to be clicked
+    - Score window shows text "CAUGHT 0" & an image of the White Rabbit
+
+* Game board below the player board:
+    - Respectively 4/6/9 game cards, which are inactive till Play button is pressed, and Rabbit Run is complete
+    - Control buttons right above the cards:
+        * Play activates the Rabbit Run, during which the game cards, and reset button are inactive
+        * Reset button reshuffles the images in the game cards, preparing for a new game
+        * Info button opens a How to Play modal with rules of the game
+        * Mute on/off button turns game sounds on & off
+        * Clicks Countdown shows how many clicks are left before a game is over 
+        * Last click triggers a Win or Lose modal
+        * Closing Win modal increases Points by 1
+        * Closing Lose modal decreases Points by 1, unless it is 0
+        * After gaining 7 points in a game on easy & medium levels, closing Win modal triggers Level Up modal to be displayed, saying that the level has been complete and a plaer can switch to a harder level. *The developer evaluated automated switcing to a higher level on closing the Level Up modal, but decided to leave it for later implementation.*  
+        * After gaining 7 points on hard, triggers Final Win modal, saying the White Rabbit cannot run away, and a player won the game.
+
+* Copyright modal is open by a button located in the right bottom corner of the screen
+    - Modal shows info about the developer, link to his Github profile, and disclaimer "for educational purposes only"
+
+
+* Visual and sound cues:
+    * Initial page has three clickable images for choosing a difficulty level, each image has a colour border, with green for easy, yellow for medium, and red for hard
+    * Mouse-over or touch on mobile will reveal description for each level: Easy, Medium, Hard
+    * Once a level choice image clicked a player is taken to a game board of 4,6,9 cards respectively, a melody is played on the transition from the main page to a game board
+    * All the buttons have a mouse-over reaction, so a player can know that a button is active
+    * Cards images & level images can be active and inactive. When they are active, a player can get a visual feedback, change of colour, opacity, or border colour
+    * On pressing Play, an image of the White Rabbit starts its “run”, sequence of showing at each separate card and creating a pattern
+    * Play button is inactive while a player is clicking game cards
+    * A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a plyer indication that the “Run” is finished, and he/she can start
+    * Cards are inactive(unclickable) during the Rabbit Run, and become clickable once it is finished, it is indicated by colour change of each cards border on mouse-over or touch
+    * Click on a card is marked by a click sound, so that a plyer knows that a card has been clicked
+    * Clicks Countdown deducts a number at each click, till it is zero, when a win or lose modal is displayed (triggered by the last click)
+    * Reset button reshuffles game cards, and resets the Rabbit Run, it is accompanied by a melody
+    * Reset button is inactive during Rabbit Run
+    * Info button opens a modal with How to Play rules, accompanied by a sound 
+    * Mute On/Off has a visual indication of switching between modes, plus when sounds are turned on, the action is accompanied by a click sound
+    * Win and Lose modals are displayed with a happy and sad melody respectively
+    * Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
+    * Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
+    * Closing of each modal is accompanied with a click sound
+    * Opening and closing a footer is accompanied with a click sound
 
 ### Features to Implement in the Future
 
-
+* Automated level switching on completing a level, i.e. gaining 7 points on easy or medium level. 
 
 
 ## Technologies Used
@@ -145,16 +229,17 @@ Main page
 - [Google Fonts](https://fonts.google.com/) for fonts.
 - [AutoPrefixer](https://autoprefixer.github.io/) to make sure css prefixes cover all browser versions.
 - [Am I responsive](http://ami.responsivedesign.is/) was used to check responsiveness of the website for various screen sizes - mobile, tab, laptop, desktop.
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes.
+- [ColorSpace](https://mycolor.space/) for matching colors
+
 
 ## Testing
-
 Testing information can be found in separate [Testing.md](Testing.md) file.
+
 
 ## Deployment
 
-[GitHub Pages Website](link to be added)
-
-[GitHub Pages Website](https://olekst.github.io/STOdrones---aerial-photography/)
+[GitHub Pages Website](https://olekst.github.io/Follow-The-White-Rabbit/)
 
 Gitpod was used to code this project. It was then committed and pushed to Github using the command line and deployed on GitHub pages from the repository.
 
