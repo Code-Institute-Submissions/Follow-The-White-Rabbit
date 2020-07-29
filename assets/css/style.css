@@ -573,13 +573,13 @@ body {
 }
 
 .vertical-aligned {
-    vertical-align: middle;
+    top: 50%;
+    bottom: 50%;
 }
 
 .footer-box {
     margin: 0;
     padding: 0;
-    vertical-align: middle;
 }
 
 #btn-close-copyright {

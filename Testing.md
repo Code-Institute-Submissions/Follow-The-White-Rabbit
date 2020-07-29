@@ -23,9 +23,13 @@ This document is intended to record testing at various stages of development of 
 
 ### Validation services
 The following validation services and linter were used to check the validity of the website code.
-- [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
+- [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML
+    Three errors related to <dfn> used on the main screen around difficulty level choice. I've decided to keep them, because I have not found a way to solve the issue on time. 
+    plus
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
+    No errors, some warnings.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
+    No errors, some warnings.
 - [Am I responsive](http://ami.responsivedesign.is/) was used to check responsiveness of the website for various screen sizes - mobile, tab, laptop, desktop. 
 
 

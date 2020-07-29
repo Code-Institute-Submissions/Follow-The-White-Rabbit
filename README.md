@@ -36,8 +36,6 @@
 
 7. [**Disclaimer**](#disclaimer)
 
-<img src="assets/images/readme/main_screen.jpg" alt="Main Screen" style="margin: 0 10px;" width="100%"/>
-
 
 ## UX
 
@@ -124,9 +122,9 @@ Colors:
 - The main colors were chosen based on the colors used in the main background of the whole game. For purposes of not distracting attention, the main background was dimmed and unfocused.
 - Images used for game cards are colorful, for this reason everything else was chosen to be dimmed, no bright colors, no multi-colored areas or elements 
 - Backgrounds for all the main modals, game boards, buttons, where chosen using [ColorSpace website](https://mycolor.space/).
+- The starting color for colour pallette used for backgrounds & other game elements was a color of one card suits on the main background: #c5a304. 
 
-- The starter color for most of the backgrounds, an other colors from the palette, was the color of some card suits on the main background: #c5a304. 
-<img src="assets/images/readme/backgound_pallette.jpg" alt="Color Palette" style="margin: 0 10px;" width="60%"/>
+<img src="assets/images/readme/backgound_pallette.jpg" alt="Color Palette" style="margin: 0 10px; align-self: center;" width="60%"/>
 
 Fonts: 
 * Sunshiney & Alice, for resemblance to Alice in Wonderland font used in the Hollywood film. 
@@ -148,6 +146,8 @@ Images:
 ## Features
 ### Existing Features
 
+<img src="assets/images/readme/main_intro_screen.jpg" alt="Main Screen" style="margin: 0 10px;" width="100%"/>
+
 Main page has:
 - an image of the White Rabbit with the game's slogan - "Let's Catch The White Rabbit", which complements the name of the game "Follow The White Rabbit"
 - suggestion to select a difficulty level, represented by three images: 
@@ -163,12 +163,13 @@ Main page has:
 - pressing each of the levels closes the main page modal, and opens the player board with level switch buttons/images, and Score window and game board of 4/6/9 cards
     - on opening a game board the game randomly inserts images into the game cards
 
-Game screen has:
 
+<img src="assets/images/readme/main_screen.jpg" alt="Main Screen" style="margin: 0 10px;" width="100%"/>
+
+Game screen has:
 * Player boards at the top:
     - Level switching buttons/images
     - Switching between levels closes a current game board(eg. easy, 4 cards) and opens a target one(eg. medium, 6 cards), also updates the Score to 0
-
     - Active level image is bright, the other two are dimmed
     - Images change their border color on mouse-over, so a player knows its active to be clicked
     - Score window shows text "CAUGHT 0" & an image of the White Rabbit
@@ -187,8 +188,27 @@ Game screen has:
         * After gaining 7 points in a game on easy & medium levels, closing Win modal triggers Level Up modal to be displayed, saying that the level has been complete and a plaer can switch to a harder level. *The developer evaluated automated switcing to a higher level on closing the Level Up modal, but decided to leave it for later implementation.*  
         * After gaining 7 points on hard, triggers Final Win modal, saying the White Rabbit cannot run away, and a player won the game.
 
+
+Win & Lose modals:
+
+<table>
+    <tr>
+        <td><img src="assets/images/readme/win_modal_prtsc.jpg" alt="Win Modal" style="float: left; margin-rigth: 10px;" width="400"/></td>
+        <td><img src="assets/images/readme/lose_modal_prtsc.jpg" alt="Lose Modal" style="float: left; margin-rigth: 10px;" width="380"/></td>
+        <td></td>
+    </tr>
+</table>
+
+Level Up & Final Win modals:
+
+<img src="assets/images/readme/level_up_final_win_modal_prtsc.jpg" alt="Level Up modal & Final Win modal" style="margin: 0 10px; align-self: center;" width="90%"/>
+
+
+
 * Copyright modal is open by a button located in the right bottom corner of the screen
     - Modal shows info about the developer, link to his Github profile, and disclaimer "for educational purposes only"
+
+<img src="assets/images/readme/copyright_modal.jpg" alt="Copyright modal" style="margin: 0 10px; align-self: center;" width="90%"/>
 
 
 * Visual and sound cues:
@@ -215,7 +235,7 @@ Game screen has:
 
 ### Features to Implement in the Future
 
-* Automated level switching on completing a level, i.e. gaining 7 points on easy or medium level. 
+* Automated level switching on completing a level, i.e. gaining 7 points on easy or medium level, i.e. on closing Level Up modal.
 
 
 ## Technologies Used
