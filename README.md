@@ -32,7 +32,7 @@
     - [**Images**](#images)
     - [**Audio**](#audio)
     - [**Code**](#code)
-    - [**Acknowledgements**](#acknowledgements)
+    - [**Acknowledgments**](#acknowledgments)
 
 7. [**Disclaimer**](#disclaimer)
 
@@ -67,24 +67,27 @@ Developer's goals:
 
 ### Strategy
 
-Create a memory testing/challening game, which will be fun to play.
+Create a memory testing/challenging game, which will be fun to play.
 Create a simple, easy to use game which provides challenging stimulative interactivity, with increasing difficulty levels. 
 Referencing some famous characters to appeal to certain audience. 
-Create a game with reference to the characters from Alice in Wonderland, readers of which are smart peope and will be interested  in testing or training their attention & memory skills in a fun way. 
+Create a game with reference to the characters from Alice in Wonderland, readers of which are smart people and will be interested  in testing or training their attention & memory skills in a fun way. 
 
 The idea for the game was inspired by:
 - Simon says game
 - [Visual Memory test from Human Benchmark website](https://humanbenchmark.com/tests/memory)
 - "Follow the White Rabbit" from the film Matrix
-- Secirity sequence drawn by a finger between 9 or 12 dots on mobile phones
-- Some parts/features of the game were insipred by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
+- Security sequence drawn by a finger between 9 or 12 dots on mobile phones
+- Some parts/features of the game were inspired by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
 
 ### Scope
 
-User Strories:
-- School children: I like Alice in Wonderland, and its characters, and I'd love to play "with those chracters". I want a simple easy to undestand game, where I can test my attention and memory skills, by playing with my favourite characters, play together with my friends during a lesson break or over the weekend, and see who is faster. 
-- Students: I read the book several times, and now I understand more meanings meant by the author than before, and i really love its storyline, and deeper meaning placed in the characters, their actions in various situations. I'd love to play a fun challening game, which challenges my attantion and tests my memory. It'd be fun also fun to compete with my friends who share the same love for the book. 
-- Elder people: I love books and reading. Alice in Wonderlnad has been one of my favourites since young age. I'd be happy to be reminded of the fun mysteries and intricacies of the book, but also keep my attention and memory fit. I'd love a simple easy to understand game, providing good exercises for my brain. 
+User Stories:
+* School children: 
+    - I like Alice in Wonderland, and its characters, and I'd love to play "with those characters". I want a simple easy to understand game, where I can test my attention and memory skills, by playing with my favourite characters, play together with my friends during a lesson break or over the weekend, and see who is faster. 
+* Students: 
+    - I read the book several times, and now I understand more meanings meant by the author than before, and i really love its storyline, and deeper meaning placed in the characters, their actions in various situations. I'd love to play a fun challenging game, which challenges my attention and tests my memory. It'd be fun also fun to compete with my friends who share the same love for the book. 
+* Elder people: 
+    - I love books and reading. Alice in Wonderland has been one of my favourites since young age. I'd be happy to be reminded of the fun mysteries and intricacies of the book, but also keep my attention and memory fit. I'd love a simple easy to understand game, providing good exercises for my brain. 
 
 ### Structure
 
@@ -94,8 +97,8 @@ User Strories:
         Easy: 4 images
         Medium: 6 images
         Hard: 9 images 
-    - Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" throung images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). 
-    - A user will be aksed to repeat the sequence by pressing respective images. If it is succesful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
+    - Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" through images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). 
+    - A user will be asked to repeat the sequence by pressing respective images. If it is successful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
        
 - Info modals for won or lost game, finishing a level, completing the game.
 
@@ -104,7 +107,7 @@ User Strories:
 
 Balsamiq wireframes software was used to create wireframes for this project:
 * [Draft of the idea](assets/images/readme/wireframes/JS_Memory_game_draft_idea.pdf)
-Shows a mobile view of three different difficulty levels and screen-by-screen seuqence of possible game play. 
+Shows a mobile view of three different difficulty levels and screen-by-screen sequence of possible game play. 
 * [Main screen + Hard level, computer view](assets/images/readme/wireframes/Main_Screen_Level_web.pdf)
 Shows initial game screen and hard level with 9 cards on a computer browser.
 * [Main screen + Hard level, mobile view](assets/images/readme/wireframes/Main_Screen_Level_mobile.pdf)
@@ -122,7 +125,7 @@ Colors:
 - The main colors were chosen based on the colors used in the main background of the whole game. For purposes of not distracting attention, the main background was dimmed and unfocused.
 - Images used for game cards are colorful, for this reason everything else was chosen to be dimmed, no bright colors, no multi-colored areas or elements 
 - Backgrounds for all the main modals, game boards, buttons, where chosen using [ColorSpace website](https://mycolor.space/).
-- The starting color for colour pallette used for backgrounds & other game elements was a color of one card suits on the main background: #c5a304. 
+- The starting color for colour palette used for backgrounds & other game elements was a color of one card suits on the main background: #c5a304. 
 
 <img src="assets/images/readme/backgound_pallette.jpg" alt="Color Palette" style="margin: 0 10px; align-self: center;" width="60%"/>
 
@@ -185,7 +188,7 @@ Game screen has:
         * Last click triggers a Win or Lose modal
         * Closing Win modal increases Points by 1
         * Closing Lose modal decreases Points by 1, unless it is 0
-        * After gaining 7 points in a game on easy & medium levels, closing Win modal triggers Level Up modal to be displayed, saying that the level has been complete and a plaer can switch to a harder level. *The developer evaluated automated switcing to a higher level on closing the Level Up modal, but decided to leave it for later implementation.*  
+        * After gaining 7 points in a game on easy & medium levels, closing Win modal triggers Level Up modal to be displayed, saying that the level has been complete and a player can switch to a harder level. *The developer evaluated automated switching to a higher level on closing the Level Up modal, but decided to leave it for later implementation.*  
         * After gaining 7 points on hard, triggers Final Win modal, saying the White Rabbit cannot run away, and a player won the game.
 
 
@@ -219,9 +222,9 @@ Level Up & Final Win modals:
     * Cards images & level images can be active and inactive. When they are active, a player can get a visual feedback, change of colour, opacity, or border colour
     * On pressing Play, an image of the White Rabbit starts its “run”, sequence of showing at each separate card and creating a pattern
     * Play button is inactive while a player is clicking game cards
-    * A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a plyer indication that the “Run” is finished, and he/she can start
+    * A melody of appropriate length is played during the Rabbit “Run”, which finish exactly when the Rabbit image disappears from the last card, giving a player indication that the “Run” is finished, and he/she can start
     * Cards are inactive(unclickable) during the Rabbit Run, and become clickable once it is finished, it is indicated by colour change of each cards border on mouse-over or touch
-    * Click on a card is marked by a click sound, so that a plyer knows that a card has been clicked
+    * Click on a card is marked by a click sound, so that a player knows that a card has been clicked
     * Clicks Countdown deducts a number at each click, till it is zero, when a win or lose modal is displayed (triggered by the last click)
     * Reset button reshuffles game cards, and resets the Rabbit Run, it is accompanied by a melody
     * Reset button is inactive during Rabbit Run
@@ -230,8 +233,8 @@ Level Up & Final Win modals:
     * Win and Lose modals are displayed with a happy and sad melody respectively
     * Level Up modal is triggered by closing a win modal, when a player achieved 7 points, accompanied by a melody
     * Final Win modal, is triggered by closing a win modal, when a player achieved 7 points on Hard level, accompanied by the happiest melody
-    * Closing of each modal is accompanied with a click sound
-    * Opening and closing a footer is accompanied with a click sound
+    * Closing of each modal is accompanied by a click sound
+    * Opening and closing a footer is accompanied by a click sound
 
 ### Features to Implement in the Future
 
@@ -243,7 +246,7 @@ Level Up & Final Win modals:
 - [JQuery](https://jquery.com) to simplify DOM manipulation
 - [Gitpod](https://gitpod.io/) for coding the project.
 - [GitHub](https://github.com/) to store & share the project's code. 
-- [ChromeDevtools](https://developers.google.com/web/tools/chrome-devtools) to check created code and possible inconsistences, find best parameters for various code items. 
+- [ChromeDevtools](https://developers.google.com/web/tools/chrome-devtools) to check created code and possible inconsistencies, find best parameters for various code items. 
 - [Bootstrap](https://www.bootstrapcdn.com/) to simplify website's structure. 
 - [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) for button icons.
 - [Google Fonts](https://fonts.google.com/) for fonts.
@@ -304,10 +307,10 @@ The website is created by Alexey Statsenko, using the media described below.
 - Mute On/Off function code is taken from [Anna Greaves game's page](https://github.com/AJGreaves/picflip).
 
 
-#### Acknowledgements
+#### Acknowledgments
 1. Stephen Moody, CI tutor for shorting out the code for Rabbit Run/rabbit image moving across cards/, and other advice. 
 2. Tim Nelson, CI tutor for helping with Rabbit Run code.
-3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above througout the text), as well as ideas for structuring Readme.md & Testing.md. 
+3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above throughout the text), as well as ideas for structuring Readme.md & Testing.md. 
 4. My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
 5. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
 
