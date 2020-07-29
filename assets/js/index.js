@@ -8,6 +8,8 @@ const easyCards = ["card01","card02","card03","card04"],
 
 /* Choosing difficulty level and closing the modal   */
 let modal = document.getElementById('myModal'),
+ a, 
+ b, 
  board, // Reference from Level divs to cardsArrays[easyCards, mediumCards, HardCards]
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,

@@ -971,7 +971,7 @@ dfn:hover::before {top: 15px;}
     }
     
     .clicks-holder {
-        padding-right: 0 5px;
+        padding-right: 5px;
     }
     .click-counter {
         font-size: 1.2em;
