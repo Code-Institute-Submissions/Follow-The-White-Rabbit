@@ -340,7 +340,8 @@ The website is created by Alexey Statsenko, using the media described below.
 2. Tim Nelson, CI tutor for helping with Rabbit Run code.
 3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above throughout the text), as well as ideas for structuring Readme.md & Testing.md. 
 4. My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
-5. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
+5. My friend Chris for giving a good testing and checking the game's code, and giving good advice on improvements. 
+6. My firends Katja, Nafeesah, Mario, Kasia, Candice for playing/testing the game and giving me feedback on possible improvements. 
 
 
 
