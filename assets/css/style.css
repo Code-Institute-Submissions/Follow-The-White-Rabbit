@@ -479,7 +479,8 @@ body {
 .level-up-title, 
 .final-win-title {
     font-family: "Alice", sans-serif;
-    font-size: 32px;
+    font-size: 2em;
+    margin: 0 5px;
     font-weight: 100;
     text-align: center;
     color: white;
@@ -488,7 +489,7 @@ body {
 .score-win-title,
 .score-lose-title {
     font-family: "Alice", sans-serif;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 100;
     text-align: center;
     color: white;
@@ -540,8 +541,9 @@ body {
 }
 
 #you-win {
-    color: rgb(17, 0, 255);
+    color: red;
     font-weight: bold;
+    font-size: 2.4em;
 }
 
 /* Footer modal */
@@ -873,8 +875,8 @@ dfn:hover::before {top: 15px;}
         width: 50px;
         margin: 4px 1px 3px 7px;
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 
     #level-info {
@@ -882,12 +884,40 @@ dfn:hover::before {top: 15px;}
     }
 }
 
-/* Fix size of level-score board in between screen size 375 & 576  */
-@media screen and (max-width: 435px) {
+/* Fix player board size for Surface Duo/Google DevTools  */
+@media screen and (max-width: 450px) {
     #player-board {    
         width: 95%;
         vertical-align: middle;
     }
+    
+    .clicks-holder {
+        padding-left: 15px;
+        padding-right: 5px;
+    }
+}
+
+
+/* Fix size of level-score board in between screen size 375 & 576  */
+@media screen and (max-width: 435px) {
+    
+    #player-board {    
+        width: 95%;
+        vertical-align: middle;
+    }
+
+    .modal-lose-title,
+    .modal-win-title, 
+    .level-up-title, 
+    .final-win-title {
+        font-size: 1.75em;
+    }
+
+    .clicks-holder {
+        padding-left: 4px;
+        padding-right: 10px;
+    }
+
 }
 
 @media screen and (max-width: 375px) {
@@ -971,7 +1001,7 @@ dfn:hover::before {top: 15px;}
     }
     
     .clicks-holder {
-        padding-right: 5px;
+        padding-left: 8px;
     }
     .click-counter {
         font-size: 1.2em;
@@ -1027,7 +1057,7 @@ dfn:hover::before {top: 15px;}
     #small-rabbit {
         height: 45px;
         width: 45px;
-        margin: 3px;
+        margin-top: 12px;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
@@ -1062,5 +1092,32 @@ dfn:hover::before {top: 15px;}
 
    .click-counter {
         font-size: 1.2em;
+    }
+
+    .clicks-holder {
+        padding-left: 4px;
+        padding-right: 10px;
+    }
+
+    #win-image {
+        width: 150px;
+        height: auto;
+    }
+
+    .modal-lose-title,
+    .modal-win-title, 
+    .level-up-title, 
+    .final-win-title {
+        font-size: 1.5em;
+    }
+
+    .score-win-title,
+    .score-lose-title {
+        font-size: 1em;
+        margin: 0 2.5px;
+    }
+
+    #you-win {
+        font-size: 1.9em;
     }
 }

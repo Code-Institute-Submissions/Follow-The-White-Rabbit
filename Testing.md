@@ -1,4 +1,8 @@
-# Interactive Frontend Project - Testing
+# FOLLOW THE WHITE RABBIT - Testing
+## MEMORY MATCHING GAME - Testing
+#### Interactive Frontend Project - Testing write-up
+
+<img src="assets/images/readme/title_image.jpg" alt="Title image" style="margin: 0 10px;" width="100%"/>
 
 This document is intended to record testing at various stages of development of the project, as well as different functions, functionalities, correct display of the project's page, etc. 
 

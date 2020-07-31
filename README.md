@@ -1,11 +1,12 @@
 # FOLLOW THE WHITE RABBIT
-
 ## MEMORY MATCHING GAME 
 #### Interactive Frontend Project
 
 <img src="assets/images/readme/title_image.jpg" alt="Title image" style="margin: 0 10px;" width="100%"/>
 
 [Follow The White Rabbit - Github Pages link](https://olekst.github.io/Follow-The-White-Rabbit/)
+
+************************************************************
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -36,10 +37,11 @@
 
 7. [**Disclaimer**](#disclaimer)
 
+************************************************************
 
 ## UX
 
-### Goals 
+### GOALS
 
 Organizational Goals: 
 - Create a simple, easy to play memory game, which can provide a quick relaxation moment.
@@ -65,7 +67,9 @@ Developer's goals:
 - A game, which can be potentially used by an online book store, as a fun relaxation break, which can attract more users, and later on used as a promotional tool for new books on this shop, etc. 
 
 
-### Strategy
+
+
+### STRATEGY
 
 Create a memory testing/challenging game, which will be fun to play.
 Create a simple, easy to use game which provides challenging stimulative interactivity, with increasing difficulty levels. 
@@ -79,7 +83,10 @@ The idea for the game was inspired by:
 - Security sequence drawn by a finger between 9 or 12 dots on mobile phones
 - Some parts/features of the game were inspired by [PicFlip](https://github.com/AJGreaves/picflip) by Anna Greaves, former student of CI. 
 
-### Scope
+
+
+
+### SCOPE
 
 User Stories:
 * School children: 
@@ -89,7 +96,10 @@ User Stories:
 * Elder people: 
     - I love books and reading. Alice in Wonderland has been one of my favourites since young age. I'd be happy to be reminded of the fun mysteries and intricacies of the book, but also keep my attention and memory fit. I'd love a simple easy to understand game, providing good exercises for my brain. 
 
-### Structure
+
+
+
+### STRUCTURE
 
 - The main screen will have a slogan: "Follow the white Rabbit", and/or "Catch me if you can", prompt for "How to Play", three screens of difficulty levels with characters from the book: Alice/Easy, The Cheshire Cat/Medium, and The Queen of Hearts/Difficult. 
 - How To Play: explains the objective, rules, etc of the game.
@@ -103,7 +113,9 @@ User Stories:
 - Info modals for won or lost game, finishing a level, completing the game.
 
 
-### Skeleton
+
+
+### SKELETON
 
 Balsamiq wireframes software was used to create wireframes for this project:
 * [Draft of the idea](assets/images/readme/wireframes/JS_Memory_game_draft_idea.pdf)
@@ -113,7 +125,9 @@ Shows initial game screen and hard level with 9 cards on a computer browser.
 * [Main screen + Hard level, mobile view](assets/images/readme/wireframes/Main_Screen_Level_mobile.pdf)
 
 
-### Surface
+
+
+### SURFACE
 
 Design choices:
 - Main introductory screen will have a slogan Let's Catch the White Rabbit", and suggestion to choose a difficulty level, with three (clickable) images representing each level
@@ -146,8 +160,11 @@ Images:
 * The Queen of Hearts - the hard one
 
 
-## Features
-### Existing Features
+
+
+
+## FEATURES
+### EXISTING FEATURES
 
 <img src="assets/images/readme/main_intro_screen.jpg" alt="Main Screen" style="margin: 0 10px;" width="100%"/>
 
@@ -236,12 +253,18 @@ Level Up & Final Win modals:
     * Closing of each modal is accompanied by a click sound
     * Opening and closing a footer is accompanied by a click sound
 
-### Features to Implement in the Future
+
+
+
+### FEATURES TO IMPLEMENT IN THE FUTURE
 
 * Automated level switching on completing a level, i.e. gaining 7 points on easy or medium level, i.e. on closing Level Up modal.
+* Assign a separate sound for each "step" of Rabbit Run, i.e. 4, 6 or 9 sounds per difficulty level, and assign similar sounds to clicking cards by a player, i.e. a player would be recreating not only the path of the Rabbit Run, but also sound of it. 
 
 
-## Technologies Used
+
+## TECHNOLOGIES USED 
+
 - This project is built using HTML, CSS & JavaScript programming languages.
 - [JQuery](https://jquery.com) to simplify DOM manipulation
 - [Gitpod](https://gitpod.io/) for coding the project.
@@ -256,11 +279,15 @@ Level Up & Final Win modals:
 - [ColorSpace](https://mycolor.space/) for matching colors
 
 
-## Testing
+
+
+## TESTING
 Testing information can be found in separate [Testing.md](Testing.md) file.
 
 
-## Deployment
+
+
+## DEPLOYMENT
 
 [GitHub Pages Website](https://olekst.github.io/Follow-The-White-Rabbit/)
 
@@ -268,7 +295,7 @@ Gitpod was used to code this project. It was then committed and pushed to Github
 
 In order to deploy the site, firstly I logged into GitHub Pages. Following this I chose OlekSt/User-Centric-Frontend-Milestone-Project-1 and then clicked on ‘Settings’. I then scrolled down to ‘Github Pages’ and changed the ‘Source’ to ‘master branch’. From this, the page automatically refreshed and I scrolled up and found the link to the deployed website. 
 
-### Running the project locally
+##£ Running the project locally
 
 In order to clone this project, it is necessary to follow these steps:
 
@@ -286,33 +313,38 @@ These instructions were taken from the following link: [Cloning a Repository](ht
 
 
 
-### Credits
 
-#### Content
+## CREDITS
+#### CONTENT
 The website is created by Alexey Statsenko, using the media described below. 
 
-#### Media
 
-#### Images
+#### IMAGES
 - Main background image, B&W & colored images of the white rabbit were downloaded from a blog of [Pan Macmillan UK publishing house](https://www.panmacmillan.com/). 
 - Images for game cards, win, lose modals were downloaded from [Jose Avalos' website](https://www.tumbex.com/josepeacock.tumblr/posts). 
 
-#### Audio
+
+#### AUDIO
 - All audio files were downloaded from [Free Sound Library](https://www.freesoundslibrary.com/).
 
-#### Code
+
+#### CODE
 - Main modal code was copied from [Code Lab](https://www.tutorialrepublic.com/codelab.php?topic=faq&file=show-bootstrap-modal-on-page-load).
 - Code for other modals was copied from [W3Schools](https://www.w3schools.com/bootstrap/bootstrap_modal.asp).
 - JSON.stringify code taken from here [Atta-Ur-Rehman Shah's website](https://attacomsian.com/blog/javascript-compare-arrays#).
 - Mute On/Off function code is taken from [Anna Greaves game's page](https://github.com/AJGreaves/picflip).
 
 
-#### Acknowledgments
+#### ACKNOWLEDGEMENTS
 1. Stephen Moody, CI tutor for shorting out the code for Rabbit Run/rabbit image moving across cards/, and other advice. 
 2. Tim Nelson, CI tutor for helping with Rabbit Run code.
 3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above throughout the text), as well as ideas for structuring Readme.md & Testing.md. 
 4. My mentor, Adegbenga Adeye, for advice and help with planning and creating the website; checking the project and giving advice during the project's calls - checking the code, fixing problems, giving general advice how to organize the website in a better way.
 5. My firends Katja, Nafeesah, Mario, Kasia, Chris, Candice for playing/testing the game and giving me feedback on possible improvements. 
 
-#### Disclaimer
+
+
+************************************************************
+
+### DISCLAIMER
 The content of this website, including the images used, are for educational purposes only.
