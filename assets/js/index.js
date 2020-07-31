@@ -321,7 +321,6 @@ $(".btn-modal, .close-modal").on("click", function() {
     if (btn === "modal-btn-win") { score++; }
     if ((btn === "modal-btn-lose" && score > 0)) { score--; }
     $("#score").text(score);    
-    console.log(score)
     $("#close-modal")[0].currentTime = 0; // CLOSE Modal sound
     $("#close-modal")[0].play();
 });
