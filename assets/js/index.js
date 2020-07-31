@@ -89,7 +89,11 @@ $(".info-level-image").on("click", function() {
           	level = "#game-board-hard"; } 
         board = b;
         $(level).show(); //  new card board is shown
-        resetGame();
+        images = [];
+        rabbitRun = [];
+        followRabbit = [];
+        score = 0;  // Score count to zero upon level switch
+        $("#score").text(score); 
         // Below: makes PlayButton active, in case it was clicked on any board and became inactive, then levels switched, 
         //  and switched back to the first board, so PlayButton does not stay deactivated
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); 
@@ -98,14 +102,6 @@ $(".info-level-image").on("click", function() {
         $("#level-change")[0].play();
         return board;
 });  
-
-function resetGame() {
-    images = [];
-    rabbitRun = [];
-    followRabbit = [];
-    score = 0;  // Score count to zero upon level switch
-    $("#score").text(score); 
-}
 
 /* Highelight level button/image which is currently active */
 $(".info-level-image").on("click", function() {
@@ -305,7 +301,9 @@ $(".btn-reset, .btn-modal").on("click", function() {
             $("#" + card).find("img:last").remove();
         index++;    
         }
-        resetGame();
+        images = [];
+        rabbitRun = [];
+        followRabbit = [];
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success");
         $(".game-card,.card-image").css({"pointer-events": "none"});
         randomPics(a,b);  
@@ -323,6 +321,7 @@ $(".btn-modal, .close-modal").on("click", function() {
     if (btn === "modal-btn-win") { score++; }
     if ((btn === "modal-btn-lose" && score > 0)) { score--; }
     $("#score").text(score);    
+    console.log(score)
     $("#close-modal")[0].currentTime = 0; // CLOSE Modal sound
     $("#close-modal")[0].play();
 });
