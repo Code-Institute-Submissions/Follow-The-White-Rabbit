@@ -5,7 +5,6 @@ const easyCards = ["card01","card02","card03","card04"],
  hardCards = ["card1","card2","card3","card4","card5","card6","card7","card8","card9"],
  randomImageArr = ["alice", "cat", "dodo", "caterpillar", "queen", "twins", "king", "madhatter", "oysters"];
 
-/* Choosing difficulty level and closing the modal   */
 let modal = document.getElementById('myModal'),
  a, 
  b, 
@@ -30,7 +29,7 @@ $(document).ready(function(){
           	a = b.length;
             level = "#game-board-easy";
             clicksCounter = clicksCounterEasy;
-            $("#pic_E").addClass("active"); // Make current level unclickable
+            $("#pic_E").addClass("active"); // Make current level button unclickable
             $("#pic_M, #pic_H").addClass("inactive"); //Show which level is currently active
         }
         if (levelImg === "imageM") { 
@@ -38,23 +37,23 @@ $(document).ready(function(){
           	a = b.length; 
           	level = "#game-board-medium"; 
             clicksCounter = clicksCounterMedium;
-            $("#pic_M").addClass("active"); // Make current level unclickable
-            $("#pic_E, #pic_H").addClass("inactive"); 
+            $("#pic_M").addClass("active"); // Make current level button unclickable
+            $("#pic_E, #pic_H").addClass("inactive"); //Show which level is currently active
         }
         if (levelImg === "imageH") { 
             b = hardCards;
           	a = b.length;
           	level = "#game-board-hard";
             clicksCounter = clicksCounterHard; 
-            $("#pic_H").addClass("active"); // Make current level unclickable
-            $("#pic_E, #pic_M").addClass("inactive"); 
+            $("#pic_H").addClass("active"); // Make current level button unclickable
+            $("#pic_E, #pic_M").addClass("inactive"); //Show which level is currently active
         }
         $(modal).hide();
         $("#main, #player-board").show();
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
-        randomPics(a,b); // generates random images into game cards
+        randomPics(a,b); // generates random 4, 6 or 9 images into game cards
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
-        $("#btn-footer").show();  // show button for copyright info, which opens a modal with it
+        $("#btn-footer").show();  // show button for copyright info, which opens a modal with it, button invisible on main page
         board = b;
         playSound("#level-choice"); // INITIAL Level choice sound
         return board, level;
@@ -74,7 +73,7 @@ $(".info-level-image").on("click", function() {
             $("#" + card).find("img:last").remove();
         index++;    
         }
-        $(currentBoard).hide(); // current card board is hidden
+        $(currentBoard).hide(); // current card board is hidden, before showing a new board
         
         let levelImg = $(this).attr("id");
         if (levelImg === "pic_E") { 
@@ -90,7 +89,7 @@ $(".info-level-image").on("click", function() {
           	a = b.length;
           	level = "#game-board-hard"; } 
         board = b;
-        $(level).show(); //  new card board is shown
+        $(level).show(); //  new game board is shown
         images = [];
         rabbitRun = [];
         followRabbit = [];
@@ -104,7 +103,7 @@ $(".info-level-image").on("click", function() {
         return board;
 });  
 
-/* Highelight level button/image which is currently active */
+/* Higelight level button/image so a player can see which is currently active */
 $(".info-level-image").on("click", function() {
     let levelImg = $(this).attr("id");
     if (levelImg === "pic_E") {
@@ -149,17 +148,17 @@ $(".btn-play").on("click", function() {
         if (btnId === "btn-play-easy") { 
             b = easyCards;
             a = easyCards.length;
-            playSound("#steps-4");  //Sound for Rabbit Run             
+            playSound("#steps-4");  //Sound for Rabbit Run of different length to match Rabbit Run      
         }
         if (btnId === "btn-play-medium") { 
             b = mediumCards;
             a = mediumCards.length;
-            playSound("#steps-6");  //Sound for Rabbit Run 
+            playSound("#steps-6");  //Sound for Rabbit Run of different length to match Rabbit Run   
         }
         if (btnId === "btn-play-hard") { 
             b = hardCards;
             a = hardCards.length;
-            playSound("#steps-9");  //Sound for Rabbit Run 
+            playSound("#steps-9");  //Sound for Rabbit Run of different length to match Rabbit Run   
             }
         
         let i = 0;
@@ -187,9 +186,7 @@ $(".btn-play").on("click", function() {
                 clearInterval(myInterval);
             }      
         }, speed);
-    console.log("rabbitRun: " + rabbitRun);
     return rabbitRun;
-    // Finish - Code here was writtne with help from tutors: Stephen & Tim
 });
 
 /*  Identifier, clicks from which difficulty level to capture, for followRabbit below  */
@@ -218,7 +215,6 @@ $(".game-card").on("click", function() {
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
-/* JSON.stringify code taken from here https://attacomsian.com/blog/javascript-compare-arrays */
 $(".game-card").on("click", function() { 
     if (followRabbit.length === rabbitRun.length && JSON.stringify(followRabbit) === JSON.stringify(rabbitRun))
         {  displayModal("#win-modal"); }
@@ -329,7 +325,7 @@ $("#modal-btn-win").on("click", function() {
     }, 800); } 
 });
 
-/* Sound to open copyright info & mute off button  */
+/* Sound to open copyright info & for mute on/off button  */
 $("#btn-footer, .btn-sound").on("click", function() {
     playSound("#close-modal");
 });
