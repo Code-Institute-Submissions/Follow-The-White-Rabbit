@@ -16,11 +16,12 @@ This document is intended to record testing at various stages of development of 
     - [**Validation services**](#validation-services)
 2. [**Client Stories Testing**](#client-stories-testing)
 3. [**Manual Testing**](#manual-testing)
-    - [**Testing undertaken on desktop**](#testing-undertaken-on-desktop) Testing undertaken on tablet and phone devices
-    - [**Testing undertaken on tablet and phone devices**](#testing-undertaken-on-tablet-and-phone-devices)
+    - [**Testing undertaken on laptop**](#testing-undertaken-on-laptop) 
+    - [**Testing undertaken mobile and pad devices**](#testing-undertaken-on-mobile-and-pad-devices)
+    - [**Testing undertaken in DevTools**](#testing-undertaken-in-DevTools)
 4. [**Bugs discovered**](#bugs-discovered)
     - [**Solved bugs**](#solved-bugs)
-    - [*Unsolved bugs**](#unsolved-bugs)
+    - [**Unsolved bugs**](#unsolved-bugs)
 5. [**Further Testing**](#further-testing)
 
 
@@ -29,7 +30,7 @@ This document is intended to record testing at various stages of development of 
 ### Validation services
 The following validation services were used to check the validity of the website code.
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML
-    Three errors on lines 49, 56, 63 due to "div" being a child of "dfn". Left the errors unfixed due to being unable to find fast solution to keep functionality of floating in level names (Easy, Medium, Hard) on mouse over on level choice images on the main page. 
+    Three errors: lines 49, 56, 63; due to "div" being a child of "dfn". Left the errors unfixed due to being unable to find fast solution to keep functionality of floating in level names (Easy, Medium, Hard) on mouse over on level choice images on the main page. 
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
     No errors, some warnings.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
@@ -100,9 +101,15 @@ The user stories are described in the UX section of [README.md](README.md)
 
 ## Manual testing
 The section described in detail all the steps taken to confirm all the elements of the website work as intended. 
+Tested on:
+- laptop
+- desktop window of [Am I Responsive](https://amiresponsive.co.uk/)
+- pad mode on a laptop
+- mobile phone
+- Chrome Developer Tools device simulators on all options
 
-### Testing undertaken on a laptop, and desktop version of Am I responsive website 
-The game was tested on Lenovo Yoga 530, in both laptop & Pad modes, in Google Chrome, Mozilla Firefox, & Microsoft Edge
+### Testing undertaken on laptop; and desktop version of [Am I Responsive](https://amiresponsive.co.uk/)
+The game was tested on Lenovo Yoga 530, in Google Chrome, Mozilla Firefox, & Microsoft Edge
 
 1. The main page screen:
 - Confirmed that each level images has a description (Easy, Medium, Hard) floating in on mouse-over
@@ -146,8 +153,8 @@ The game was tested on Lenovo Yoga 530, in both laptop & Pad modes, in Google Ch
     - all modals with respective melodies
     - everything works as intended
 
-### Testing undertaken on mobile phone
-The game was tested on Samsung A7, Google Chrome & Mozilla Firefox
+### Testing undertaken mobile and pad devices
+The game was tested on Samsung A7 & Lenovo Yoga 530 in Pad mode, Google Chrome, Microsoft Edge & Mozilla Firefox
 
 1. The main page screen:
 - Confirmed that each level images has a description (Easy, Medium, Hard) floating in on touching a level image
@@ -192,7 +199,7 @@ The game was tested on Samsung A7, Google Chrome & Mozilla Firefox
     - everything works as intended
 
 
-### Testing undertaken on in DevTools in Google Chrome
+### Testing undertaken in DevTools
 The game was tested on all devices available there following the same procedure described in the section above for testing on a laptop, tab & mobile 
 
 

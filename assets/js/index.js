@@ -13,6 +13,9 @@ let modal = document.getElementById('myModal'),
  clicksCounterEasy = 4,
  clicksCounterMedium = 6,
  clicksCounterHard = 9,
+ rabbitRun = [],
+ followRabbit = [], 
+ index,
  speed = 350,
  level,
  score = 0,
@@ -140,7 +143,6 @@ function randomPics(a,b) {
 }
 
 /* Function calculates a random pattern to insert WhiteRabbit image across game cards */
-let rabbitRun = [];
 $(".btn-play").on("click", function() { 
      // To give some time between pressing Play and start of Rabbit Run
         let btnId = $(this).attr("id");
@@ -200,8 +202,6 @@ $(".board").on("click", function() {
 });
 
 /* Capturing players' clicks through game cards  */
-let followRabbit = []; 
-let index;
 $(".game-card").on("click", function() {     
     playSound("#cardClick"); //Game card click sound 
     if (followRabbit.length === images.length) 

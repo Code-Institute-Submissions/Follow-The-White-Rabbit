@@ -12,14 +12,14 @@
 1. [**UX**](#ux)
     - [**Goals**](#goals)
     - [**Strategy**](#strategy)
-    - [**Scope**](#Scope)
-    - [**Structure**](#developer-and-Business-Goals)
+    - [**Scope**](#scope)
+    - [**Structure**](#structure)
     - [**Skeleton**](#skeleton)
     - [**Surface**](#surface)
 
 2. [**Features**](#features)
     - [**Existing Features**](#existing-features)
-    - [**Features to be Implemented**](#features-left-to-implement)
+    - [**Features to be Implemented**](#features-to-be-implemented)
 
 3. [**Technologies used**](#technologies-used)
 
@@ -45,9 +45,9 @@
 
 Organizational Goals: 
 - Create a simple, easy to play memory game, which can provide a quick relaxation moment.
-- The game must be  challenging players with different difficulty levels. 
-- The game should be simple, but engaging, with an increasing level of complexity to appeal to people who like challenges and give them fun feeling of overcoming difficulty and achievement. 
-- Provide reference to some well recognized characters to attract players' attention.
+- The game must be challenging players with levels with increasing difficulty, should be relatively easy at the beginning, so that players can easily learn how to play
+- The game should be simple, engaging, but not too easy to appeal to people who like challenges and give them fun feeling of overcoming difficulty and achievement. 
+- Provide reference to some well recognized characters to attract players' attention, and make the game more fun.
 
 User Goals: 
 - Get a stimulating relaxation break.
@@ -63,7 +63,7 @@ User Interface:
 - Clear objectives, instructions, reactions or prompts where needed. 
 
 Developer's goals: 
-- Learn & practice interactive fornt end development, using HTML, CSS, & Javascript/JQuery. 
+- Learn & practice interactive front-end development, using HTML, CSS, & Javascript/JQuery. 
 - A game, which can be potentially used by an online book store, as a fun relaxation break, which can attract more users, and later on used as a promotional tool for new books on this shop, etc. 
 
 
@@ -71,13 +71,12 @@ Developer's goals:
 
 ### STRATEGY
 
-Create a memory testing/challenging game, which will be fun to play.
-Create a simple, easy to use game which provides challenging stimulative interactivity, with increasing difficulty levels. 
+Create a simple memory testing/challenging game; easy to use game which provides challenging stimulative interactivity, with increasing difficulty levels. 
 Referencing some famous characters to appeal to certain audience. 
 Create a game with reference to the characters from Alice in Wonderland, readers of which are smart people and will be interested  in testing or training their attention & memory skills in a fun way. 
 
-The idea for the game was inspired by:
-- Simon says game
+The idea for the game was inspired by a combination of the following:
+- "Simon says" game
 - [Visual Memory test from Human Benchmark website](https://humanbenchmark.com/tests/memory)
 - "Follow the White Rabbit" from the film Matrix
 - Security sequence drawn by a finger between 9 or 12 dots on mobile phones
@@ -109,7 +108,8 @@ User Stories:
         Hard: 9 images 
     - Upon pressing "Play", a user will be asked to watch, and by randomly generated sequence, an image of a white rabbit will "run" through images, drawing a mouse/finger movement sequence across the images (similar to password sequence on mobile phones, so that it feels familiar to users). 
     - A user will be asked to repeat the sequence by pressing respective images. If it is successful, a user will be congratulated for "Catching the White Rabbit", otherwise, will be informed that "the rabbit is gone". In Both cases a user will be invited to keep following the rabbit.  
-       
+
+- All necessary control buttons are placed above the game boards
 - Info modals for won or lost game, finishing a level, completing the game.
 
 
@@ -134,6 +134,7 @@ Design choices:
 - Game screens should be as simple as possible, with the focus on the game boards with 4/6/9 cards, which contains all the necessary controls: Play, Reset, Info/Rules, Mute On/Off, Clicks countdown
 - Have a player board to show an active difficulty level, where a player will be able to switch between levels.
 - The player board will display Score results
+- All necessary control buttons are places right above the game cards
 
 Colors: 
 - The main colors were chosen based on the colors used in the main background of the whole game. For purposes of not distracting attention, the main background was dimmed and unfocused.
@@ -174,7 +175,7 @@ Main page has:
         - Alice for easy level, 
         - The Cheshire Car - medium
         - The Queen of Hearts - hard
-- each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see [**Acknowledgements**](#acknowledgements) below:
+- each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see) [**Acknowledgements**](#acknowledgements) below:
         - green for easy
         - yellow for medium
         - red for 
@@ -215,7 +216,6 @@ Win & Lose modals:
     <tr>
         <td><img src="assets/images/readme/win_modal_prtsc.jpg" alt="Win Modal" style="float: left; margin-rigth: 10px;" width="400"/></td>
         <td><img src="assets/images/readme/lose_modal_prtsc.jpg" alt="Lose Modal" style="float: left; margin-rigth: 10px;" width="380"/></td>
-        <td></td>
     </tr>
 </table>
 
@@ -256,11 +256,11 @@ Level Up & Final Win modals:
 
 
 
-### FEATURES TO IMPLEMENT IN THE FUTURE
+### FEATURES TO BE IMPLEMENTED
 
 * Automated level switching on completing a level, i.e. gaining 7 points on easy or medium level, i.e. on closing Level Up modal.
-* Assign a separate sound for each "step" of Rabbit Run, i.e. 4, 6 or 9 sounds per difficulty level, and assign similar sounds to clicking cards by a player, i.e. a player would be recreating not only the path of the Rabbit Run, but also sound of it. 
-
+* Possible feature: Assign a separate sound for each "step" of Rabbit Run, i.e. 4, 6 or 9 sounds per difficulty level, and assign similar sounds to clicking cards by a player, i.e. a player would be recreating not only the path of the Rabbit Run, but also sound of it. 
+* Based on players' response, in case they miss that function, possible feature: Level difficulty info bubble placed over small images of levels swithcing board, placed on the player info board, next to Score window. 
 
 
 ## TECHNOLOGIES USED 
@@ -295,7 +295,7 @@ Gitpod was used to code this project. It was then committed and pushed to Github
 
 In order to deploy the site, firstly I logged into GitHub Pages. Following this I chose OlekSt/User-Centric-Frontend-Milestone-Project-1 and then clicked on ‘Settings’. I then scrolled down to ‘Github Pages’ and changed the ‘Source’ to ‘master branch’. From this, the page automatically refreshed and I scrolled up and found the link to the deployed website. 
 
-##£ Running the project locally
+## How to run this project locally
 
 In order to clone this project, it is necessary to follow these steps:
 

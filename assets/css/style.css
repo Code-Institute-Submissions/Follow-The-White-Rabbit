@@ -240,7 +240,6 @@ body {
     font-size: 1.4em;
 }
 
-
 /* remove white border appearing after clicking a button */
 .btn-dashboard:focus, .btn-dashboard:active, .btn-dashboard.active, .btn-dashboard:focus:active {
     background-image: none;
@@ -359,7 +358,6 @@ body {
     margin-right: 15px;
     text-align: center;
     vertical-align: middle;
-    
 }
 
 /* Fixing non working links in modal */
@@ -608,7 +606,7 @@ body {
     margin-top: 10px;
 }
 
-.pull-right{
+.pull-right {
   float:right;
 }
 
@@ -619,37 +617,37 @@ body {
 /*  Difficulty level Bubbble info on hover above level image on the main page */
 /* Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
 dfn { 
-  padding: 0 0.4em;
-  font-family: "Alice", sans-serif;
-  font-style: normal;
-  position: relative;
-  }
+    padding: 0 0.4em;
+    font-family: "Alice", sans-serif;
+    font-style: normal;
+    position: relative;
+}
 
 dfn::after {
-  content: attr(data-info);
-  display: inline;
-  position: absolute;
-  top: 0; left: 12px;
-  opacity: 0;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.5em;
-  padding: 0.5em 0.8em;
-  /* background: rgba(0,0,0,0.8); */
-  color: #fff;
-  pointer-events: none; /* This prevents the box from apearing when hovered. */
-  -webkit-transition: opacity 250ms, top 250ms;
-  -o-transition: opacity 250ms, top 250ms;
-  transition: opacity 250ms, top 250ms;
+    content: attr(data-info);
+    display: inline;
+    position: absolute;
+    top: 0; left: 12px;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5em;
+    padding: 0.5em 0.8em;
+    /* background: rgba(0,0,0,0.8); */
+    color: #fff;
+    pointer-events: none; /* This prevents the box from apearing when hovered. */
+    -webkit-transition: opacity 250ms, top 250ms;
+    -o-transition: opacity 250ms, top 250ms;
+    transition: opacity 250ms, top 250ms;
 }
 
 dfn::before {
-  content: '';
-  display: block;
-  position: fixed;
-  top: 0px; left: 15px;
-  opacity: 0;
-  width: 0; height: 0;
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0px; left: 15px;
+    opacity: 0;
+    width: 0; height: 0;
 } 
 
 dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
@@ -658,8 +656,6 @@ dfn:hover::before {opacity: 1;}
 dfn:hover::after {top: 7px;}
 dfn:hover::before {top: 15px;} 
 /* ABOVE - Initial code is taken from https://speckyboy.com/custom-hover-click-effects-css-javascript/ and modified */
-
-
 
 /*----------------------------------- MEDIA QUERIES */
 /* Adjust player info boards, game boards and cards to bigger screens */
@@ -726,18 +722,19 @@ dfn:hover::before {top: 15px;}
         height: 150px;
         width: 150px;
     }
+}
 
 @media screen and (max-width: 1024px) {
-      /*bigger tablets*/
+    /*bigger tablets*/
     #myModal {
         max-width: 95%;
     }
 
     #small-rabbit {
-    height: 65px;
-    width: 65px;
-    margin-top: 8px;
-    margin-right: 8px;
+        height: 65px;
+        width: 65px;
+        margin-top: 8px;
+        margin-right: 8px;
     }
 
     #game-board-easy,
@@ -753,9 +750,9 @@ dfn:hover::before {top: 15px;}
         height: 60px;
         width: 75px;
         margin: 10px;
-        font-size: 8px;} 
-    }
-
+        font-size: 8px;
+    } 
+    
     .easy-card {
         height: 150px;
         width: 150px;
@@ -776,6 +773,7 @@ dfn:hover::before {top: 15px;}
         right: 0;
         left: 0;
     }
+}
 
 @media screen and (max-width: 768px) {
     /* bigger phones and tablets */
@@ -809,8 +807,8 @@ dfn:hover::before {top: 15px;}
         height: 50px;
         width: 65px;
         margin: 8px;
-        font-size:6px;} 
-    }
+        font-size:6px;
+    }    
 
     h4 {
         font-size: 17px;
@@ -902,7 +900,6 @@ dfn:hover::before {top: 15px;}
 
 /* Fix size of level-score board in between screen size 375 & 576  */
 @media screen and (max-width: 435px) {
-    
     #player-board {    
         width: 95%;
         vertical-align: middle;
@@ -956,7 +953,9 @@ dfn:hover::before {top: 15px;}
     dfn::after {    
         top: 0; left: 14px;
     }
-    dfn:hover::after {top: 10px;}
+    dfn:hover::after {
+        top: 10px;
+    }
     
     #player-board {    
         width: 95%;
@@ -1005,6 +1004,7 @@ dfn:hover::before {top: 15px;}
     .clicks-holder {
         padding-left: 8px;
     }
+    
     .click-counter {
         font-size: 1.2em;
     }
