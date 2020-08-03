@@ -48,7 +48,7 @@ $(document).ready(function(){
             $("#pic_H").addClass("active"); // Make current level button unclickable
             $("#pic_E, #pic_M").addClass("inactive"); //Show which level is currently active
         }
-        $(modal).hide();
+        $(modal).hide(); // to hide the main modal with Level Choice images
         $("#main, #player-board").show();
         $(level).show(); // shows level game cards board - 4, 6 or 9 cards
         randomPics(a,b); // generates random 4, 6 or 9 images into game cards
@@ -103,7 +103,7 @@ $(".info-level-image").on("click", function() {
         return board;
 });  
 
-/* Higelight level button/image so a player can see which is currently active */
+/* Highlight level button/image so a player can see which is currently active */
 $(".info-level-image").on("click", function() {
     let levelImg = $(this).attr("id");
     if (levelImg === "pic_E") {
@@ -174,9 +174,9 @@ $(".btn-play").on("click", function() {
         rabbitImg = $("#rabbit").clone();
         let card = b[rabbitRun[index]];  
             $("#" + card).find("img:first").hide(); // hide the first image 
-            $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and how him
+            $("#" + card).append($(rabbitImg)).show(); // append White Rabbit image and show it
         var myInterval = setInterval(function(){ 
-            $("#" + card).find("img:last").remove(); // find White Rabbit image and remove him
+            $("#" + card).find("img:last").remove(); // find White Rabbit image and remove it
             $("#" + card).find("img:first").show(); // find first image and show it 
                 index++;
                 card = b[rabbitRun[index]];
@@ -210,8 +210,9 @@ $(".game-card").on("click", function() {
 
 /* Makes cards-images inactive after respectively 4-6-9 clicks  */
 $(".game-card").on("click", function() {     
-    if (followRabbit.length === images.length) 
-    { $(".game-card, .card-image").css({"pointer-events": "none"}); }    
+    if (followRabbit.length === images.length) { 
+        $(".game-card, .card-image").css({"pointer-events": "none"}); 
+    }    
 });
 
 /* Comparison of randomly generated White Rabbit run across game cards vs players' clicks  */
@@ -249,18 +250,18 @@ $(".btn-play").on("click", function() {
     let btnId = $(this).attr("id");
     if (btnId == "btn-play-easy") { clicksCounter = clicksCounterEasy,
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
-            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // activates cards after Rabbit Run, they are unclickable before Play button is pressed
+            $(".btn-reset").prop("disabled",false); // To reactive Reset button, as it is deactivated during the Rabbit Run
         }, speed*4); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-medium") { clicksCounter = clicksCounterMedium, 
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
-            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // activates cards after Rabbit Run, they are unclickable before Play button is pressed
+            $(".btn-reset").prop("disabled",false); // To reactive Reset button, as it is deactivated during the Rabbit Run
         }, speed*6); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
     if (btnId == "btn-play-hard") { clicksCounter = clicksCounterHard, 
         setTimeout(function() {
-            $(".game-card, .card-image").css({"pointer-events": "auto"}); // Game cards activation 
-            $(".btn-reset").prop("disabled",false); // Reset button is activated for the period of Rabbit Run
+            $(".game-card, .card-image").css({"pointer-events": "auto"}); // activates cards after Rabbit Run, they are unclickable before Play button is pressed
+            $(".btn-reset").prop("disabled",false); // To reactive Reset button, as it is deactivated during the Rabbit Run
         }, speed*9); } // Delayed activation of game cards, so a player cannot click while Rabbit Run
 });
 
@@ -281,19 +282,19 @@ $(".game-card").on("click", function() {
 
 /* Resetting the whole game board on closing the win-lose modal */
 $(".btn-reset, .btn-modal").on("click", function() {
-        index = 0; 
-  		let card;
-        while (index < board.length) {
-            card = board[index];
-            $("#" + card).find("img:last").remove();
-        index++;    
-        }
-        images = [];
-        rabbitRun = [];
-        followRabbit = [];
-        $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success");
-        $(".game-card,.card-image").css({"pointer-events": "none"});
-        randomPics(a,b);  
+    index = 0; 
+  	let card;
+    while (index < board.length) {
+        card = board[index];
+        $("#" + card).find("img:last").remove();
+    index++;    
+    }
+    images = [];
+    rabbitRun = [];
+    followRabbit = [];
+    $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); // to activate Play button
+    $(".game-card,.card-image").css({"pointer-events": "none"});
+    randomPics(a,b);  
 });  
 
 /* Sound for game cards reset */
@@ -317,7 +318,6 @@ $("#modal-btn-win").on("click", function() {
             displayModal("#levelUp");
             playSound("#level-up");    
     }, 800); } 
-
     if (score === 7 && board === hardCards) { 
         setTimeout(function() {
             displayModal("#finalWin");
