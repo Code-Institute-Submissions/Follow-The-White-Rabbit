@@ -17,7 +17,7 @@ This document is intended to record testing at various stages of development of 
 2. [**Client Stories Testing**](#client-stories-testing)
 3. [**Manual Testing**](#manual-testing)
     - [**Testing undertaken on laptop**](#testing-undertaken-on-laptop) 
-    - [**Testing undertaken mobile and pad devices**](#testing-undertaken-on-mobile-and-pad-devices)
+    - [**Testing undertaken on mobile and pad devices**](#testing-undertaken-on-mobile-and-pad-devices)
     - [**Testing undertaken in DevTools**](#testing-undertaken-in-DevTools)
 4. [**Bugs discovered**](#bugs-discovered)
     - [**Solved bugs**](#solved-bugs)
@@ -108,7 +108,9 @@ Tested on:
 - mobile phone
 - Chrome Developer Tools device simulators on all options
 
-### Testing undertaken on laptop; and desktop version of [Am I Responsive](https://amiresponsive.co.uk/)
+### Testing undertaken on laptop
+ as well as desktop version of [Am I Responsive](https://amiresponsive.co.uk/)
+
 The game was tested on Lenovo Yoga 530, in Google Chrome, Mozilla Firefox, & Microsoft Edge
 
 1. The main page screen:
@@ -153,7 +155,7 @@ The game was tested on Lenovo Yoga 530, in Google Chrome, Mozilla Firefox, & Mic
     - all modals with respective melodies
     - everything works as intended
 
-### Testing undertaken mobile and pad devices
+### Testing undertaken on mobile and pad devices
 The game was tested on Samsung A7 & Lenovo Yoga 530 in Pad mode, Google Chrome, Microsoft Edge & Mozilla Firefox
 
 1. The main page screen:
