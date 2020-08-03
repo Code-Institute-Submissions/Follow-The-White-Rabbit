@@ -251,7 +251,7 @@ The game was tested on all devices available there following the same procedure 
     BUG: Added opacity to level images in player board to show which level is active. Does not change opacity correctly. Show correct active level only after second click on level image/button in player board.
     Fixed.
 
-#### Solved bugs:
+#### Unsolved bugs:
 1. On mobile
     BUG: Touch on level choice images, control buttons, level switching images opens right-click menu of a browser, while showing necessary visual info of the game. 
 
