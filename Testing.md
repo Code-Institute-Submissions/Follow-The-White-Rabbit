@@ -20,6 +20,7 @@ This document is intended to record testing at various stages of development of 
     - [**Testing undertaken on tablet and phone devices**](#testing-undertaken-on-tablet-and-phone-devices)
 4. [**Bugs discovered**](#bugs-discovered)
     - [**Solved bugs**](#solved-bugs)
+    - [*Unsolved bugs**](#unsolved-bugs)
 5. [**Further Testing**](#further-testing)
 
 
@@ -28,8 +29,7 @@ This document is intended to record testing at various stages of development of 
 ### Validation services
 The following validation services were used to check the validity of the website code.
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML
-    Three errors related to <dfn> used on the main screen around difficulty level choice. I've decided to keep them, because I have not found a way to solve the issue on time. 
-    plus
+    Three errors on lines 49, 56, 63 due to "div" being a child of "dfn". Left the errors unfixed due to being unable to find fast solution to keep functionality of floating in level names (Easy, Medium, Hard) on mouse over on level choice images on the main page. 
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
     No errors, some warnings.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
@@ -101,7 +101,7 @@ The user stories are described in the UX section of [README.md](README.md)
 ## Manual testing
 The section described in detail all the steps taken to confirm all the elements of the website work as intended. 
 
-### Testing undertaken on a laptop
+### Testing undertaken on a laptop, and desktop version of Am I responsive website 
 The game was tested on Lenovo Yoga 530, in both laptop & Pad modes, in Google Chrome, Mozilla Firefox, & Microsoft Edge
 
 1. The main page screen:
@@ -244,8 +244,14 @@ The game was tested on all devices available there following the same procedure 
     BUG: Added opacity to level images in player board to show which level is active. Does not change opacity correctly. Show correct active level only after second click on level image/button in player board.
     Fixed.
 
-8. On mobile
+#### Solved bugs:
+1. On mobile
     BUG: Touch on level choice images, control buttons, level switching images opens right-click menu of a browser, while showing necessary visual info of the game. 
+
+2. Mute On/Off button.
+    BUG: On Mute off mode the button does not show FontAwesome icon properly. 
+
+3. Errors in html reported on lines 49, 56, 63 due to "div" being a child of "dfn". Left the errors due to being unable to find fast solution to keep functionality of floating in level names (Easy, Medium, Hard) on mouse over on level choice images on the main page. 
 
 
 ## Further testing: 

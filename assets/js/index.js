@@ -53,8 +53,7 @@ $(document).ready(function(){
         $(".game-card, .card-image").css({"pointer-events": "none"}); // makes cards unclickable till Play button is clicked
         $("#btn-footer").show();  // show button for copyright info, which opens a modal with it
         board = b;
-        $("#level-choice")[0].currentTime = 0; // INITIAL Level choice sound
-        $("#level-choice")[0].play();
+        playSound("#level-choice"); // INITIAL Level choice sound
         return board, level;
     }); 
 });  
@@ -98,8 +97,7 @@ $(".info-level-image").on("click", function() {
         //  and switched back to the first board, so PlayButton does not stay deactivated
         $(".btn-play").prop("disabled",false).removeClass("btn-outline-success").addClass("btn-success"); 
         randomPics(a,b); // inserts new set of randomly generated images into the new card board "level"
-        $("#level-change")[0].currentTime = 0;
-        $("#level-change")[0].play();
+        playSound("#level-change");
         return board;
 });  
 
@@ -149,20 +147,17 @@ $(".btn-play").on("click", function() {
         if (btnId === "btn-play-easy") { 
             b = easyCards;
             a = easyCards.length;
-            $("#steps-4")[0].currentTime = 0;     //Sound for Rabbit Run
-            $("#steps-4")[0].play();              //Sound for Rabbit Run 
+            playSound("#steps-4");  //Sound for Rabbit Run             
         }
         if (btnId === "btn-play-medium") { 
             b = mediumCards;
             a = mediumCards.length;
-            $("#steps-6")[0].currentTime = 0;     //Sound for Rabbit Run
-            $("#steps-6")[0].play();              //Sound for Rabbit Run 
+            playSound("#steps-6");  //Sound for Rabbit Run 
         }
         if (btnId === "btn-play-hard") { 
             b = hardCards;
             a = hardCards.length;
-            $("#steps-9")[0].currentTime = 0;     //Sound for Rabbit Run
-            $("#steps-9")[0].play();              //Sound for Rabbit Run 
+            playSound("#steps-9");  //Sound for Rabbit Run 
             }
         
         let i = 0;
@@ -208,8 +203,7 @@ $(".board").on("click", function() {
 let followRabbit = []; 
 let index;
 $(".game-card").on("click", function() {     
-    $("#cardClick")[0].currentTime = 0; //Game card click sound
-    $("#cardClick")[0].play();          
+    playSound("#cardClick"); //Game card click sound 
     if (followRabbit.length === images.length) 
         return followRabbit;
     else
@@ -237,12 +231,10 @@ function displayModal(id) {
     setTimeout(function() {
         $(id).modal("show");
         if (id === "#win-modal") {
-            $("#win")[0].currentTime = 0; //WIN Modal sound
-            $("#win")[0].play();
+            playSound("#win") ; //WIN Modal sound
         }
         if (id === "#lose-modal") {
-            $("#lose")[0].currentTime = 0; // LOSE Modal sound
-            $("#lose")[0].play();
+            playSound("#lose"); // LOSE Modal sound
         }
     }, 300);
 }
@@ -250,8 +242,7 @@ function displayModal(id) {
 /*  Game rules modal loading + sound */
 $(".btn-rules").on("click", function() {
     $("#rules").modal("show");
-    $("#rulesModal")[0].currentTime = 0; //RULES Modal opening sound
-    $("#rulesModal")[0].play();
+    playSound("#rulesModal"); //RULES Modal opening sound
 });
 
 /* Clicks countdown setup for a new game, for each game board, PLay Button is deactivated, reset button re-activated after Rabbit Run is finished  */
@@ -311,8 +302,7 @@ $(".btn-reset, .btn-modal").on("click", function() {
 
 /* Sound for game cards reset */
 $(".btn-reset").on("click", function() {
-    $("#resetSound")[0].currentTime = 0;
-    $("#resetSound")[0].play();
+    playSound("#resetSound");
 });
 
 /* Calculating score on closing modal */
@@ -321,8 +311,7 @@ $(".btn-modal, .close-modal").on("click", function() {
     if (btn === "modal-btn-win") { score++; }
     if ((btn === "modal-btn-lose" && score > 0)) { score--; }
     $("#score").text(score);    
-    $("#close-modal")[0].currentTime = 0; // CLOSE Modal sound
-    $("#close-modal")[0].play();
+    playSound("#close-modal"); // CLOSE Modal sound
 });
 
 /* Modal suggesting to go a level up  */
@@ -330,22 +319,19 @@ $("#modal-btn-win").on("click", function() {
     if (score === 7 && (board === easyCards || board === mediumCards)) { 
         setTimeout(function() {
             displayModal("#levelUp");
-            $("#level-up")[0].currentTime = 0;
-            $("#level-up")[0].play();    
+            playSound("#level-up");    
     }, 800); } 
 
     if (score === 7 && board === hardCards) { 
         setTimeout(function() {
             displayModal("#finalWin");
-            $("#final-win")[0].currentTime = 0;
-            $("#final-win")[0].play();
+            playSound("#final-win");
     }, 800); } 
 });
 
 /* Sound to open copyright info & mute off button  */
 $("#btn-footer, .btn-sound").on("click", function() {
-    $("#close-modal")[0].currentTime = 0;
-    $("#close-modal")[0].play();
+    playSound("#close-modal");
 });
 
 /* Mute On / Off button function */
@@ -363,5 +349,10 @@ $('.btn-sound').click(function() {
         }
         silence = true;
     }
-    $('.btn-sound i').toggleClass('fa fa-volume-mute');
+    $('.btn-sound i').toggleClass('fa fa-volume-off');
 });
+
+function playSound(id) {
+    $(id)[0].currentTime = 0; 
+    $(id)[0].play();
+}

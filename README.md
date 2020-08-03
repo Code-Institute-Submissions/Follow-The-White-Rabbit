@@ -335,7 +335,7 @@ The website is created by Alexey Statsenko, using the media described below.
 - Mute On/Off function code is taken from [Anna Greaves game's page](https://github.com/AJGreaves/picflip).
 
 
-#### ACKNOWLEDGEMENTS
+#### ACKNOWLEDGMENTS 
 1. Stephen Moody, CI tutor for shorting out the code for Rabbit Run/rabbit image moving across cards/, and other advice. 
 2. Tim Nelson, CI tutor for helping with Rabbit Run code.
 3. Anna Greaves, CI tutor for the Picflip game, where I got inspiration for some features of my game (described in this file above throughout the text), as well as ideas for structuring Readme.md & Testing.md. 
