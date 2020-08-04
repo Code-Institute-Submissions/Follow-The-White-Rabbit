@@ -176,7 +176,7 @@ Main page has:
     * The Cheshire Car - medium
     * The Queen of Hearts - hard
 
-- each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see) [**Acknowledgements**](#acknowledgements) below:
+- each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see) [**Acknowledgments**](#acknowledgments) below:
     * green for easy
     * yellow for medium
     * red for hard
