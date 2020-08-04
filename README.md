@@ -172,13 +172,15 @@ Images:
 Main page has:
 - an image of the White Rabbit with the game's slogan - "Let's Catch The White Rabbit", which complements the name of the game "Follow The White Rabbit"
 - suggestion to select a difficulty level, represented by three images: 
-        - Alice for easy level, 
-        - The Cheshire Car - medium
-        - The Queen of Hearts - hard
+    * Alice for easy level, 
+    * The Cheshire Car - medium
+    * The Queen of Hearts - hard
+
 - each image has a coloured border (idea was taken from Anna Greave's student project, PicFlip - see) [**Acknowledgements**](#acknowledgements) below:
-        - green for easy
-        - yellow for medium
-        - red for 
+    * green for easy
+    * yellow for medium
+    * red for hard
+
 - each image has a title (EASY, MEDIUM, or HARD) float on if a mouse is moved over an image, so a player can easily understand which level is which
 - each image changes its border color on mouse over so a player knows which image is clickable at the moment
 - pressing each of the levels closes the main page modal, and opens the player board with level switch buttons/images, and Score window and game board of 4/6/9 cards

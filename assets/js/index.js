@@ -159,7 +159,7 @@ $(".btn-play").on("click", function() {
             b = hardCards;
             a = hardCards.length;
             playSound("#steps-9");  //Sound for Rabbit Run of different length to match Rabbit Run   
-            }
+        }
         
         let i = 0;
         while (i < a) { 
