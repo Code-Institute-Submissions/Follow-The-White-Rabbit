@@ -136,6 +136,7 @@ body {
 .score-box {
     padding-bottom: 5px;
 }
+
 .score-box-img {
     padding-top: 5px;
     padding-right: 5px;
@@ -841,6 +842,7 @@ dfn:hover::before {top: 15px;}
         padding: 2% 2.5%;
         margin-top: 1em;
     }
+    
     .easy-card {
         height: 130px;
         width: 130px;
@@ -1044,14 +1046,14 @@ dfn:hover::before {top: 15px;}
     }
 
     .easy-card {
-        height: 95px;
-        width: 95px;
+        height: 90px;
+        width: 90px;
     }
 
     .medium-card,
     .hard-card {
-        height: 70px;
-        width: 70px;
+        height: 65px;
+        width: 65px;
         margin-left: 5px;
         margin-right: 5px;
     }
@@ -1092,12 +1094,17 @@ dfn:hover::before {top: 15px;}
         padding: 0;
     }
 
-   .click-counter {
-        font-size: 1.2em;
+    .click-counter {
+        font-size: 1em;
+    }
+
+    .clicks-counter,
+    .clicks-holder {
+        width: 20px;
     }
 
     .clicks-holder {
-        padding-left: 4px;
+        padding-left: 8px;
         padding-right: 10px;
     }
 
